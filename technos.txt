@@ -1,0 +1,4 @@
+Techno utilisée :
+- github
+- qt et les différentes libs (qttest, designer )
+- trello pour la gestion de projet.
