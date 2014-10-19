@@ -3,27 +3,31 @@
 #include <iostream>
 #include <string>
 using namespace std;
+
 class Couleurs {
+
 private:
     static const int nbCouleurs = 4;
-    static const string correspondances[nbCouleurs];
+    static const string correspondances[];
 
 public:
 
-    enum class  Couleur{black,white,yellow,red};
+    enum Couleur{black,white,yellow,red};
 
-    string couleurToString(const Couleur& couleur)const{
+    static string couleurToString(const Couleur& couleur){
         return correspondances[couleur];
     }
 
-    bool isCouleur(const string& coul) const {
+    static bool isCouleur(const string& coul) {
         for (int i = 0; i < nbCouleurs; i++){
-            if ()
+            if (correspondances[i] == coul){
+                return true;
+            }
         }
+        return false;
     }
+};
 
-}
-Couleurs::correspondances[Couleurs::nbCouleurs] = {"black","white", "yellow","red"};
 
 
 #endif // COULEUR_H
