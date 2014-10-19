@@ -19,9 +19,9 @@ void Point::homothetie(const Point &p, const double scale){
 }
 
 void Point::translation(const Vecteur &v){
-
+    //TODO
 }
 
 void Point::dessin(){
-
+    //TODO
 }
