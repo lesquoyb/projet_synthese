@@ -13,8 +13,17 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    formegeom.cpp \
+    src/formegeom.cpp \
+    src/main.cpp \
+    src/mainwindow.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    formegeom.h \
+    Couleur.h \
+    src/Couleur.h \
+    src/formegeom.h \
+    src/mainwindow.h
 
 FORMS    += mainwindow.ui
