@@ -6,24 +6,35 @@
 Groupe::Groupe(const string &coul): FormeGeom::FormeGeom(coul){}
 
 void Groupe::rotation(const Point &p, const Angle &angle){
-   //TODO with for_each and bind
+    for(FormeGeom* f:composition){
+        f->rotation(p,angle);
+    }
 }
 
 void Groupe::homothetie(const Point &p, const double scale){
-//TODO with for_each and bind
+    for(FormeGeom* f:composition){
+        f->homothetie(p,scale);
+    }
 }
 
 void Groupe::translation(const Vecteur &v){
-//TODO with for_each and bind
+    for(FormeGeom* f:composition){
+        f->translation(v);
+    }
 }
 
 void Groupe::dessin() const{
-//TODO with for_each and bind
+    for(const FormeGeom* f : composition){
+        f->dessin();
+    }
 }
 
 double Groupe::aire() const{
-//TODO with for_each and bind
-    return 0;
+    double aire = 0;
+    for(const FormeGeom* f : composition){
+        aire += f->aire();
+    }
+    return aire;
 }
 
 Groupe::~Groupe(){

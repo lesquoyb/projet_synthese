@@ -10,6 +10,7 @@ private:
 public:
     Angle(const double a);
     double getRadian()const;
+    double getDegree()const;
     virtual ~Angle();
 };
 

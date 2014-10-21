@@ -12,7 +12,8 @@ public:
 
     double getDeplacementX()const;
     double getDeplacementY()const;
-
+    Vecteur operator* (const Vecteur& v);
+    double norme()const;
 };
 
 #endif // VECTEUR_H

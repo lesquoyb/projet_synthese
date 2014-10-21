@@ -15,5 +15,5 @@ void TestCouleurs::CouleurToStringTestTrue(){
 }
 
 
-QTEST_MAIN(TestCouleurs)
+//QTEST_MAIN(TestCouleurs)
 //#include "testcouleurs.moc"

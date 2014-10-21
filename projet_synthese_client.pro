@@ -12,6 +12,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = projet_synthese_client
 TEMPLATE = app
 
+QMAKE_CXXFLAGS += -std=c++11
 
 SOURCES += src/formegeom.cpp \
     src/main.cpp \
@@ -21,7 +22,15 @@ SOURCES += src/formegeom.cpp \
     src/point.cpp \
     src/vecteur.cpp \
     src/Couleur.cpp \
-    src/groupe.cpp
+    src/groupe.cpp \
+    tests/testgroupe.cpp \
+    src/segment.cpp \
+    tests/testsegment.cpp \
+    tests/testforme.cpp \
+    src/cercle.cpp \
+    src/triangle.cpp \
+    tests/testtriangle.cpp \
+    src/polygone.cpp
 
 HEADERS  += src/Couleur.h \
     src/formegeom.h \
@@ -31,6 +40,19 @@ HEADERS  += src/Couleur.h \
     src/point.h \
     src/vecteur.h \
     exceptions/exceptioncouleurinexistante.h \
-    src/groupe.h
+    src/groupe.h \
+    tests/testgroupe.h \
+    src/segment.h \
+    tests/testsegment.h \
+    tests/testforme.h \
+    src/cercle.h \
+    src/Tools.h \
+    src/triangle.h \
+    tests/testtriangle.h \
+    src/polygone.h
 
 FORMS    += src/mainwindow.ui
+
+OTHER_FILES += \
+    contraintes.ods \
+    technos.txt
