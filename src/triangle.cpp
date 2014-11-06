@@ -26,21 +26,15 @@ double Triangle::aire() const{
 }
 
 void Triangle::rotation(const Point &p, const Angle &angle){
-    _p1.rotation(p,angle);
-    _p2.rotation(p,angle);
-    _p3.rotation(p,angle);
+  //TODO
 }
 
 void Triangle::homothetie(const Point &p, const double scale){
-    _p1.homothetie(p,scale);
-    _p2.homothetie(p,scale);
-    _p3.homothetie(p,scale);
+  //TODO
 }
 
 void Triangle::translation(const Vecteur &v){
-    _p1.translation(v);
-    _p2.translation(v);
-    _p3.translation(v);
+  //TODO
 }
 
 void Triangle::dessin() const{

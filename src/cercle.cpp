@@ -7,7 +7,7 @@ void Cercle::rotation(const Point &p, const Angle &angle){}
 
 void Cercle::homothetie(const Point &p, const double scale){
     _rayon *= scale;
-    _centre.homothetie(p,scale);
+   //TODO
 }
 
 void Cercle::translation(const Vecteur &v){

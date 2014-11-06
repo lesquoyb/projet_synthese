@@ -1,30 +1,31 @@
 #ifndef POINT_H
 #define POINT_H
 #include "formegeom.h"
+#include <cmath>
 
-
-class Point : public FormeGeom{
+class Point{
 
 private:
 
     double _x, _y;
-    Point();
 
 public:
 
-    Point(const string &c);
     Point(const Point&);
     Point( const string &c,double x, double y);
-    virtual void rotation(const Point &p,const Angle& angle) ;
-    virtual void homothetie(const Point& p, const double scale);
     virtual void translation(const Vecteur& v);
-    virtual double aire() const;
-    virtual void dessin() const;
-    bool operator==(const Point&p)const;
+
+    double getDist(const Point &p){
+        return sqrt( pow(_x - p._x,2) + pow(_y - p._y,2) );
+    }
+
+    bool operator==(const Point&p)const{
+        return (_x == p._x) &&(_y == p._y);
+    }
     friend ostream& operator<<(ostream& , const Point &);
 
-    double getX()const;
-    double getY()const;
+    double getX()const{return _x;}
+    double getY()const{return _y;}
 
 };
 

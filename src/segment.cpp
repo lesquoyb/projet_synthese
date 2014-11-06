@@ -8,13 +8,11 @@ _p2(p2)
 {}
 
 void Segment::rotation(const Point &p, const Angle &angle){
-    _p1.rotation(p,angle);
-    _p2.rotation(p,angle);
+
 }
 
 void Segment::homothetie(const Point &p, const double scale){
-    _p1.homothetie(p,scale);
-    _p2.homothetie(p,scale);
+
 }
 
 void Segment::translation(const Vecteur &v){
