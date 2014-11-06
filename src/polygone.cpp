@@ -6,22 +6,26 @@ Polygone::Polygone()
 
 double Polygone::aire() const
 {
-
+	//TODO
+	return 0;
 }
 
-void Polygone::rotation(const Point &p, const Angle &angle)
+Polygone* Polygone::rotation(const Point &p, const Angle &angle)
 {
-
+	//TODO:
+	return new Polygone(*this);
 }
 
-void Polygone::homothetie(const Point &p, const double scale)
+Polygone* Polygone::homothetie(const Point &p, const double scale)
 {
-
+	//TODO:
+	return new Polygone(*this);
 }
 
-void Polygone::translation(const Vecteur &v)
+Polygone* Polygone::translation(const Vecteur &v)
 {
-
+	//TODO:
+	return new Polygone(*this);
 }
 
 void Polygone::dessin() const{

@@ -12,7 +12,7 @@ class Point;
 
 class FormeGeom{
 
-private:
+protected:
 
     string _couleur;
 
@@ -23,9 +23,9 @@ public:
     FormeGeom(const string & coul);
     virtual ~FormeGeom();
     virtual double aire()const = 0;
-    virtual void rotation(const Point &p, const Angle& angle) = 0;
-    virtual void homothetie(const Point& p, const double scale) = 0;
-    virtual void translation(const Vecteur& v) = 0;
+    virtual FormeGeom* rotation(const Point &p, const Angle& angle) = 0;
+    virtual FormeGeom* homothetie(const Point& p, const double scale) = 0;
+    virtual FormeGeom* translation(const Vecteur& v) = 0;
     virtual void dessin()const = 0 ;
 
 };

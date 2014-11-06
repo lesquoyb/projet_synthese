@@ -14,11 +14,12 @@ private:
 public:
 
     Cercle(const Point& centre,double rayon);
-    Cercle(const string &couleur,const Point& centre, double rayon);
+    Cercle(const string& couleur,const Point& centre, double rayon);
+
     virtual double aire()const ;
-    virtual void rotation(const Point &p, const Angle& angle) ;
-    virtual void homothetie(const Point& p, const double scale) ;
-    virtual void translation(const Vecteur& v) ;
+    virtual Cercle* rotation(const Point &p, const Angle& angle) ;
+    virtual Cercle* homothetie(const Point& p, const double scale) ;
+    virtual Cercle* translation(const Vecteur& v) ;
     virtual void dessin()const;
 };
 

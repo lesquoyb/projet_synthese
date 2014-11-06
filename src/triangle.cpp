@@ -25,16 +25,20 @@ double Triangle::aire() const{
     return sqrt( demiPerimetre * (demiPerimetre - distP1P2) * (demiPerimetre - distP1P3) * (demiPerimetre - distP3P2) );
 }
 
-void Triangle::rotation(const Point &p, const Angle &angle){
+Triangle* Triangle::rotation(const Point &p, const Angle &angle){
   //TODO
+	return new Triangle(*this);
 }
 
-void Triangle::homothetie(const Point &p, const double scale){
+Triangle* Triangle::homothetie(const Point &p, const double scale){
   //TODO
+	return new Triangle(*this);
 }
 
-void Triangle::translation(const Vecteur &v){
-  //TODO
+Triangle* Triangle::translation(const Vecteur &v){
+  
+	//TODO
+	return new Triangle(*this);
 }
 
 void Triangle::dessin() const{

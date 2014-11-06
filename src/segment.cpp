@@ -2,22 +2,23 @@
 
 
 Segment::Segment(const string &couleur, const Point &p, const Point &p2):
-FormeGeom::FormeGeom(couleur),
+FormeGeom(couleur),
 _p1(p),
 _p2(p2)
 {}
 
-void Segment::rotation(const Point &p, const Angle &angle){
-
+Segment* Segment::rotation(const Point &p, const Angle &angle){
+	//TODO
+	return new Segment(*this);
 }
 
-void Segment::homothetie(const Point &p, const double scale){
-
+Segment* Segment::homothetie(const Point &p, const double scale){
+	//TODO
+	return new Segment(*this);
 }
 
-void Segment::translation(const Vecteur &v){
-    _p1.translation(v);
-    _p2.translation(v);
+Segment* Segment::translation(const Vecteur &v){
+	return new Segment(_couleur, *_p1.translation(v), *_p2.translation(v) );
 }
 
 double Segment::aire() const{

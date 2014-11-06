@@ -8,14 +8,18 @@ class Groupe : public FormeGeom{
 private:
 
     vector<FormeGeom*> composition;
-    Groupe();
 
 public:
 
     Groupe(const string & coul);
-    virtual void rotation(const Point &p,const Angle &angle);
-    virtual void homothetie(const Point&,const double);
-    virtual void translation(const Vecteur&);
+
+	void ajouter(const FormeGeom*);
+	void supprimer(const FormeGeom*);
+
+
+    virtual Groupe* rotation(const Point &p,const Angle &angle);
+    virtual Groupe* homothetie(const Point&,const double);
+    virtual Groupe* translation(const Vecteur&);
     virtual void dessin()const;
     virtual double aire() const;
     virtual ~Groupe();

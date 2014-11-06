@@ -3,15 +3,17 @@
 #include "Tools.h"
 
 
-void Cercle::rotation(const Point &p, const Angle &angle){}
+Cercle* Cercle::rotation(const Point &p, const Angle &angle){
+	return new Cercle(*this);
+}
 
-void Cercle::homothetie(const Point &p, const double scale){
-    _rayon *= scale;
+Cercle* Cercle::homothetie(const Point &p, const double scale){
+    return new Cercle(_couleur,_centre,_rayon *= scale);
    //TODO
 }
 
-void Cercle::translation(const Vecteur &v){
-    _centre.translation(v);
+Cercle* Cercle::translation(const Vecteur &v){
+    return new Cercle(_couleur,*_centre.translation(v),_rayon);
 }
 
 void Cercle::dessin() const{

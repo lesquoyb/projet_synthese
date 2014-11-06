@@ -1,12 +1,9 @@
-#include "tests/testcouleurs.h"
-#include "tests/testgroupe.h"
-#include "tests/testforme.h"
-#include "tests/testsegment.h"
+#include <iostream>
 
 
 int main(int argc, char* argv[]){
-
-    //tests unitaires
+	/*
+	    //tests unitaires
     TestCouleurs testCouleurs;
     QTest::qExec(&testCouleurs);
 
@@ -20,7 +17,11 @@ int main(int argc, char* argv[]){
     QTest::qExec(&testF);
 
     // fin des tests unitaires
+	
+	*/
 
 
+	int test;
+	std::cin >> test;
     return 0;
 }

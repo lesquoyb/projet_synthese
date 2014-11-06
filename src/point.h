@@ -12,8 +12,8 @@ private:
 public:
 
     Point(const Point&);
-    Point( const string &c,double x, double y);
-    virtual void translation(const Vecteur& v);
+    Point(double x, double y);
+    virtual Point* translation(const Vecteur& v);
 
     double getDist(const Point &p){
         return sqrt( pow(_x - p._x,2) + pow(_y - p._y,2) );
