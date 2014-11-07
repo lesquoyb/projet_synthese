@@ -17,9 +17,9 @@ public:
     Cercle(const string& couleur,const Point& centre, double rayon);
 
     virtual double aire()const ;
-    virtual Cercle* rotation(const Point &p, const Angle& angle) ;
-    virtual Cercle* homothetie(const Point& p, const double scale) ;
-    virtual Cercle* translation(const Vecteur& v) ;
+    virtual Cercle* rotation(const Point &p, const Angle& angle) const;
+    virtual Cercle* homothetie(const Point& p, const double scale)const ;
+    virtual Cercle* translation(const Vecteur& v)const ;
     virtual void dessin()const;
 };
 

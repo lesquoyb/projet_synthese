@@ -23,9 +23,9 @@ public:
     FormeGeom(const string & coul);
     virtual ~FormeGeom();
     virtual double aire()const = 0;
-    virtual FormeGeom* rotation(const Point &p, const Angle& angle) = 0;
-    virtual FormeGeom* homothetie(const Point& p, const double scale) = 0;
-    virtual FormeGeom* translation(const Vecteur& v) = 0;
+    virtual FormeGeom* rotation(const Point &p, const Angle& angle)const = 0;
+    virtual FormeGeom* homothetie(const Point& p, const double scale)const = 0;
+    virtual FormeGeom* translation(const Vecteur& v)const = 0;
     virtual void dessin()const = 0 ;
 
 };

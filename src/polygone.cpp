@@ -1,29 +1,26 @@
 #include "polygone.h"
 
-Polygone::Polygone()
-{
+Polygone::Polygone(const Polygone &p){
+	this->_couleur = p._couleur;
+	//TODO
 }
-
 double Polygone::aire() const
 {
 	//TODO
 	return 0;
 }
 
-Polygone* Polygone::rotation(const Point &p, const Angle &angle)
-{
+Polygone* Polygone::rotation(const Point &p, const Angle &angle)const{
 	//TODO:
 	return new Polygone(*this);
 }
 
-Polygone* Polygone::homothetie(const Point &p, const double scale)
-{
+Polygone* Polygone::homothetie(const Point &p, const double scale)const{
 	//TODO:
 	return new Polygone(*this);
 }
 
-Polygone* Polygone::translation(const Vecteur &v)
-{
+Polygone* Polygone::translation(const Vecteur &v)const{
 	//TODO:
 	return new Polygone(*this);
 }

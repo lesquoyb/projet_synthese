@@ -13,8 +13,8 @@ _x(x),
 _y(y)
 {}
 
-Point* Point::translation(const Vecteur &v){
-    return new Point(_x += v.getDeplacementX(), _y += v.getDeplacementY());
+Point* Point::translation(const Vecteur &v)const{
+    return new Point(_x + v.getDeplacementX(), _y + v.getDeplacementY());
 }
 
 

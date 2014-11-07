@@ -13,10 +13,11 @@ private:
 public:
 
     Polygone();
+	Polygone(const Polygone&);
     virtual double aire()const;
-    virtual Polygone* rotation(const Point &p, const Angle& angle);
-    virtual Polygone* homothetie(const Point& p, const double scale) ;
-    virtual Polygone* translation(const Vecteur& v);
+	virtual Polygone* rotation(const Point &p, const Angle& angle)const;
+	virtual Polygone* homothetie(const Point& p, const double scale) const;
+	virtual Polygone* translation(const Vecteur& v)const;
     virtual void dessin()const ;
 
 };

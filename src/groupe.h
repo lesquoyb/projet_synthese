@@ -17,9 +17,9 @@ public:
 	void supprimer(const FormeGeom*);
 
 
-    virtual Groupe* rotation(const Point &p,const Angle &angle);
-    virtual Groupe* homothetie(const Point&,const double);
-    virtual Groupe* translation(const Vecteur&);
+    virtual Groupe* rotation(const Point &p,const Angle &angle)const;
+    virtual Groupe* homothetie(const Point&,const double)const;
+    virtual Groupe* translation(const Vecteur&)const;
     virtual void dessin()const;
     virtual double aire() const;
     virtual ~Groupe();

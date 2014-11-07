@@ -7,17 +7,17 @@ _p1(p),
 _p2(p2)
 {}
 
-Segment* Segment::rotation(const Point &p, const Angle &angle){
+Segment* Segment::rotation(const Point &p, const Angle &angle)const{
 	//TODO
 	return new Segment(*this);
 }
 
-Segment* Segment::homothetie(const Point &p, const double scale){
+Segment* Segment::homothetie(const Point &p, const double scale)const{
 	//TODO
 	return new Segment(*this);
 }
 
-Segment* Segment::translation(const Vecteur &v){
+Segment* Segment::translation(const Vecteur &v)const{
 	return new Segment(_couleur, *_p1.translation(v), *_p2.translation(v) );
 }
 

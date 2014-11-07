@@ -14,9 +14,9 @@ private:
 public:
 
     Segment(const string& couleur,const Point& p, const Point &p2);
-    virtual Segment* rotation(const Point &p,const Angle& angle) ;
-    virtual Segment* homothetie(const Point& p, const double scale);
-    virtual Segment* translation(const Vecteur& v);
+	virtual Segment* rotation(const Point &p, const Angle& angle) const;
+	virtual Segment* homothetie(const Point& p, const double scale)const;
+	virtual Segment* translation(const Vecteur& v)const;
     virtual double aire() const;
     virtual void dessin() const;
 
