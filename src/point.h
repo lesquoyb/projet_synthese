@@ -13,7 +13,12 @@ public:
 
     Point(const Point&);
     Point(double x, double y);
-    virtual Point* translation(const Vecteur& v);
+
+    Point* translation(const Vecteur& v);
+    Point* rotation(const Point &p,const Angle &a){
+
+    }
+
 
     double getDist(const Point &p){
         return sqrt( pow(_x - p._x,2) + pow(_y - p._y,2) );

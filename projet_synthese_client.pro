@@ -18,7 +18,6 @@ SOURCES += src/formegeom.cpp \
     src/main.cpp \
     src/mainwindow.cpp \
     tests/testcouleurs.cpp \
-    src/angle.cpp \
     src/point.cpp \
     src/vecteur.cpp \
     src/Couleur.cpp \
@@ -26,7 +25,6 @@ SOURCES += src/formegeom.cpp \
     tests/testgroupe.cpp \
     src/segment.cpp \
     tests/testsegment.cpp \
-    tests/testforme.cpp \
     src/cercle.cpp \
     src/triangle.cpp \
     tests/testtriangle.cpp \
@@ -44,7 +42,6 @@ HEADERS  += src/Couleur.h \
     tests/testgroupe.h \
     src/segment.h \
     tests/testsegment.h \
-    tests/testforme.h \
     src/cercle.h \
     src/Tools.h \
     src/triangle.h \

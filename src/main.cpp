@@ -22,6 +22,6 @@ int main(int argc, char* argv[]){
 
 
 	int test;
-	std::cin >> test;
+    //std::cin >> test;
     return 0;
 }

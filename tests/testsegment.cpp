@@ -5,14 +5,14 @@ TestSegment::TestSegment(QObject *parent) :
     QObject(parent){}
 
 void TestSegment::aire(){
-    Segment s("red",Point("red",3.4,6.0),Point("black",5.0,9.0));
+    Segment s("red",Point(3.4,6.0),Point(5.0,9.0));
     QCOMPARE(s.aire(),0.0);
 }
 
 void TestSegment::rotationAngleNeg(){
-    Segment depart("red",Point("red",9,1),Point("black",-3,6));
-    Segment resultat("red",Point("red",-1,9),Point("black",6,3));
-    depart.rotation(Point("red",0,0),Angle(-1.57)); // rotation de -90°
+    Segment depart("red",Point(9,1),Point(-3,6));
+    Segment resultat("red",Point(-1,9),Point(6,3));
+    depart.rotation(Point(0,0),Angle(90.0)); // rotation de -90°
     cout << depart.getPoint1() <<endl<< depart.getPoint2()<<endl;
     QCOMPARE(depart.getPoint1(),resultat.getPoint1());
     QCOMPARE(depart.getPoint2(),resultat.getPoint2());
