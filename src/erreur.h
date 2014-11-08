@@ -1,6 +1,3 @@
-/**
-classe Erreur
-*/
 #ifndef ERREUR
 #define ERREUR
 

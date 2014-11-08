@@ -8,15 +8,18 @@ class DessinManager{
 
 private:
 	static DessinManager* _me;
+	SOCKET _sock;
+
 	DessinManager();
-	static void envoyer();
-	static void recevoir();
+	void envoyer();
+	void recevoir();
 
 public:
 
 	static DessinManager* getDessinManager();
-	static void dessinerTriangle(const Triangle &t);
-	static void dessinerSegment(const Segment &s);
-	static void dessinerPolygone(const Polygone &p);
-	static void test();
+	void dessinerTriangle(const Triangle &t);
+	void dessinerSegment(const Segment &s);
+	void dessinerPolygone(const Polygone &p);
+	~DessinManager();
+	void test();
 };
