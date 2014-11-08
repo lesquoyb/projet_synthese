@@ -20,6 +20,7 @@ public:
 	void dessinerTriangle(const Triangle &t);
 	void dessinerSegment(const Segment &s);
 	void dessinerPolygone(const Polygone &p);
-	~DessinManager();
-	void test();
+	~DessinManager(){};
+	void deconnexion();
+
 };

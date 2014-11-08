@@ -26,7 +26,8 @@ int main()
 {
 	DessinManager* dessin = DessinManager::getDessinManager();
 	dessin->dessinerTriangle(Triangle("red",Point(1,2),Point(7,8),Point(50,50)));
-
+	dessin->dessinerTriangle(Triangle("red", Point(1, 2), Point(7, 8), Point(50, 50)));
+	dessin->deconnexion();
 	int i;
 	cin >> i;
 	return 0;
