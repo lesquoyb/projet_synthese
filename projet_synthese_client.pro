@@ -28,7 +28,9 @@ SOURCES += src/formegeom.cpp \
     src/cercle.cpp \
     src/triangle.cpp \
     tests/testtriangle.cpp \
-    src/polygone.cpp
+    src/polygone.cpp \
+    src/dessinManager.cpp \
+    src/erreur.cpp
 
 HEADERS  += src/Couleur.h \
     src/formegeom.h \
@@ -46,7 +48,9 @@ HEADERS  += src/Couleur.h \
     src/Tools.h \
     src/triangle.h \
     tests/testtriangle.h \
-    src/polygone.h
+    src/polygone.h \
+    src/dessinManager.h \
+    src/erreur.h
 
 FORMS    += src/mainwindow.ui
 
