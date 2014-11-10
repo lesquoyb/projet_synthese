@@ -60,25 +60,58 @@ DessinManager::DessinManager(){
         }
 }
 
+/**
+ * @brief DessinManager::envoyer envoie le message au serveur
+ * @param message le message à envoyer
+ * Cette méthode permet d'envoyer un message au serveur, les messages sont les objets géométriques avec un certain formats.
+ * Il ne faut pas ajouter "\r\n" à la fin du message, la fonction s'en charge.
+ */
+void DessinManager::envoyer(char *message){
+    char* envoie = strcat(message, "\r\n");
+    int l = strlen(envoie);
+    if (send(_sock, envoie, l, 0) == SOCKET_ERROR){
+        throw Erreur("échec de l'envoi de la requête" + WSAGetLastError());
+    }
+}
+
+/**
+ * @brief DessinManager::recevoir
+ * @return la réponse du serveur, 0 (il y a eu une erreur) ou 1 (tout c'est bien passé)
+ * Fonction à appeller après chaque envoie de message, elle vérifie que le message a bien été reçu par le serveur
+ */
+int DessinManager::recevoir(){
+    char reponse[1];
+    if (recv(_sock, reponse, 1, 0) == SOCKET_ERROR){
+        throw Erreur("La réception de la réponse a échoué");
+    }
+    return atoi(reponse);
+}
 
 void DessinManager::dessinerTriangle(const Triangle &t){
 	
-
-	//envoie au serveur
-	char requete[L] = "triangle rectangle\r\n";
-	int l = strlen(requete);
-	if (send(_sock, requete, l, 0) == SOCKET_ERROR){
-		throw Erreur("échec de l'envoi de la requête" + WSAGetLastError());
-	}
+    //envoyer("triangle rectangle\r\n");
 
     //réception de la réponse du serveur 
-	char reponse[L];
-	if (recv(_sock, reponse, l, 0) == SOCKET_ERROR){
-		
-		throw Erreur("La réception de la réponse a échoué");
-	}
+    if(recevoir() != 0 ){
+        cout << "le serveur a bien reçu le triangle" << endl;
+    }
+    else{
+        cout << "il y a eu une erreur lors de l'envoie"<< endl;
+    }
 
-	cout << "le serveur a bien reçu le triangle" << endl;
+}
+
+void DessinManager::dessinerSegment(const Segment &s){
+    ostringstream message ;
+    message << "segment: #FFEEFF," << s.getPoint1().getX() << "," << s.getPoint1().getY() << "," << s.getPoint2().getX() << "," << s.getPoint2().getY();
+    //TODO conversion de la couleur en hexa
+    envoyer(const_cast<char*>(message.str().c_str()));
+    if(recevoir() != 0 ){
+        cout << "le serveur a bien reçu le triangle" << endl;
+    }
+    else{
+        cout << "il y a eu une erreur lors de l'envoie"<< endl;
+    }
 }
 
 DessinManager* DessinManager::getDessinManager(){
