@@ -29,10 +29,9 @@ void Segment::dessin() const{
     //TODO
 }
 
-Point Segment::getPoint1() const{
-    return _p1;
-}
-
-Point Segment::getPoint2() const{
-    return _p2;
+string Segment::serialisation()const {
+    ostringstream ser;
+    ser << "segment: "<< Couleurs::stringToHexa(_couleur) << ", ";
+    ser << _p1.getX() <<", " << _p1.getY() << ", " << _p2.getX() << ", " << _p2.getY();
+    return ser.str();
 }

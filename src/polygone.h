@@ -8,17 +8,23 @@ class Polygone : public FormeGeom{
 
 private:
 
-    vector<Point> points;
+    vector<Point> _points;
 
 public:
 
-    Polygone();
+    Polygone(const string &couleur);
 	Polygone(const Polygone&);
+
+    vector<Point> getPoints()const{return _points;}
+    void ajouterPoint(const Point &p){return _points.push_back(p);}
+
+    virtual string serialisation()const;
     virtual double aire()const;
 	virtual Polygone* rotation(const Point &p, const Angle& angle)const;
 	virtual Polygone* homothetie(const Point& p, const double scale) const;
 	virtual Polygone* translation(const Vecteur& v)const;
     virtual void dessin()const ;
+
 
 };
 

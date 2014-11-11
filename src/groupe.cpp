@@ -22,8 +22,8 @@ void Groupe::ajouter(const FormeGeom* f){
 void Groupe::supprimer(const FormeGeom* f){
 	//TODO: verifier que la forme est bien dans ce groupe
 	//TODO: vérifier que pointeur non null
-	//TODO:
-//	composition.push_back(f);
+    //TODO:
+    //	composition.push_back(f);
 
 }
 
@@ -60,4 +60,8 @@ double Groupe::aire() const{
 
 Groupe::~Groupe(){
     //TODO
+}
+
+string Groupe::serialisation()const{
+//TODO
 }

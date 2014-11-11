@@ -44,3 +44,10 @@ Triangle* Triangle::translation(const Vecteur &v)const{
 void Triangle::dessin() const{
 //TODO
 }
+
+
+string Triangle::serialisation()const {
+    ostringstream ser;
+    ser << "triangle: " << Couleurs::stringToHexa(_couleur) << ", " <<  _p1.getX() <<", " << _p1.getY() << ", " << _p2.getX() << ", " << _p2.getY() << ", " << _p3.getX() << ", " << _p3.getY();
+    return ser.str(); // on enlève 2 car c'est la taille du dernier ", "
+}

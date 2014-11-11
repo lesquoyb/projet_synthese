@@ -5,6 +5,8 @@
 #include "angle.h"
 #include "vecteur.h"
 #include <math.h>
+#include "Couleur.h"
+#include <sstream>
 
 using namespace std;
 
@@ -21,7 +23,10 @@ public:
 
     FormeGeom();
     FormeGeom(const string & coul);
+
+
     virtual ~FormeGeom();
+    virtual string serialisation()const = 0;
     virtual double aire()const = 0;
     virtual FormeGeom* rotation(const Point &p, const Angle& angle)const = 0;
     virtual FormeGeom* homothetie(const Point& p, const double scale)const = 0;

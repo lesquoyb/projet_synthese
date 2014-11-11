@@ -35,3 +35,11 @@ _rayon(rayon)
 double Cercle::aire() const{
     return _rayon*_rayon*PI;
 }
+
+
+string Cercle::serialisation()const{
+    ostringstream oss;
+    oss << "cercle: " <<  Couleurs::stringToHexa(_couleur) << ", " <<  _centre.getX() << ", " <<  _centre.getY() << ", " <<  _rayon;
+    return oss.str();
+}
+

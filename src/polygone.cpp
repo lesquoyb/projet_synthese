@@ -1,5 +1,9 @@
 #include "polygone.h"
 
+Polygone::Polygone(const string &couleur):
+FormeGeom(couleur)
+{}
+
 Polygone::Polygone(const Polygone &p){
 	this->_couleur = p._couleur;
 	//TODO
@@ -27,4 +31,13 @@ Polygone* Polygone::translation(const Vecteur &v)const{
 
 void Polygone::dessin() const{
     //for_each(points.begin(),points.end();   );
+}
+
+string Polygone::serialisation()const {
+    ostringstream ser;
+    ser << "polygone: " << Couleurs::stringToHexa(_couleur) << ", ";
+    for(Point point : _points){
+        ser << point.getX() << ", " << point.getY() << ", ";
+    }
+    return ser.str().substr(0,ser.str().length()- 2); // on enlève 2 car c'est la taille du dernier ", "
 }

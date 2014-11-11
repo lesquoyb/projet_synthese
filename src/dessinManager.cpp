@@ -66,12 +66,14 @@ DessinManager::DessinManager(){
  * Cette méthode permet d'envoyer un message au serveur, les messages sont les objets géométriques avec un certain formats.
  * Il ne faut pas ajouter "\r\n" à la fin du message, la fonction s'en charge.
  */
-void DessinManager::envoyer(char *message){
-    char* envoie = strcat(message, "\r\n");
+void DessinManager::envoyer(const char *message){
+    char* envoie = strcat(strdup(message), "\r\n");
     int l = strlen(envoie);
+
     if (send(_sock, envoie, l, 0) == SOCKET_ERROR){
         throw Erreur("échec de l'envoi de la requête" + WSAGetLastError());
     }
+
 }
 
 /**
@@ -84,14 +86,14 @@ int DessinManager::recevoir(){
     if (recv(_sock, reponse, 1, 0) == SOCKET_ERROR){
         throw Erreur("La réception de la réponse a échoué");
     }
+    cout << "reponse: " << reponse << endl;
     return atoi(reponse);
 }
 
 void DessinManager::dessinerTriangle(const Triangle &t){
-	
-    //envoyer("triangle rectangle\r\n");
 
-    //réception de la réponse du serveur 
+    envoyer(t.serialisation().c_str());
+
     if(recevoir() != 0 ){
         cout << "le serveur a bien reçu le triangle" << endl;
     }
@@ -100,19 +102,49 @@ void DessinManager::dessinerTriangle(const Triangle &t){
     }
 
 }
+
 
 void DessinManager::dessinerSegment(const Segment &s){
-    ostringstream message ;
-    message << "segment: #FFEEFF," << s.getPoint1().getX() << "," << s.getPoint1().getY() << "," << s.getPoint2().getX() << "," << s.getPoint2().getY();
-    //TODO conversion de la couleur en hexa
-    envoyer(const_cast<char*>(message.str().c_str()));
+    cout << s.serialisation();
+
+    envoyer(s.serialisation().c_str());
+
     if(recevoir() != 0 ){
-        cout << "le serveur a bien reçu le triangle" << endl;
+        cout << "le serveur a bien reçu le segment" << endl;
+    }
+    else{
+        cout << "il y a eu une erreur lors de l'envoie"<< endl;
+    }
+
+}
+
+
+
+void DessinManager::dessinerCercle(const Cercle &c){
+
+    envoyer(c.serialisation().c_str());
+
+    if(recevoir() != 0 ){
+        cout << "le serveur a bien reçu le cercle" << endl;
     }
     else{
         cout << "il y a eu une erreur lors de l'envoie"<< endl;
     }
 }
+
+
+void DessinManager::dessinerPolygone(const Polygone &p){
+
+    envoyer(p.serialisation().c_str());
+
+    if(recevoir() != 0 ){
+        cout << "le serveur a bien reçu le polygone" << endl;
+    }
+    else{
+        cout << "il y a eu une erreur lors de l'envoie"<< endl;
+    }
+}
+
 
 DessinManager* DessinManager::getDessinManager(){
 	if (_me == NULL){
@@ -121,26 +153,23 @@ DessinManager* DessinManager::getDessinManager(){
 	return _me;
 }
 
-void DessinManager::deconnexion(){
+DessinManager::~DessinManager(){
 
-	if (shutdown(_sock, SD_BOTH) == SOCKET_ERROR){
-		ostringstream oss;
-		oss << "la coupure de connexion a échoué" << WSAGetLastError() << endl;
-		throw Erreur(oss.str().c_str());
-	}
+    if (shutdown(_sock, SD_BOTH) == SOCKET_ERROR){
+        ostringstream oss;
+        oss << "la coupure de connexion a échoué" << WSAGetLastError() << endl;
+        throw Erreur(oss.str().c_str());
+    }
 
+    if (closesocket(_sock)){
+        ostringstream oss;
+        oss << "La fermeture du socket a échoué" << WSAGetLastError() << endl;
+        throw Erreur(oss.str().c_str());
 
-
-        if (closesocket(_sock)){
-            ostringstream oss;
-            oss << "La fermeture du socket a échoué" << WSAGetLastError() << endl;
-            throw Erreur(oss.str().c_str());
-
-        }
+    }
     #ifdef WIN32
         WSACleanup();
     #endif
-
 }
 
 

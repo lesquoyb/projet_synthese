@@ -1,4 +1,5 @@
 #include "triangle.h"
+#include "cercle.h"
 #include "segment.h"
 #include "polygone.h"
 
@@ -26,6 +27,7 @@
 //    #pragma comment(lib, "ws2_32.lib") // spécifique à VISUAL C++ peut être à retirer
 
 #endif
+
 /**
  * @brief The DessinManager class
  * Cette classe est chargé de dessiner les formes géometriques.
@@ -42,16 +44,16 @@ private:
 	SOCKET _sock;
 
 	DessinManager();
-    void envoyer(char *);
+    void envoyer(const char *);
     int recevoir();
 
 public:
 
 	static DessinManager* getDessinManager();
+    void dessinerCercle(const Cercle &c);
 	void dessinerTriangle(const Triangle &t);
 	void dessinerSegment(const Segment &s);
 	void dessinerPolygone(const Polygone &p);
-    ~DessinManager(){/*TODO*/};
-	void deconnexion();
+    ~DessinManager();
 
 };

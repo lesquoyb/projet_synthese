@@ -16,7 +16,7 @@ public:
 	void ajouter(const FormeGeom*);
 	void supprimer(const FormeGeom*);
 
-
+    virtual string serialisation()const;
     virtual Groupe* rotation(const Point &p,const Angle &angle)const;
     virtual Groupe* homothetie(const Point&,const double)const;
     virtual Groupe* translation(const Vecteur&)const;
