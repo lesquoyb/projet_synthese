@@ -1,6 +1,7 @@
 #ifndef TRIANGLE_H
 #define TRIANGLE_H
 #include "point.h"
+#include "formegeom.h"
 
 class Triangle : public FormeGeom{
 
@@ -22,7 +23,7 @@ public:
     virtual Triangle* rotation(const Point &p, const Angle& angle)const;
     virtual Triangle* homothetie(const Point& p, const double scale)const;
     virtual Triangle* translation(const Vecteur& v)const;
-    virtual void dessin()const;
+    virtual void dessin(const DessinManager&)const;
 
 };
 

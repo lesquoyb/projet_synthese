@@ -1,7 +1,11 @@
-#include "triangle.h"
-#include "cercle.h"
-#include "segment.h"
-#include "polygone.h"
+#ifndef DESSINMANAGER_H
+#define DESSINMANAGER_H
+
+
+class Cercle;
+class Polygone;
+class Segment;
+class Triangle;
 
 #ifdef  __unix__
 
@@ -44,16 +48,18 @@ private:
 	SOCKET _sock;
 
 	DessinManager();
-    void envoyer(const char *);
-    int recevoir();
+    void envoyer(const char *)const;
+    int recevoir()const;
 
 public:
 
 	static DessinManager* getDessinManager();
-    void dessinerCercle(const Cercle &c);
-	void dessinerTriangle(const Triangle &t);
-	void dessinerSegment(const Segment &s);
-	void dessinerPolygone(const Polygone &p);
+    void dessinerCercle(const Cercle &c)const;
+    void dessinerTriangle(const Triangle &t)const;
+    void dessinerSegment(const Segment &s)const;
+    void dessinerPolygone(const Polygone &p)const;
     ~DessinManager();
 
 };
+
+#endif

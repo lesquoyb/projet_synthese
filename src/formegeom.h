@@ -1,16 +1,20 @@
 #ifndef FORMEGEOM_H
 #define FORMEGEOM_H
+
 #include <iostream>
 #include <string>
-#include "angle.h"
 #include "vecteur.h"
 #include <math.h>
 #include "Couleur.h"
 #include <sstream>
+#include "point.h"
+
+
+#include "dessinManager.h"
 
 using namespace std;
 
-class Point;
+
 
 class FormeGeom{
 
@@ -31,7 +35,7 @@ public:
     virtual FormeGeom* rotation(const Point &p, const Angle& angle)const = 0;
     virtual FormeGeom* homothetie(const Point& p, const double scale)const = 0;
     virtual FormeGeom* translation(const Vecteur& v)const = 0;
-    virtual void dessin()const = 0 ;
+    virtual void dessin(const DessinManager&)const = 0 ;
 
 };
 

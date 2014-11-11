@@ -16,8 +16,8 @@ Cercle* Cercle::translation(const Vecteur &v)const{
     return new Cercle(_couleur,*_centre.translation(v),_rayon);
 }
 
-void Cercle::dessin() const{
-    //TODO
+void Cercle::dessin(const DessinManager &d) const{
+    d.dessinerCercle(*this);
 }
 
 Cercle::Cercle(const Point &centre, double rayon):

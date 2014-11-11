@@ -22,3 +22,12 @@ ostream& operator<<(ostream& stream,const Point& p ){
     stream << "x: " << p._x<< ",y: " << p._y;
     return stream;
 }
+
+Point* Point::rotation(const Point &p, const Angle &a) const{
+    //TODO
+    return new Point(*this);
+}
+Point* Point::homothetie(const Point &p, double scale) const{
+    //TODO
+    return new Point(*this);
+}

@@ -41,8 +41,8 @@ Triangle* Triangle::translation(const Vecteur &v)const{
 	return new Triangle(*this);
 }
 
-void Triangle::dessin() const{
-//TODO
+void Triangle::dessin(const DessinManager &d) const{
+    d.dessinerTriangle(*this);
 }
 
 

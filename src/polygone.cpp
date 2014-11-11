@@ -1,36 +1,44 @@
 #include "polygone.h"
+#include <algorithm>
 
 Polygone::Polygone(const string &couleur):
 FormeGeom(couleur)
 {}
 
-Polygone::Polygone(const Polygone &p){
-	this->_couleur = p._couleur;
-	//TODO
+Polygone::Polygone(const Polygone &p):
+FormeGeom(p._couleur),
+_points(p._points)
+{//TODO
 }
-double Polygone::aire() const
-{
-	//TODO
-	return 0;
+
+double Polygone::aire() const{
+    //TODO:
+    return 0;
 }
 
 Polygone* Polygone::rotation(const Point &p, const Angle &angle)const{
-	//TODO:
-	return new Polygone(*this);
+    //TODO:tester
+    Polygone* poly = new Polygone(*this);
+    for_each(poly->_points.begin(),poly->_points.end(), [p,angle] (Point obj){obj.rotation(p,angle);});
+    return poly;
 }
 
 Polygone* Polygone::homothetie(const Point &p, const double scale)const{
-	//TODO:
-	return new Polygone(*this);
+    //TODO:tester
+    Polygone* poly = new Polygone(*this);
+    for_each(poly->_points.begin(),poly->_points.end(), [p,scale] (Point obj){obj.homothetie(p,scale);});
+    return poly;
 }
 
 Polygone* Polygone::translation(const Vecteur &v)const{
-	//TODO:
-	return new Polygone(*this);
+    //TODO tester
+    Polygone* p = new Polygone(*this);
+    for_each(p->_points.begin(),p->_points.end(), [v] (Point obj){obj.translation(v);});
+    return p;
 }
 
-void Polygone::dessin() const{
-    //for_each(points.begin(),points.end();   );
+void Polygone::dessin(const DessinManager &d) const{
+    d.dessinerPolygone(*this);
 }
 
 string Polygone::serialisation()const {

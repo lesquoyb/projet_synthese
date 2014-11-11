@@ -3,7 +3,14 @@
 #include <string>
 #include <string.h>
 #include "erreur.h"
+
+#include "cercle.h"
+#include "triangle.h"
+#include "segment.h"
+#include "polygone.h"
+
 #include "dessinManager.h"
+
 
 int main(){
     string entree;
@@ -21,12 +28,13 @@ int main(){
     p.ajouterPoint(Point(600,250));
 
 
-        dessin->dessinerSegment(s);
-        dessin->dessinerTriangle(t);
-       dessin->dessinerCercle(c);
-        dessin->dessinerPolygone(p);
-        cout << "continuer ?" <<endl;
-        cin >> entree;
+    s.dessin(*dessin);
+    t.dessin(*dessin);
+    c.dessin(*dessin);
+    p.dessin(*dessin);
+
+    cout << "continuer ?" <<endl;
+    cin >> entree;
     if(entree == "o"){
         dessin->dessinerCercle(Cercle("red",Point(250,250),50));
     }

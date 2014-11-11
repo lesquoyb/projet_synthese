@@ -1,5 +1,6 @@
 #ifndef COULEUR_H
 #define COULEUR_H
+
 #include <iostream>
 #include <string>
 using namespace std;

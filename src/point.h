@@ -1,7 +1,12 @@
 #ifndef POINT_H
 #define POINT_H
-#include "formegeom.h"
+#include <iostream>
+#include "vecteur.h"
 #include <cmath>
+#include "angle.h"
+
+
+using namespace std;
 
 class Point{
 
@@ -15,11 +20,8 @@ public:
     Point(double x, double y);
 
     Point* translation(const Vecteur& v)const;
-    Point* rotation(const Point &p,const Angle &a)const{
-		//TODO
-    }
-
-
+    Point* rotation(const Point &p,const Angle &a)const;//TODO
+    Point* homothetie(const Point&p, double scale)const;//TODO
     double getDist(const Point &p)const{
         return sqrt( pow(_x - p._x,2) + pow(_y - p._y,2) );
     }

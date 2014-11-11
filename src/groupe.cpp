@@ -12,10 +12,12 @@ Groupe* Groupe::rotation(const Point &p, const Angle &angle)const{
     }
 	return ret;
 }
+
+
 void Groupe::ajouter(const FormeGeom* f){
 	//TODO: vérifier qu'il n'y est pas déjà
 	//TODO: changer le groupe si nécessaire
-	//TODO:
+    //TODO: verif que non null
 
 }
 
@@ -43,9 +45,9 @@ Groupe* Groupe::translation(const Vecteur &v)const{
 	return g;
 }
 
-void Groupe::dessin() const{
+void Groupe::dessin(const DessinManager &d) const{
     for(const FormeGeom* f : composition){
-        f->dessin();
+        f->dessin(d);
     }
 }
 

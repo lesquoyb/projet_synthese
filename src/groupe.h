@@ -20,7 +20,7 @@ public:
     virtual Groupe* rotation(const Point &p,const Angle &angle)const;
     virtual Groupe* homothetie(const Point&,const double)const;
     virtual Groupe* translation(const Vecteur&)const;
-    virtual void dessin()const;
+    virtual void dessin(const DessinManager&d)const;
     virtual double aire() const;
     virtual ~Groupe();
 

@@ -25,8 +25,8 @@ double Segment::aire() const{
     return 0;
 }
 
-void Segment::dessin() const{
-    //TODO
+void Segment::dessin(const DessinManager &d) const{
+    d.dessinerSegment(*this);
 }
 
 string Segment::serialisation()const {

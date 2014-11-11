@@ -1,6 +1,6 @@
 #ifndef SEGMENT_H
 #define SEGMENT_H
-#include "point.h"
+#include "formegeom.h"
 
 
 class Segment : public FormeGeom{
@@ -21,7 +21,7 @@ public:
 	virtual Segment* homothetie(const Point& p, const double scale)const;
 	virtual Segment* translation(const Vecteur& v)const;
     virtual double aire() const;
-    virtual void dessin() const;
+    virtual void dessin(const DessinManager&) const;
 
 
 

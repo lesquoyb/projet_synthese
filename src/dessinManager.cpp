@@ -1,4 +1,8 @@
 #include "dessinManager.h"
+#include "triangle.h"
+#include "cercle.h"
+#include "segment.h"
+#include "polygone.h"
 #include <iostream>
 #include <sstream>
 #include <string>
@@ -66,7 +70,7 @@ DessinManager::DessinManager(){
  * Cette méthode permet d'envoyer un message au serveur, les messages sont les objets géométriques avec un certain formats.
  * Il ne faut pas ajouter "\r\n" à la fin du message, la fonction s'en charge.
  */
-void DessinManager::envoyer(const char *message){
+void DessinManager::envoyer(const char *message)const{
     char* envoie = strcat(strdup(message), "\r\n");
     int l = strlen(envoie);
 
@@ -81,7 +85,7 @@ void DessinManager::envoyer(const char *message){
  * @return la réponse du serveur, 0 (il y a eu une erreur) ou 1 (tout c'est bien passé)
  * Fonction à appeller après chaque envoie de message, elle vérifie que le message a bien été reçu par le serveur
  */
-int DessinManager::recevoir(){
+int DessinManager::recevoir() const{
     char reponse[1];
     if (recv(_sock, reponse, 1, 0) == SOCKET_ERROR){
         throw Erreur("La réception de la réponse a échoué");
@@ -90,7 +94,7 @@ int DessinManager::recevoir(){
     return atoi(reponse);
 }
 
-void DessinManager::dessinerTriangle(const Triangle &t){
+void DessinManager::dessinerTriangle(const Triangle &t) const{
 
     envoyer(t.serialisation().c_str());
 
@@ -104,7 +108,7 @@ void DessinManager::dessinerTriangle(const Triangle &t){
 }
 
 
-void DessinManager::dessinerSegment(const Segment &s){
+void DessinManager::dessinerSegment(const Segment &s) const{
     cout << s.serialisation();
 
     envoyer(s.serialisation().c_str());
@@ -120,7 +124,7 @@ void DessinManager::dessinerSegment(const Segment &s){
 
 
 
-void DessinManager::dessinerCercle(const Cercle &c){
+void DessinManager::dessinerCercle(const Cercle &c) const{
 
     envoyer(c.serialisation().c_str());
 
@@ -133,7 +137,7 @@ void DessinManager::dessinerCercle(const Cercle &c){
 }
 
 
-void DessinManager::dessinerPolygone(const Polygone &p){
+void DessinManager::dessinerPolygone(const Polygone &p) const{
 
     envoyer(p.serialisation().c_str());
 
