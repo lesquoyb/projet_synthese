@@ -35,7 +35,7 @@ public:
     virtual FormeGeom* rotation(const Point &p, const Angle& angle)const = 0;
     virtual FormeGeom* homothetie(const Point& p, const double scale)const = 0;
     virtual FormeGeom* translation(const Vecteur& v)const = 0;
-    virtual void dessin(const DessinManager&)const = 0 ;
+    virtual void dessin(const Dessinable&)const = 0 ;
 
 };
 

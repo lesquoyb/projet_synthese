@@ -21,7 +21,7 @@ public:
 	virtual Segment* homothetie(const Point& p, const double scale)const;
 	virtual Segment* translation(const Vecteur& v)const;
     virtual double aire() const;
-    virtual void dessin(const DessinManager&) const;
+    virtual void dessin(const Dessinable&) const;
 
 
 

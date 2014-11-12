@@ -25,7 +25,7 @@ double Segment::aire() const{
     return 0;
 }
 
-void Segment::dessin(const DessinManager &d) const{
+void Segment::dessin(const Dessinable &d) const{
     d.dessinerSegment(*this);
 }
 

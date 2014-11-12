@@ -1,11 +1,7 @@
 #ifndef DESSINMANAGER_H
 #define DESSINMANAGER_H
 
-
-class Cercle;
-class Polygone;
-class Segment;
-class Triangle;
+#include "dessinable.h"
 
 #ifdef  __unix__
 
@@ -39,7 +35,7 @@ class Triangle;
  * Cette classe est un singleton et on peut acceder à l'instance grace à la méthode getDessinManager().
  * De plus elle est compilable et fonctionnelle sous windows et unix (linux/mac compris) car la portabilité c'est la vie.
  */
-class DessinManager{
+class DessinManager : public Dessinable{
 
 
 private:

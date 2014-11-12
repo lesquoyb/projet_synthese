@@ -45,7 +45,7 @@ Groupe* Groupe::translation(const Vecteur &v)const{
 	return g;
 }
 
-void Groupe::dessin(const DessinManager &d) const{
+void Groupe::dessin(const Dessinable &d) const{
     for(const FormeGeom* f : composition){
         f->dessin(d);
     }

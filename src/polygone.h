@@ -24,7 +24,7 @@ public:
 	virtual Polygone* rotation(const Point &p, const Angle& angle)const;
 	virtual Polygone* homothetie(const Point& p, const double scale) const;
 	virtual Polygone* translation(const Vecteur& v)const;
-    virtual void dessin(const DessinManager&)const ;
+    virtual void dessin(const Dessinable&)const ;
 
 
 };

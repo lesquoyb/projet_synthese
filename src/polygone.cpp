@@ -37,7 +37,7 @@ Polygone* Polygone::translation(const Vecteur &v)const{
     return p;
 }
 
-void Polygone::dessin(const DessinManager &d) const{
+void Polygone::dessin(const Dessinable &d) const{
     d.dessinerPolygone(*this);
 }
 

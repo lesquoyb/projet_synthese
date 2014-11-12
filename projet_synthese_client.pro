@@ -50,7 +50,8 @@ HEADERS  += src/Couleur.h \
     tests/testtriangle.h \
     src/polygone.h \
     src/dessinManager.h \
-    src/erreur.h
+    src/erreur.h \
+    src/dessinable.h
 
 FORMS    += src/mainwindow.ui
 

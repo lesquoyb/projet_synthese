@@ -24,7 +24,7 @@ public:
     virtual Cercle* rotation(const Point &p, const Angle& angle) const;
     virtual Cercle* homothetie(const Point& p, const double scale)const ;
     virtual Cercle* translation(const Vecteur& v)const ;
-    virtual void dessin(const DessinManager&)const;
+    virtual void dessin(const Dessinable&)const;
 };
 
 #endif // CERCLE_H
