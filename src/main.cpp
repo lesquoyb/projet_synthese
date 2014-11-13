@@ -20,7 +20,7 @@ int main(){
     Segment s2("red",Point(150,300),Point(50,50));
     Triangle t("red",Point(300,300),Point(50,50),Point(300,50));
 
-    Cercle c(Point(80,90),90);
+    Cercle c(Point(0,0),90);
     Polygone p("yellow");
     p.ajouterPoint(Point(500,10));
     p.ajouterPoint(Point(400,100));

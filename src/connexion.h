@@ -29,6 +29,14 @@
 
 #endif
 
+
+
+/**
+* @brief The Connexion class
+* Cette classe est chargée d'établire une connexion avec un serveur distant
+* Cette classe est un singleton et on peut acceder à l'instance grace à la méthode getDessinManager().
+* De plus elle est compilable et fonctionnelle sous windows et unix(linux / mac compris) car la portabilité c'est la vie.
+*/
 class Connexion{
 	
 private:
@@ -40,12 +48,8 @@ private:
 public:
 	
 	static Connexion* getConnexion();
-
 	void envoyer(const char *)const;
-
     int recevoir()const;
-
-
 	~Connexion();
 
 };
