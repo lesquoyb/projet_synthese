@@ -58,4 +58,6 @@ FORMS    += src/mainwindow.ui
 
 OTHER_FILES += \
     contraintes.ods \
-    technos.txt
+    technos.txt \
+    DiagrammeDeClasses.dia \
+    DiagrammeDeClasses.png
