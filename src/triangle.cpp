@@ -26,19 +26,18 @@ double Triangle::aire() const{
 }
 
 Triangle* Triangle::rotation(const Point &p, const Angle &angle)const{
-  //TODO
-	return new Triangle(*this);
+  //TODO:test
+    return new Triangle(_p1.rotation(p,angle),_p2.rotation(p,angle),_p3.rotation(p,angle));
 }
 
 Triangle* Triangle::homothetie(const Point &p, const double scale)const{
-  //TODO
-	return new Triangle(*this);
+    //TODO: test
+    return new Triangle(_p1.homothetie(p,scale),_p2.homothetie(p,scale),_p3.homothetie(p,scale));
 }
 
 Triangle* Triangle::translation(const Vecteur &v)const{
-  
-	//TODO
-	return new Triangle(*this);
+    //TODO:test
+    return new Triangle(_p1.translation(v),_p2.translation(v),_p3.translation(v));
 }
 
 void Triangle::dessin(const Dessinable &d) const{

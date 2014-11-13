@@ -1,20 +1,20 @@
 #ifndef FORMEGEOM_H
 #define FORMEGEOM_H
 
+#include "point.h"
 #include <iostream>
 #include <string>
 #include "vecteur.h"
 #include <math.h>
 #include "Couleur.h"
 #include <sstream>
-#include "point.h"
-
 
 #include "dessinManager.h"
 
 using namespace std;
 
-
+class Point;
+class Angle;
 
 class FormeGeom{
 

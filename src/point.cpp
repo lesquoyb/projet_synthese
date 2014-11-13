@@ -13,8 +13,8 @@ _x(x),
 _y(y)
 {}
 
-Point* Point::translation(const Vecteur &v)const{
-    return new Point(_x + v.getDeplacementX(), _y + v.getDeplacementY());
+Point Point::translation(const Vecteur &v)const{
+    return Point(_x + v.getDeplacementX(), _y + v.getDeplacementY());
 }
 
 
@@ -23,11 +23,24 @@ ostream& operator<<(ostream& stream,const Point& p ){
     return stream;
 }
 
-Point* Point::rotation(const Point &p, const Angle &a) const{
-    //TODO
-    return new Point(*this);
+/**
+ * @brief Point::rotation
+ * @param p le point à partir duquel il faut effectuer la rotation
+ * @param a l'angle de la rotation
+ * @return le point résultat
+ * Permet de calculer le point issus de la rotation du point courrant par rapport à p et a
+ */
+Point Point::rotation(const Point &p, const Angle &a) const{
+    //TODO:test
+    double theta = a.getRadian();
+    double x = cos(theta) * (_x - p._x) - sin(theta) * (_y - p._y) + p._x;
+    double y = sin(theta) * (_x - p._x) + cos(theta) * (_y - p._y) + p._y;
+    return Point(x, y);
 }
-Point* Point::homothetie(const Point &p, double scale) const{
-    //TODO
-    return new Point(*this);
+
+Point Point::homothetie(const Point &p, double scale) const{
+    //TODO: test
+    double deltaX = _x - p._x;
+    double deltaY = _y - p._y;
+    return p.translation(Vecteur(deltaX*scale,deltaY*scale));
 }

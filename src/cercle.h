@@ -7,7 +7,6 @@ class Cercle : public FormeGeom{
 
 private:
 
-    Cercle();
     Point _centre;
     double _rayon;
 

@@ -7,7 +7,7 @@ class Groupe : public FormeGeom{
 
 private:
 
-    vector<FormeGeom*> composition;
+    vector<FormeGeom*> _composition;
 
 public:
 

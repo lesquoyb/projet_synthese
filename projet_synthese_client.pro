@@ -30,7 +30,8 @@ SOURCES += src/formegeom.cpp \
     tests/testtriangle.cpp \
     src/polygone.cpp \
     src/dessinManager.cpp \
-    src/erreur.cpp
+    src/erreur.cpp \
+    src/tools.cpp
 
 HEADERS  += src/Couleur.h \
     src/formegeom.h \

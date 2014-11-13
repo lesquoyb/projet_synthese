@@ -4,7 +4,7 @@
 class Vecteur{
 
 private:
-    Vecteur();
+
     double _deplacementX, _deplacementY;
 public:
 

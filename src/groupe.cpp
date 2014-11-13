@@ -6,8 +6,9 @@
 Groupe::Groupe(const string &coul): FormeGeom(coul){}
 
 Groupe* Groupe::rotation(const Point &p, const Angle &angle)const{
+    //TODO: avec for_each
 	Groupe* ret = new Groupe(_couleur);
-	for(FormeGeom* f:composition){
+    for(FormeGeom* f:_composition){
         ret->ajouter(f->rotation(p,angle));
     }
 	return ret;
@@ -30,31 +31,37 @@ void Groupe::supprimer(const FormeGeom* f){
 }
 
 Groupe* Groupe::homothetie(const Point &p, const double scale)const{
+    //TODO: test
 	Groupe* g = new Groupe(*this);
-	for(FormeGeom* f: g->composition){
+    for(FormeGeom* f: g->_composition){
         f->homothetie(p,scale);
     }
 	return g;
 }
 
 Groupe* Groupe::translation(const Vecteur &v)const{
+    //TODO: test
 	Groupe* g = new Groupe(*this);
-    for(FormeGeom* f: g->composition){
+    for(FormeGeom* f: g->_composition){
         f->translation(v);
     }
 	return g;
 }
 
 void Groupe::dessin(const Dessinable &d) const{
-    for(const FormeGeom* f : composition){
+    //TODO test
+    //for_each(_composition.begin(),_composition.end(),[d](FormeGeom*f){f->dessin(d);});
+    /*
+    for(const FormeGeom* f : _composition){
         f->dessin(d);
     }
+    */
 }
 
 double Groupe::aire() const{
-	//TODO avec for_each + foncteurs
+    //TODO avec for_each
     double aire = 0;
-    for(const FormeGeom* f : composition){
+    for(const FormeGeom* f : _composition){
         aire += f->aire();
     }
     return aire;

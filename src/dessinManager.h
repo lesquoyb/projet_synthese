@@ -23,6 +23,7 @@
     typedef struct sockaddr SOCKADDR;
 
 #else
+
     #include <winsock2.h>
 //    #pragma comment(lib, "ws2_32.lib") // spécifique à VISUAL C++ peut être à retirer
 
@@ -43,7 +44,7 @@ private:
 	static DessinManager* _me;
 	SOCKET _sock;
 
-	DessinManager();
+    DessinManager();
     void envoyer(const char *)const;
     int recevoir()const;
 

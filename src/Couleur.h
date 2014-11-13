@@ -14,7 +14,7 @@ private:
 
 public:
 
-    enum Couleur{black,white,yellow,red};
+    enum Couleur{black,white,yellow,red,green,blue};
 
     static string couleurToString(const Couleur& couleur){
         return correspondances[couleur];

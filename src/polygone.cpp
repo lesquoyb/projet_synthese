@@ -19,21 +19,21 @@ double Polygone::aire() const{
 Polygone* Polygone::rotation(const Point &p, const Angle &angle)const{
     //TODO:tester
     Polygone* poly = new Polygone(*this);
-    for_each(poly->_points.begin(),poly->_points.end(), [p,angle] (Point obj){obj.rotation(p,angle);});
+    for_each(poly->_points.begin(),poly->_points.end(), [p,angle] (Point obj){obj = obj.rotation(p,angle);});
     return poly;
 }
 
 Polygone* Polygone::homothetie(const Point &p, const double scale)const{
     //TODO:tester
     Polygone* poly = new Polygone(*this);
-    for_each(poly->_points.begin(),poly->_points.end(), [p,scale] (Point obj){obj.homothetie(p,scale);});
+    for_each(poly->_points.begin(),poly->_points.end(), [p,scale] (Point obj){obj = obj.homothetie(p,scale);});
     return poly;
 }
 
 Polygone* Polygone::translation(const Vecteur &v)const{
     //TODO tester
     Polygone* p = new Polygone(*this);
-    for_each(p->_points.begin(),p->_points.end(), [v] (Point obj){obj.translation(v);});
+    for_each(p->_points.begin(),p->_points.end(), [v] (Point obj){obj = obj.translation(v);});
     return p;
 }
 

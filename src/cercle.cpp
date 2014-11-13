@@ -4,16 +4,15 @@
 
 
 Cercle* Cercle::rotation(const Point &p, const Angle &angle)const{
-	return new Cercle(*this);
+    return new Cercle(_couleur,_centre.rotation(p,angle),_rayon);
 }
 
 Cercle* Cercle::homothetie(const Point &p, const double scale)const{
-    return new Cercle(_couleur,_centre,_rayon * scale);
-   //TODO
+    return new Cercle(_couleur,_centre.homothetie(p,scale), _rayon * scale);
 }
 
 Cercle* Cercle::translation(const Vecteur &v)const{
-    return new Cercle(_couleur,*_centre.translation(v),_rayon);
+    return new Cercle(_couleur,_centre.translation(v),_rayon);
 }
 
 void Cercle::dessin(const Dessinable &d) const{
@@ -33,7 +32,7 @@ _rayon(rayon)
 {}
 
 double Cercle::aire() const{
-    return _rayon*_rayon*PI;
+    return _rayon*_rayon*(tools::PI);
 }
 
 
