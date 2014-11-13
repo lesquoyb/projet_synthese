@@ -72,5 +72,6 @@ Groupe::~Groupe(){
 }
 
 string Groupe::serialisation()const{
-//TODO
+//TODO 
+	return "lol";
 }
