@@ -48,20 +48,19 @@ int main(){
 
     */
 
-/*
- *
-    DessinManager* dessin = DessinManager::getDessinManager();
-    s.dessin(*dessin);
-    t.dessin(*dessin);
-    c.dessin(*dessin);
-    p.dessin(*dessin);
+
+    DessinManager dessin ;
+    s.dessin(dessin);
+    t.dessin(dessin);
+    c.dessin(dessin);
+    p.dessin(dessin);
 
     cout << "continuer ?" <<endl;
     cin >> entree;
     if(entree == "o"){
-        dessin->dessinerCercle(Cercle("red",Point(250,250),50));
+        dessin.dessinerCercle(Cercle("red",Point(250,250),50));
     }
-
-    */
+	int lol;
+	cin >> lol;
     return 0;
 }
