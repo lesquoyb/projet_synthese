@@ -1,13 +1,11 @@
 #ifndef TESTGROUPE_H
 #define TESTGROUPE_H
-#include <QtTest/qtest.h>
 
-class TestGroupe :public QObject{
+/*
+class TestGroupe {
 
-    Q_OBJECT
 public:
 
-    explicit TestGroupe(QObject *parent = 0);
 
 
 private slots:
@@ -26,4 +24,5 @@ private slots:
     void Destructeur();
 };
 
+*/
 #endif // TESTGROUPE_H

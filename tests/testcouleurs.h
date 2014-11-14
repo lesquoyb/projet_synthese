@@ -1,23 +1,22 @@
 #ifndef TESTCOULEURS_H
 #define TESTCOULEURS_H
-#include <QtTest/qtest.h>
-#include <QObject>
+#include "test.h"
 
-class TestCouleurs : public QObject{
+class TestCouleurs : public Test{
 
-    Q_OBJECT
+
 
 public:
 
-    explicit TestCouleurs(QObject *parent = 0);
+    TestCouleurs(){
+        Test::_name = "TestCouleur";
+        _functions.push_back(CouleurToStringTestFalse);
+        _functions.push_back(CouleurToStringTestTrue);
+    }
 
-signals:
 
-
-private slots:
-
-    void CouleurToStringTestFalse();
-    void CouleurToStringTestTrue();
+   static function<string()> CouleurToStringTestFalse;
+    static function<string()> CouleurToStringTestTrue;
 };
 
 #endif // TESTCOULEURS_H

@@ -26,6 +26,9 @@
 
     #include <winsock2.h>
     #pragma comment(lib, "ws2_32.lib") // spécifique à VISUAL C++ peut être à retirer
+    #if (MSVC++ 12.0 _MSC_VER == 1800)
+        #define strdup _strdup
+    #endif
 
 #endif
 

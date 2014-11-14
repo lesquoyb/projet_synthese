@@ -31,7 +31,8 @@ SOURCES += src/formegeom.cpp \
     src/polygone.cpp \
     src/dessinManager.cpp \
     src/erreur.cpp \
-    src/tools.cpp
+    src/tools.cpp \
+    src/connexion.cpp
 
 HEADERS  += src/Couleur.h \
     src/formegeom.h \
@@ -52,7 +53,11 @@ HEADERS  += src/Couleur.h \
     src/polygone.h \
     src/dessinManager.h \
     src/erreur.h \
-    src/dessinable.h
+    src/dessinable.h \
+    src/connexion.h \
+    tests/test.h \
+    tests/testfacade.h \
+    tests/testfunction.h
 
 FORMS    += src/mainwindow.ui
 

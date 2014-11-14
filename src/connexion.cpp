@@ -2,6 +2,9 @@
 #include "erreur.h"
 #include <iostream>
 #include <sstream>
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
 using namespace std;
 
 Connexion* Connexion::_me = NULL;
@@ -21,7 +24,7 @@ Connexion* Connexion::getConnexion(){
 * Il ne faut pas ajouter "\r\n" à la fin du message, la fonction s'en charge.
 */
 void Connexion::envoyer(const char *message)const{
-	char* envoie = strcat(_strdup(message), "\r\n");
+    char* envoie = strcat(strdup(message), "\r\n");
 	int l = strlen(envoie);
 
 	if (send(_sock, envoie, l, 0) == SOCKET_ERROR){

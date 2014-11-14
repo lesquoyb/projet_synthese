@@ -1,5 +1,5 @@
 #include "testgroupe.h"
-#include <QtTest>
+/*
 
 TestGroupe::TestGroupe(QObject *parent) :
     QObject(parent){}
@@ -51,3 +51,5 @@ void TestGroupe::homothetieByZero(){
 void TestGroupe::Destructeur(){
 
 }
+
+*/

@@ -1,19 +1,16 @@
 #include "testcouleurs.h"
 #include "../src/Couleur.h"
 
-TestCouleurs::TestCouleurs(QObject *parent) :
-    QObject(parent)
-{
-}
 
 
-void TestCouleurs::CouleurToStringTestFalse(){
-    QCOMPARE(Couleurs::isCouleur(string("rose")), false);
-}
-void TestCouleurs::CouleurToStringTestTrue(){
-    QCOMPARE(Couleurs::isCouleur("black"), true);
-}
+function<string()> TestCouleurs::CouleurToStringTestFalse = [] (){
+    if(Couleurs::isCouleur(string("rose")) == false)
+        return "";
+    return "CouleurToStringTestFalse";
+};
+function<string()> TestCouleurs::CouleurToStringTestTrue = [] (){
+    if(Couleurs::isCouleur("black") ==  true)
+        return "";
+    return "CouleurToStringTestTrue";
+};
 
-
-//QTEST_MAIN(TestCouleurs)
-//#include "testcouleurs.moc"
