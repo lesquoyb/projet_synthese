@@ -56,8 +56,7 @@ HEADERS  += src/Couleur.h \
     src/dessinable.h \
     src/connexion.h \
     tests/test.h \
-    tests/testfacade.h \
-    tests/testfunction.h
+    tests/testfacade.h
 
 FORMS    += src/mainwindow.ui
 

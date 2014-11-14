@@ -36,7 +36,7 @@ public:
                 i++;
             }
             ( errors.size() > 0 ) ? cout << "il y a "<< errors.size() <<" erreur(s)" : cout << "il n'y a pas d'erreur";
-             cout <<"============================="<< endl;
+             cout << end <<"============================="<< endl;
         }
         (i > 0 ) ? cout <<"il y a " << i <<" erreur(s)" : cout << "il n'y a pas d'erreur";
         cout << "dans l'ensemble des tests" << endl;

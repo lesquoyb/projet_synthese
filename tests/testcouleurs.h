@@ -15,7 +15,7 @@ public:
     }
 
 
-   static function<string()> CouleurToStringTestFalse;
+    static function<string()> CouleurToStringTestFalse;
     static function<string()> CouleurToStringTestTrue;
 };
 

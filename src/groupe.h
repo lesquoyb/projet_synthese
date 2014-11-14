@@ -15,6 +15,8 @@ public:
 
 	void ajouter(const FormeGeom*);
 	void supprimer(const FormeGeom*);
+    int getNbElem()const{return _composition.size();}
+    FormeGeom* get(int i)const {return _composition.at(i);}
 
     virtual string serialisation()const;
     virtual Groupe* rotation(const Point &p,const Angle &angle)const;

@@ -8,6 +8,7 @@ using namespace std;
 class Couleurs {
 
 private:
+
     static const int nbCouleurs = 6;
     static const string correspondances[];
     static const string hexa[];
