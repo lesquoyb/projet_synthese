@@ -17,7 +17,6 @@ QMAKE_CXXFLAGS += -std=c++11
 SOURCES += src/formegeom.cpp \
     src/main.cpp \
     src/mainwindow.cpp \
-    tests/testcouleurs.cpp \
     src/point.cpp \
     src/vecteur.cpp \
     src/Couleur.cpp \
@@ -56,7 +55,10 @@ HEADERS  += src/Couleur.h \
     src/dessinable.h \
     src/connexion.h \
     tests/test.h \
-    tests/testfacade.h
+    tests/testfacade.h \
+    tests/ testpoint.h \
+    tests/testpoint.h \
+    tests/cunittools.h
 
 FORMS    += src/mainwindow.ui
 

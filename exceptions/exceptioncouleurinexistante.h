@@ -8,7 +8,7 @@ class ExceptionCouleurInexistante : public std::exception
     std::string couleur;
 
 public:
-    virtual ~ExceptionCouleurInexistante()throw(){};
+    virtual ~ExceptionCouleurInexistante()throw(){}
     ExceptionCouleurInexistante(const std::string &s) throw() :
         couleur(s)
         {};

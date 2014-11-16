@@ -31,7 +31,6 @@ ostream& operator<<(ostream& stream,const Point& p ){
  * Permet de calculer le point issus de la rotation du point courrant par rapport à p et a
  */
 Point Point::rotation(const Point &p, const Angle &a) const{
-    //TODO:test
     double theta = a.getRadian();
     double x = cos(theta) * (_x - p._x) - sin(theta) * (_y - p._y) + p._x;
     double y = sin(theta) * (_x - p._x) + cos(theta) * (_y - p._y) + p._y;

@@ -1,32 +1,43 @@
 #ifndef TEST_H
 #define TEST_H
 #include <iostream>
+#include <string>
 #include <vector>
 #include <functional>
+#include "../src/formegeom.h"
+#include "cunittools.h"
+
+
+
+
+
 
 using namespace std;
 
-class Test{
+class CUNIT{
 
+
+protected:
+
+    vector<function<bool()>> _functions;
+    vector<string> _names;
+    vector<string> _run;
+    string _name;
 
 
 public:
 
-     string _name;
-     vector<function<string()>> _functions;
-
-    Test(){};
-    vector<string> run(){
-        vector<string> _errors;
-        string temp;
-        for(auto func : _functions){
-            if((temp = func()) != "" ) _errors.push_back(temp);
+    void run(){
+        for(int i = 0 ; i < _functions.size() ; i++){
+            string detail;
+            if(_functions[i]()) detail = "réussie";
+            else detail ="ECHEC !";
+            _run.push_back(_names[i] + " " + detail);
         }
-
-        return _errors;
     }
+    vector<string> getRunResult()const{return _run;}
+     string getName()const{return _name;}
 
-     string getName(){return _name;}
 
 
 };

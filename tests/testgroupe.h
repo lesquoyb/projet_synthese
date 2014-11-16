@@ -7,7 +7,7 @@
 #include "../src/cercle.h"
 
 
-class TestGroupe : public Test{
+class TestGroupe : public CUNIT{
 
     Groupe _dataTest;
     int _dataSize;
@@ -25,7 +25,8 @@ public:
         dtSeg("red",Point(1,2),Point(2,2)),
         dtTriangle("red",Point(1,2),Point(2,2),dtPoint),
         dtCercle("red",dtPoint,10)  {
-        Test::_name = "TestGroupe";
+        CUNIT::_name = "TestGroupe";
+        /*
         _functions.push_back(aire);
         _functions.push_back(rotationAngleNeg);
         _functions.push_back(rotation);
@@ -41,7 +42,7 @@ public:
         _functions.push_back(homothetieScaleInf1);
 
 
-
+    */
         //_dataTest.ajouter(dtPoint);
         _dataTest.ajouter(&dtSeg);
         _dataTest.ajouter(&dtTriangle);

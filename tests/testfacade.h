@@ -3,18 +3,20 @@
 #include "test.h"
 #include <vector>
 #include "testcouleurs.h"
+#include "testpoint.h"
 
 class TestFacade{
 
 private:
 
-    vector<Test*> _tests;
+    vector<CUNIT*> _tests;
 
 public:
 
     TestFacade(){
 
         _tests.push_back(new TestCouleurs());
+        _tests.push_back(new TestPoint());
         //_tests.push_back(TestFormeGeom());
         //_tests.push_back(TestGroupe());
         //_tests.push_back(TestSegment());
@@ -28,18 +30,25 @@ public:
 
     void run(){
         int i = 0;
-        for(Test* t : _tests){
+        for(CUNIT* t : _tests){
            cout << t->getName() << ": " << endl;
-           vector<string> errors = t->run();
-            for(string s : errors){
+           int j = 0;
+            for(string s : t->getRunResult()){
                 cout << "# " << s << endl;
-                i++;
+                if(s.find("ECHEC !") != string::npos) { //si on trouve echec dans la chaine
+                    i++;
+                    j++;
+                }
             }
-            ( errors.size() > 0 ) ? cout << "il y a "<< errors.size() <<" erreur(s)" : cout << "il n'y a pas d'erreur";
-             cout << end <<"============================="<< endl;
+            ( j > 0 ) ? cout << "il y a "<< j <<" erreur(s)" : cout << "il n'y a pas d'erreur";
+             cout << endl <<"============================="<< endl;
         }
         (i > 0 ) ? cout <<"il y a " << i <<" erreur(s)" : cout << "il n'y a pas d'erreur";
-        cout << "dans l'ensemble des tests" << endl;
+        cout << " dans l'ensemble des tests" << endl;
+    }
+
+    void addTest(CUNIT* t){
+        _tests.push_back(t);
     }
 };
 

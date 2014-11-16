@@ -1,22 +1,26 @@
 #ifndef TESTCOULEURS_H
 #define TESTCOULEURS_H
+
+#include "../exceptions/exceptioncouleurinexistante.h"
 #include "test.h"
+#include "../src/Couleur.h"
 
-class TestCouleurs : public Test{
+CUNIT(TestCouleurs)
 
+        TESTCASE(CouleurToStringTestTrue,{
+          equals(Couleurs::isCouleur("black") ,  true);
+         });
 
+        TESTCASE(CouleurToStringTestFalse, {
+            equals(Couleurs::isCouleur("violet"), false);
+        });
 
-public:
+        TESTCASE(ExceptionCouleurInexistante,{
+             errorExpected({
+                 Segment s("violet",Point(1,0),Point(0,0));
+             })
+         })
 
-    TestCouleurs(){
-        Test::_name = "TestCouleur";
-        _functions.push_back(CouleurToStringTestFalse);
-        _functions.push_back(CouleurToStringTestTrue);
-    }
-
-
-    static function<string()> CouleurToStringTestFalse;
-    static function<string()> CouleurToStringTestTrue;
-};
+ENDUNIT
 
 #endif // TESTCOULEURS_H
