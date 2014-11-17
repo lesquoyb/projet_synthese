@@ -19,26 +19,26 @@ int main(){
 
     TestLauncher1 test;
     test.run();
-/*
+
     string entree;
-    vector<FormeGeom*> liste;
     Segment s("red",Point(1,2),Point(50,50));
     Segment s2("red",Point(150,300),Point(50,50));
     Triangle t("red",Point(300,300),Point(50,50),Point(300,50));
 
     Cercle c(Point(0,0),90);
-    Polygone p("yellow");
-    p.ajouterPoint(Point(500,10));
-    p.ajouterPoint(Point(400,100));
-    p.ajouterPoint(Point(400,490));
+    Polygone p("yellow",Point(500,10),Point(400,100),Point(400,490));
     p.ajouterPoint(Point(500,490));
     p.ajouterPoint(Point(600,250));
 
-    liste.push_back(&p);
-    liste.push_back(&t);
-    liste.push_back(&c);
-    liste.push_back(&s);
-    liste.push_back(&s2);
+    Groupe g;
+    Groupe g2;
+    g.ajouter(&p);
+    g.ajouter(&s);
+    g.ajouter(&s2);
+    g2.ajouter(&t);
+    g2.ajouter(&c);
+    g.ajouter(&g2);
+    g.dessin(DessinManager());
 
 /*
     Point p1(2,1);
