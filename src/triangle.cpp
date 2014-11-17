@@ -26,17 +26,14 @@ double Triangle::aire() const{
 }
 
 Triangle* Triangle::rotation(const Point &p, const Angle &angle)const{
-  //TODO:test
     return new Triangle(_p1.rotation(p,angle),_p2.rotation(p,angle),_p3.rotation(p,angle));
 }
 
 Triangle* Triangle::homothetie(const Point &p, const double scale)const{
-    //TODO: test
     return new Triangle(_p1.homothetie(p,scale),_p2.homothetie(p,scale),_p3.homothetie(p,scale));
 }
 
 Triangle* Triangle::translation(const Vecteur &v)const{
-    //TODO:test
     return new Triangle(_p1.translation(v),_p2.translation(v),_p3.translation(v));
 }
 
@@ -45,8 +42,29 @@ void Triangle::dessin(const Dessinable &d) const{
 }
 
 
-string Triangle::serialisation()const {
+string Triangle::toString()const {
     ostringstream ser;
     ser << "triangle: " << Couleurs::stringToHexa(_couleur) << ", " <<  _p1.getX() <<", " << _p1.getY() << ", " << _p2.getX() << ", " << _p2.getY() << ", " << _p3.getX() << ", " << _p3.getY();
     return ser.str(); // on enlève 2 car c'est la taille du dernier ", "
 }
+
+Triangle* Triangle::getCoordEntiere()const{
+    return new Triangle(_p1.getCoordEntieres(),_p2.getCoordEntieres(),_p3.getCoordEntieres());
+}
+
+bool operator==(const Triangle &t,const Triangle &t2){
+    return (t._couleur == t2._couleur) && (t._p1 == t2._p1) && (t._p2 == t2._p2) && (t._p3 == t2._p3);
+}
+
+
+ostream& operator<<(ostream & stream, const Triangle &t){
+    stream << t.toString();
+    return stream;
+
+}
+
+
+
+
+
+

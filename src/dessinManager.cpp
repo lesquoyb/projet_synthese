@@ -22,7 +22,7 @@ DessinManager::DessinManager(){
 
 void DessinManager::dessinerTriangle(const Triangle &t) const{
 
-	_connexion->envoyer(t.serialisation().c_str());
+    _connexion->envoyer(t.toString().c_str());
 
 	if (_connexion->recevoir() != 0){
 		cout << "le serveur a bien reçu le triangle" << endl;
@@ -35,9 +35,9 @@ void DessinManager::dessinerTriangle(const Triangle &t) const{
 
 
 void DessinManager::dessinerSegment(const Segment &s) const{
-	cout << s.serialisation();
+    cout << s.toString();
 
-	_connexion->envoyer(s.serialisation().c_str());
+    _connexion->envoyer(s.toString().c_str());
 
 	if (_connexion->recevoir() != 0){
 		cout << "le serveur a bien reçu le segment" << endl;
@@ -52,7 +52,7 @@ void DessinManager::dessinerSegment(const Segment &s) const{
 
 void DessinManager::dessinerCercle(const Cercle &c) const{
 
-	_connexion->envoyer(c.serialisation().c_str());
+    _connexion->envoyer(c.toString().c_str());
 
 	if (_connexion->recevoir() != 0){
 		cout << "le serveur a bien reçu le cercle" << endl;
@@ -65,7 +65,7 @@ void DessinManager::dessinerCercle(const Cercle &c) const{
 
 void DessinManager::dessinerPolygone(const Polygone &p) const{
 
-	_connexion->envoyer(p.serialisation().c_str());
+    _connexion->envoyer(p.toString().c_str());
 
 	if (_connexion->recevoir() != 0){
 		cout << "le serveur a bien reçu le polygone" << endl;

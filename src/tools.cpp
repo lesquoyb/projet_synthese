@@ -15,7 +15,7 @@ void sauvegarder(const vector<FormeGeom *> &v, const string&s){
     fb.open (s,std::ios::out);
     std::ostream os(&fb);
     for(FormeGeom* f : v){
-        os << f->serialisation() << endl;
+        os << f->toString() << endl;
 
     }
     fb.close();

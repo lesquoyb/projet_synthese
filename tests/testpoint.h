@@ -85,17 +85,3 @@ CPPTEST(TestPoint)
 ENDTEST
 
 #endif // TESTPOINT_H
-
-/*
-void aire();
-void rotationAngleNeg();
-void rotation();
-void rotationAngleSup2Pi();
-void rotationZero();
-void translationTrue();
-void translationFalse();
-void translationByZero();
-void homothetieTrue();
-void homothetieFalse();
-void homothetieByZero();
-*/

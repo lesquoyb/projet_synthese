@@ -5,87 +5,53 @@
 #include "../src/segment.h"
 #include "../src/triangle.h"
 #include "../src/cercle.h"
+#include <assert.h>
 
 
-class TestGroupe : public CppTest{
+CPPTEST(TestGroupe)
 
-    Groupe _dataTest;
-    int _dataSize;
-
-    Point dtPoint;
-    Segment dtSeg;
-    Triangle dtTriangle;
-    Cercle dtCercle;
-
-public:
-
-    TestGroupe():
-        _dataTest("black"),
-        dtPoint(0,0),
-        dtSeg("red",Point(1,2),Point(2,2)),
-        dtTriangle("red",Point(1,2),Point(2,2),dtPoint),
-        dtCercle("red",dtPoint,10)  {
-        CppTest::_name = "TestGroupe";
-        /*
-        _functions.push_back(aire);
-        _functions.push_back(rotationAngleNeg);
-        _functions.push_back(rotation);
-        _functions.push_back(rotationAngleSup2Pi);
-        _functions.push_back(rotationZero);
-        _functions.push_back(translationTrue);
-        _functions.push_back(translationFalse);
-        _functions.push_back(translationByZero);
-        _functions.push_back(homothetieByZero);
-        _functions.push_back(homothetieNegatif);
-        _functions.push_back(homothetieByOne);
-        _functions.push_back(homothetieScaleSup1);
-        _functions.push_back(homothetieScaleInf1);
-
-
-    */
-        //_dataTest.ajouter(dtPoint);
-        _dataTest.ajouter(&dtSeg);
-        _dataTest.ajouter(&dtTriangle);
-        _dataTest.ajouter(&dtCercle);
-        // TODO: ajouter polygone
-        _dataSize = _dataTest.getNbElem();
-
-    }
+        Point origine(0,0);
+        Segment seg(Point(1,2),Point(2,2));
+        Triangle tri(Point(1,2),Point(2,2),origine);
+        Cercle cer(origine,10);
+        Angle droit(-90);
+        Vecteur vUn(1,1);
+        Groupe g;
+        g.ajouter(&seg);
+        g.ajouter(&tri);
+        g.ajouter(&cer);
 
 
 
-    function<string()> aire = [&](){
-        if( _dataTest.aire() == (dtCercle.aire() + (dtTriangle.aire()) ) )
-            return "";
-        return "aire";
-    };
 
-    function<string()> rotationAngleNeg = [&](){
-        Angle a(-90);
-        Point p(dtPoint);
-      //  Groupe g = _dataTest.rotation(p,a);
-      //  if(g.get(0) == dtSeg.rotation(p,a)) and (g.get(1) == dtTriangle.rotation(p,a)) and (g.get(2) == dtCercle.rotation(p,a)) and (g.get(3) == )
-        return "";
-    };
-    function<string()> rotation = [](){
-        //TODO
-        return "aire";
-    };
-    function<string()> rotationAngleSup2Pi = [](){
-        //TODO
-        return "aire";
-    };
-    function<string()> rotationZero;
-    function<string()> translationTrue;
-    function<string()> translationFalse;
-    function<string()> translationByZero;
-    function<string()> homothetieTrue;
-    function<string()> homothetieByZero;
-    function<string()> homothetieNegatif;
-    function<string()> homothetieByOne;
-    function<string()> homothetieScaleSup1;
-    function<string()> homothetieScaleInf1;
-};
+    TESTCASE(aire,{
+        equals(g.aire(),tri.aire()+cer.aire());
+    });
 
+    TESTCASE ( rotation,{
+         Groupe g2(*g.rotation(origine,droit));
+         assert( (g2.get(0)->toString() == seg.rotation(origine,droit)->toString())  &&  (g2.get(1)->toString() == tri.rotation(origine,droit)->toString()) && (g2.get(2)->toString() == cer.rotation(origine,droit)->toString()) );
+         return true;
+    });
+
+
+    TESTCASE(translation,{
+        Groupe g2(*g.translation(vUn));
+        assert(g2.get(0)->toString() == seg.translation(vUn)->toString());
+        assert(g2.get(1)->toString() == tri.translation(vUn)->toString());
+        assert(g2.get(2)->toString() == cer.translation(vUn)->toString());
+
+        return true;
+    });
+
+    TESTCASE(homothetie,{
+        Groupe g2(*g.homothetie(origine,1));
+        assert( (g2.get(0)->toString() == g.get(0)->toString())  &&  (g2.get(1)->toString() == g.get(1)->toString() ) && (g2.get(2)->toString() == g.get(2)->toString()) );
+        return true;
+     });
+
+
+
+ENDTEST
 
 #endif // TESTGROUPE_H

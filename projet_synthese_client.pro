@@ -21,12 +21,9 @@ SOURCES += src/formegeom.cpp \
     src/vecteur.cpp \
     src/Couleur.cpp \
     src/groupe.cpp \
-    tests/testgroupe.cpp \
     src/segment.cpp \
-    tests/testsegment.cpp \
     src/cercle.cpp \
     src/triangle.cpp \
-    tests/testtriangle.cpp \
     src/polygone.cpp \
     src/dessinManager.cpp \
     src/erreur.cpp \
@@ -62,7 +59,11 @@ HEADERS  += src/Couleur.h \
     tests/cunitfacade.h \
     tests/cpptest.h \
     tests/cpptestfacade.h \
-    tests/cpptesttools.h
+    tests/cpptesttools.h \
+    tests/testvecteur.h \
+    tests/testcercle.h \
+    tests/testpolygone.h \
+    tests/testangle.h
 
 FORMS    += src/mainwindow.ui
 

@@ -1,30 +1,39 @@
 #ifndef TESTTRIANGLE_H
 #define TESTTRIANGLE_H
-#include <QtTest>
-#include <QObject>
+#include "cpptest.h"
+#include "../src/triangle.h"
 
-class TestTriangle : public QObject
-{
-    Q_OBJECT
-public:
-    explicit TestTriangle(QObject *parent = 0);
+CPPTEST(TestTriangle)
 
-signals:
 
-private slots:
+    Point origine(0,0);
+    Point pUn(1,1);
+    Point pZeroUn(0,1);
+    Point pRot90(-1,1);
+    Triangle un(origine,pUn,pZeroUn);
 
-    void aire();
-    void rotationAngleNeg();
-    void rotation();
-    void rotationAngleSup2Pi();
-    void rotationZero();
-    void translationTrue();
-    void translationFalse();
-    void translationByZero();
-    void homothetieTrue();
-    void homothetieFalse();
-    void homothetieByZero();
-    
-};
+
+    TESTCASE(aire,{
+        equals(round(un.aire()*10)/10,0.5);
+    });
+
+    TESTCASE(rotationSimple,{
+         equals(*un.rotation(origine,Angle(90))->getCoordEntiere() , Triangle(origine,pRot90,Point(-1,0)));
+     });
+
+    TESTCASE(translationSimple,{
+         equals(*un.translation(Vecteur(origine,pUn)),Triangle(pUn,Point(2,2),Point(1,2)));
+     });
+
+    TESTCASE(homothetieSimple, {
+         equals(*un.homothetie(origine,1), un);
+     });
+
+    TESTCASE(toString,{
+         equals(un.toString(),"triangle: #000000, 0, 0, 1, 1, 0, 1");
+     });
+
+ENDTEST
+
 
 #endif // TESTTRIANGLE_H

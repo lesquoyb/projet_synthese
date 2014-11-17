@@ -3,24 +3,26 @@
 #include "cpptestfacade.h"
 #include "testcouleurs.h"
 #include "testpoint.h"
-//#include "testsegment.h"
-//#include "testtriangle.h"
-//#include "testpolygone.h"
-//#include "testgroupe.h"
-//#include "testvecteur.h"
-//#include "testangle.h"
+#include "testsegment.h"
+#include "testtriangle.h"
+#include "testcercle.h"
+#include "testpolygone.h"
+#include "testgroupe.h"
+#include "testvecteur.h"
+#include "testangle.h"
 
 
 TESTLAUNCHER(TestLauncher1)
 
     addTest(new TestCouleurs());
     addTest(new TestPoint());
- //   addTest(new TestSegment());
- //   addTest(new TestTriangle());
-//    addTest(new TestPolygone());
- //   addTest(new TestGroupe());
- //   addTest(new TestVecteur());
-  //  addTest(new TestAngle());
+    addTest(new TestSegment());
+    addTest(new TestTriangle());
+    addTest(new TestCercle());
+    addTest(new TestPolygone());
+    addTest(new TestGroupe());
+    addTest(new TestVecteur());
+    addTest(new TestAngle());
 
 ENDLAUNCHER
 

@@ -4,6 +4,7 @@
 
 
 Groupe::Groupe(const string &coul): FormeGeom(coul){}
+Groupe::Groupe():FormeGeom(){}
 
 Groupe* Groupe::rotation(const Point &p, const Angle &angle)const{
     //TODO: avec for_each
@@ -15,10 +16,12 @@ Groupe* Groupe::rotation(const Point &p, const Angle &angle)const{
 }
 
 
-void Groupe::ajouter(const FormeGeom* f){
+void Groupe::ajouter( FormeGeom* f){
 	//TODO: vérifier qu'il n'y est pas déjà
 	//TODO: changer le groupe si nécessaire
+    //TODO: changer la couleur
     //TODO: verif que non null
+    _composition.push_back(f);
 
 }
 
@@ -26,36 +29,41 @@ void Groupe::supprimer(const FormeGeom* f){
 	//TODO: verifier que la forme est bien dans ce groupe
 	//TODO: vérifier que pointeur non null
     //TODO:
-    //	composition.push_back(f);
+
 
 }
 
 Groupe* Groupe::homothetie(const Point &p, const double scale)const{
     //TODO: test
-	Groupe* g = new Groupe(*this);
-    for(FormeGeom* f: g->_composition){
-        f->homothetie(p,scale);
+    Groupe* ret = new Groupe(_couleur);
+    for(FormeGeom* f:_composition){
+        ret->ajouter(f->homothetie(p,scale));
     }
-	return g;
+    return ret;
 }
 
 Groupe* Groupe::translation(const Vecteur &v)const{
     //TODO: test
-	Groupe* g = new Groupe(*this);
-    for(FormeGeom* f: g->_composition){
-        f->translation(v);
+    Groupe* ret = new Groupe(_couleur);
+    for(FormeGeom* f:_composition){
+        ret->ajouter(f->translation(v));
     }
-	return g;
+    return ret;
 }
 
 void Groupe::dessin(const Dessinable &d) const{
     //TODO test
-    //for_each(_composition.begin(),_composition.end(),[d](FormeGeom*f){f->dessin(d);});
+    for_each(_composition.begin(),_composition.end(),[&d](FormeGeom*f){f->dessin(d);});
     /*
     for(const FormeGeom* f : _composition){
         f->dessin(d);
     }
     */
+}
+
+Groupe* Groupe::getCoordEntiere()const{
+    //TODO
+    return new Groupe(*this);
 }
 
 double Groupe::aire() const{
@@ -67,11 +75,45 @@ double Groupe::aire() const{
     return aire;
 }
 
+Groupe::Groupe(const Groupe &g):
+FormeGeom(g._couleur)
+{
+    for(FormeGeom* f: g._composition){
+        _composition.push_back(f->clone());
+    }
+}
+
+
+
 Groupe::~Groupe(){
     //TODO
 }
 
-string Groupe::serialisation()const{
-//TODO 
-	return "lol";
+string Groupe::toString()const{
+    ostringstream ser;
+    ser << "polygone: " << Couleurs::stringToHexa(_couleur) << ", ";
+    for(FormeGeom* f : _composition){
+        ser << f->toString() << "; ";
+    }
+    return ser.str().substr(0,ser.str().length()- 2); // on enlève 2 car c'est la taille du dernier "; "
 }
+
+ostream& operator<<(ostream &stream,const Groupe &g){
+    stream << g.toString();
+    return stream;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
