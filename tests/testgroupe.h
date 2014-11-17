@@ -1,13 +1,13 @@
 #ifndef TESTGROUPE_H
 #define TESTGROUPE_H
-#include "test.h"
+#include "cpptest.h"
 #include "../src/groupe.h"
 #include "../src/segment.h"
 #include "../src/triangle.h"
 #include "../src/cercle.h"
 
 
-class TestGroupe : public CUNIT{
+class TestGroupe : public CppTest{
 
     Groupe _dataTest;
     int _dataSize;
@@ -25,7 +25,7 @@ public:
         dtSeg("red",Point(1,2),Point(2,2)),
         dtTriangle("red",Point(1,2),Point(2,2),dtPoint),
         dtCercle("red",dtPoint,10)  {
-        CUNIT::_name = "TestGroupe";
+        CppTest::_name = "TestGroupe";
         /*
         _functions.push_back(aire);
         _functions.push_back(rotationAngleNeg);

@@ -54,11 +54,15 @@ HEADERS  += src/Couleur.h \
     src/erreur.h \
     src/dessinable.h \
     src/connexion.h \
-    tests/test.h \
-    tests/testfacade.h \
     tests/ testpoint.h \
     tests/testpoint.h \
-    tests/cunittools.h
+    tests/cunittools.h \
+    tests/testlauncher.h \
+    tests/cunit.h \
+    tests/cunitfacade.h \
+    tests/cpptest.h \
+    tests/cpptestfacade.h \
+    tests/cpptesttools.h
 
 FORMS    += src/mainwindow.ui
 

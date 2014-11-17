@@ -1,27 +1,20 @@
 #ifndef TESTPOINT_H
 #define TESTPOINT_H
-#include "test.h"
+#include "cpptest.h"
 #include "../src/point.h"
 
 
 
-CUNIT(TestPoint)
+CPPTEST(TestPoint)
 
     Point origine(0,0);
     Point un(1,1);
+    Point rot90(-1,1);
+    Vecteur vUn(1,1);
 
-
-
-    TESTCASE(translationSimple,{
-        equals(origine.translation(Vecteur(2,3)), Point(2,3) );
-     });
-
-    TESTCASE(translationFausse,{
-        nEquals(origine.translation(Vecteur(2,3)), Point(2,4) );
-    });
 
     TESTCASE(rotationSimple,{
-         equals(un.rotation(origine,Angle(90)).getCoordEntieres() , Point(-1,1));
+         equals(un.rotation(origine,Angle(90)).getCoordEntieres() ,rot90);
     });
 
     TESTCASE(rotationFausse,{
@@ -32,13 +25,68 @@ CUNIT(TestPoint)
         equals(un.rotation(origine,Angle(360)).getCoordEntieres(), un );
      });
 
+    TESTCASE(rotationAngleNeg,{
+       equals(un.rotation(origine,Angle(-90)).getCoordEntieres() , Point(1,-1));
+     });
+
+    TESTCASE(rotationSup360,{
+        equals(un.rotation(origine,Angle(450)).getCoordEntieres(), rot90);
+     });
+
+    TESTCASE(rotationZero, {
+         equals(un.rotation(origine, Angle(0)).getCoordEntieres(), un);
+     });
+
+    TESTCASE(translationSimple,{
+         equals(origine.translation(vUn), un);
+     });
+
+    TESTCASE(translationFausse, {
+         nEquals(origine.translation(vUn), origine);
+     });
+
+    TESTCASE(translationNeg, {
+         equals(origine.translation(Vecteur(-1,-1)), Point(-1,-1));
+     });
+
+    TESTCASE(translationZero, {
+         equals(origine.translation(Vecteur(0,0)), origine);
+     });
+
+    TESTCASE(homothetieSimple, {
+         equals(un.homothetie(origine,0.5), Point(0.5,0.5));
+     });
+
+    TESTCASE(homothetieFausse, {
+         nEquals(un.homothetie(origine, 0.5), un);
+     });
+
+    TESTCASE(homothetieScaleNeg,{
+         equals(un.homothetie(origine, -1), Point(-1,-1));
+     });
+
+    TESTCASE(homothetieScaleUn,{
+         equals(un.homothetie(origine, 1), un);
+     });
+
+    TESTCASE(homothetieSup1,{
+         equals(un.homothetie(origine, 2), Point(2,2));
+     });
+
+    TESTCASE(homothetieSurOrigine, {
+         equals(origine.homothetie(un,1),origine);
+     });
+
+    TESTCASE( homothetieZero,{
+        equals(un.homothetie(origine,0), origine);
+    });
 
 
-ENDUNIT
+ENDTEST
 
 #endif // TESTPOINT_H
 
-
+/*
 void aire();
 void rotationAngleNeg();
 void rotation();
@@ -50,3 +98,4 @@ void translationByZero();
 void homothetieTrue();
 void homothetieFalse();
 void homothetieByZero();
+*/

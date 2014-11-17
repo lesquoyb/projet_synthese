@@ -13,13 +13,13 @@
 #include "formegeom.h"
 #include "Tools.h"
 
-#include "tests/testfacade.h"
+#include "tests/testlauncher.h"
 
 int main(){
 
-    TestFacade test;
+    TestLauncher1 test;
     test.run();
-
+/*
     string entree;
     vector<FormeGeom*> liste;
     Segment s("red",Point(1,2),Point(50,50));
@@ -46,7 +46,7 @@ int main(){
     cout << "homothétie (-2,5) echelle 0.5" << endl;
     cout << "arrivée: " << *(p1.homothetie(Point(-2,5),0.5)) << endl;
 */
-
+/*
     string fileAdd;
     cout << "dans quel fichier voulez vous sauver ?"<< endl;
     cin >> fileAdd;
@@ -68,6 +68,6 @@ int main(){
     }
 	int lol;
 	cin >> lol;
-
+*/
     return 0;
 }

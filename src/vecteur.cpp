@@ -1,4 +1,5 @@
 #include "vecteur.h"
+#include "point.h"
 
 Vecteur::Vecteur(double deplacementX, double deplacementY):
     _deplacementX(deplacementX),
@@ -14,4 +15,12 @@ double Vecteur::getDeplacementY() const{
 }
 
 
+
+Vecteur operator* (const Vecteur &v, double c){
+    return Vecteur(v.getDeplacementX()*c , v.getDeplacementY()*c);
+}
+
+Vecteur operator* (double c, const Vecteur &v){
+    return Vecteur(v.getDeplacementX()*c , v.getDeplacementY()*c);
+}
 

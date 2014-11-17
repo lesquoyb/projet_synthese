@@ -2,10 +2,10 @@
 #define TESTCOULEURS_H
 
 #include "../exceptions/exceptioncouleurinexistante.h"
-#include "test.h"
+#include "cpptest.h"
 #include "../src/Couleur.h"
 
-CUNIT(TestCouleurs)
+CPPTEST(TestCouleurs)
 
         TESTCASE(CouleurToStringTestTrue,{
           equals(Couleurs::isCouleur("black") ,  true);
@@ -18,9 +18,9 @@ CUNIT(TestCouleurs)
         TESTCASE(ExceptionCouleurInexistante,{
              errorExpected({
                  Segment s("violet",Point(1,0),Point(0,0));
-             })
-         })
+             });
+         });
 
-ENDUNIT
+ENDTEST
 
 #endif // TESTCOULEURS_H

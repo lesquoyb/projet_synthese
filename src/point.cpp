@@ -38,8 +38,7 @@ Point Point::rotation(const Point &p, const Angle &a) const{
 }
 
 Point Point::homothetie(const Point &p, double scale) const{
-    //TODO: test
     double deltaX = _x - p._x;
     double deltaY = _y - p._y;
-    return p.translation(Vecteur(deltaX*scale,deltaY*scale));
+    return p.translation(scale* Vecteur(deltaX,deltaY));
 }

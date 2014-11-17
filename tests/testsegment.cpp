@@ -1,6 +1,6 @@
 #include "testsegment.h"
 
-
+/*
 TestSegment::TestSegment(QObject *parent) :
     QObject(parent){}
 
@@ -55,3 +55,4 @@ void TestSegment::homothetieByZero(){
 
 }
 
+*/
