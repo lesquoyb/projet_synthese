@@ -7,14 +7,8 @@
 #include <string.h>
 using namespace std;
 
-Connexion* Connexion::_me = NULL;
+bool Connexion::initialisee = false;
 
-Connexion* Connexion::getConnexion(){
-	if (_me == NULL){
-		_me = new Connexion();
-	}
-	return _me;
-}
 
 
 /**
@@ -69,7 +63,7 @@ Connexion::~Connexion(){
 }
 
 
-Connexion::Connexion(){
+Connexion::Connexion(const string &ip, int host){
 
 	#ifdef WIN32
 		//initialisation winsock
@@ -90,30 +84,17 @@ Connexion::Connexion(){
 		throw Erreur(oss.str().c_str());
 	}
 
-	//boucle de connexion
-	int connexion = SOCKET_ERROR;
-	string adresseServeur;
-	int portServeur;
 	SOCKADDR_IN sockaddr; // informations concernant le serveur avec lequel on va communiquer
-	sockaddr.sin_family = AF_INET;
-	while (connexion == SOCKET_ERROR){
-		//récupération des données sur le serveur
-		cout << "tapez l'adresse IP du serveur: " << endl;
-		cin.clear();
-		cin >> adresseServeur;
-		cout << "tapez le port du serveur du serveur: " << endl;
-		cin >> portServeur;
+    sockaddr.sin_family = AF_INET;
 
-		//initialisation de sockaddr
-		sockaddr.sin_addr.s_addr = inet_addr(adresseServeur.c_str());
-		sockaddr.sin_port = htons(portServeur);                 //htons() assure que le port est bien inscrit dans le format du réseau (little-endian ou big-endian)
+    //initialisation de sockaddr
+    sockaddr.sin_addr.s_addr = inet_addr(ip.c_str());
+    sockaddr.sin_port = htons(host);                 //htons() assure que le port est bien inscrit dans le format du réseau (little-endian ou big-endian)
 
-		// connexion du client au serveur
-		if ((connexion = connect(_sock, (SOCKADDR *)&sockaddr, sizeof(sockaddr))) == SOCKET_ERROR){
-			ostringstream oss;
-			oss << "la connexion a échouée, c'est peut être dû à une mauvaise adresse ip ou un mauvais port" << endl;
-			cout << oss.str();
-		}
-
-	}
+    // connexion du client au serveur
+    if (connect(_sock, (SOCKADDR *)&sockaddr, sizeof(sockaddr)) == SOCKET_ERROR){
+        ostringstream oss;
+        oss << "la connexion a échouée, c'est peut être dû à une mauvaise adresse ip ou un mauvais port" << endl;
+        cout << oss.str();
+    }
 }

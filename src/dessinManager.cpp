@@ -14,9 +14,8 @@ using namespace std;
 
 
 
-DessinManager::DessinManager(){
-	_connexion = Connexion::getConnexion();
-}
+DessinManager::DessinManager(Connexion *c):
+_connexion(c){}
 
 
 

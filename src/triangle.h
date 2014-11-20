@@ -12,7 +12,7 @@ private:
 public:
 
     Triangle(const Point& p1,const Point&p2,const Point& p3);
-    Triangle(const string& couleur,const Point& p1,const Point&p2,const Point& p3);
+    Triangle(const Couleurs::Couleur & couleur,const Point& p1,const Point&p2,const Point& p3);
 
     Point getP1()const{return _p1;}
     Point getP2()const{return _p2;}

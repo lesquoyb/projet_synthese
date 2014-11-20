@@ -20,18 +20,19 @@ class FormeGeom{
 
 protected:
 
-    string _couleur;
+    Couleurs::Couleur _couleur;
 
 
 public:
 
     FormeGeom();
-    FormeGeom(const string & coul);
+    FormeGeom(const Couleurs::Couleur &coul);
 
     void sauvegarder(const string nomDeFichier)const;
+    static FormeGeom* chargement(ifstream &nomDeFichier);
 
+    virtual ~FormeGeom(){}
 
-    virtual ~FormeGeom();
     virtual FormeGeom* getCoordEntiere()const = 0;
     virtual string toString()const = 0;
     virtual double aire()const = 0;

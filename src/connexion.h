@@ -1,5 +1,6 @@
 #ifndef CONNEXION_H
 #define CONNEXION_H
+#include <iostream>
 
 #define _CRT_SECURE_NO_WARNINGS
 
@@ -24,8 +25,8 @@
 
 #else
 
-    #include <winsock2.h>
-    #pragma comment(lib, "ws2_32.lib") // spécifique à VISUAL C++ peut être à retirer
+    #include <winsock2.h> // singleton ici
+    #pragma comment(lib, "ws2_32.lib") // spï¿½cifique ï¿½ VISUAL C++ peut ï¿½tre ï¿½ retirer
     #if (MSVC++ 12.0 _MSC_VER == 1800)
         #define strdup _strdup
     #endif
@@ -36,21 +37,22 @@
 
 /**
 * @brief The Connexion class
-* Cette classe est chargée d'établire une connexion avec un serveur distant
-* Cette classe est un singleton et on peut acceder à l'instance grace à la méthode getDessinManager().
-* De plus elle est compilable et fonctionnelle sous windows et unix(linux / mac compris) car la portabilité c'est la vie.
+* Cette classe est chargï¿½e d'ï¿½tablire une connexion avec un serveur distant
+* Cette classe charge une seule fois les dll Windows pour toutes les instances, cette partie est donc un singleton.
+* De plus elle est compilable et fonctionnelle sous windows et unix(linux / mac compris) car la portabilitï¿½ c'est la vie.
 */
 class Connexion{
 	
 private:
 
-	static Connexion* _me;
-	SOCKET _sock;
-	Connexion();
+    SOCKET _sock;
+    static bool initialisee;
 	
+    static void init();
+
 public:
 	
-	static Connexion* getConnexion();
+    Connexion(const std::string &ip, int host);
 	void envoyer(const char *)const;
     int recevoir()const;
 	~Connexion();

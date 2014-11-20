@@ -3,7 +3,6 @@
 #include <string>
 #include <iostream>
 
-class Point;
 
 class Vecteur{
 
@@ -15,25 +14,24 @@ public:
 
 
    explicit Vecteur(const double &x=0,const double &y=0);
-   Vecteur(const Point &p1,const Point &p2);
+  //  Vecteur(const Point &p1,const Point &p2);
 
-    double getX()const;
-    double getY()const;
+  //  double getDeplacementX()const;
+   // double getDeplacementY()const;
 
 
-   bool operator==(const Vecteur& v)const{return (_x == v._x) && (_y == v._y);} //// suspect
+   // bool operator==(const Vecteur& v)const{return (_x == v._x) && (_y == v.getDeplacementY());} //// suspect
 
    inline const Vecteur operator+ (const Vecteur &v)const;
 
    inline const Vecteur operator- (const Vecteur &v)const;
 
-   inline const double operator *(const Vecteur &v)const;
-
-   inline const Vecteur operator* (const double &a)const;
+    const Vecteur operator* (const double &a)const;
 
     inline const Vecteur operator-()const;
 
-    double norme()const;
+
+    double norme()const;//on garde
 
     operator std::string()const;
 
@@ -41,15 +39,16 @@ public:
 
 std::ostream& operator<<(std::ostream &, const Vecteur&);
 
-
+inline const Vecteur operator* (const double &a,const Vecteur&v);
+/*
+Vecteur operator* (double c, const Vecteur &v);
+double operator* (const Vecteur& v1,const Vecteur& v2);
+*/
 //--------------- mise en oeuvre des fonctions inline. --------------------------
+//
 
 inline const Vecteur Vecteur::operator+ (const Vecteur &v)const{
     return Vecteur(_x + v._x , _y + v._y);
-}
-
-inline const Vecteur Vecteur::operator* (const double &a)const{
-    return Vecteur(a*_x , a*_y);
 }
 
 
@@ -66,9 +65,7 @@ inline const Vecteur Vecteur::operator- (const Vecteur &v)const{
     return *this+ -v;
 }
 
-const double Vecteur::operator* (const Vecteur &v)const{
-    return _x * v._x + _y * v._y;
-}
+
 
 
 #endif // VECTEUR_H

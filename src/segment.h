@@ -11,7 +11,7 @@ private:
 
 public:
 
-    Segment(const string& couleur,const Point& p, const Point &p2 );
+    Segment(const Couleurs::Couleur& couleur,const Point& p, const Point &p2 );
     Segment( const Point &p, const Point &p2);
 
 

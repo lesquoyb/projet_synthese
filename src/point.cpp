@@ -14,7 +14,7 @@ _y(y)
 {}
 
 Point Point::translation(const Vecteur &v)const{
-    return Point(_x + v.getDeplacementX(), _y + v.getDeplacementY());
+    return Point(_x + v.getX(), _y + v.getY());
 }
 
 

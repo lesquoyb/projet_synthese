@@ -19,7 +19,7 @@ private:
 
 public:
 
-	DessinManager();
+    DessinManager(Connexion* c);
 	~DessinManager();
 
     void dessinerCercle(const Cercle &c)const;

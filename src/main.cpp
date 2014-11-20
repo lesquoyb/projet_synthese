@@ -20,13 +20,12 @@ int main(){
     TestLauncher1 test;
     test.run();
 
-    string entree;
-    Segment s("red",Point(1,2),Point(50,50));
-    Segment s2("red",Point(150,300),Point(50,50));
-    Triangle t("red",Point(300,300),Point(50,50),Point(300,50));
+    Segment s(Couleurs::red,Point(1,2),Point(50,50));
+    Segment s2(Couleurs::red,Point(150,300),Point(50,50));
+    Triangle t(Couleurs::red,Point(300,300),Point(50,50),Point(300,50));
 
     Cercle c(Point(0,0),90);
-    Polygone p("yellow",Point(500,10),Point(400,100),Point(400,490));
+    Polygone p(Couleurs::yellow,Point(500,10),Point(400,100),Point(400,490));
     p.ajouterPoint(Point(500,490));
     p.ajouterPoint(Point(600,250));
 
@@ -38,7 +37,15 @@ int main(){
     g2.ajouter(&t);
     g2.ajouter(&c);
     g.ajouter(&g2);
-    g.dessin(DessinManager());
+    Connexion* connexion= new Connexion("192.168.1.10",9111);
+
+
+    string entree;
+    while(1){
+        g.dessin(DessinManager(connexion));
+        cin >> entree;
+    }
+
 
 /*
     Point p1(2,1);

@@ -29,7 +29,7 @@ _centre(centre),
 _rayon(rayon)
 {}
 
-Cercle::Cercle(const string &couleur,const Point &centre, double rayon):
+Cercle::Cercle(const Couleurs::Couleur &couleur,const Point &centre, double rayon):
 FormeGeom(couleur),
 _centre(centre),
 _rayon(rayon)
@@ -42,7 +42,7 @@ double Cercle::aire() const{
 
 string Cercle::toString()const{
     ostringstream oss;
-    oss << "cercle: " <<  Couleurs::stringToHexa(_couleur) << ", " <<  _centre.getX() << ", " <<  _centre.getY() << ", " <<  _rayon;
+    oss << "cercle: " <<  _couleur << ", " <<  _centre.getX() << ", " <<  _centre.getY() << ", " <<  _rayon;
     return oss.str();
 }
 

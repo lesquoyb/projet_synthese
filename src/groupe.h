@@ -12,7 +12,7 @@ private:
 
 public:
 
-    Groupe(const string & coul);
+    Groupe(const Couleurs::Couleur &coul);
     Groupe(const Groupe &g);
     Groupe();
 

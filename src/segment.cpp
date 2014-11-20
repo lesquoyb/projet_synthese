@@ -1,14 +1,14 @@
 #include "segment.h"
 
 
-Segment::Segment(const string &couleur, const Point &p, const Point &p2):
+Segment::Segment(const Couleurs::Couleur &couleur, const Point &p, const Point &p2):
 FormeGeom(couleur),
 _p1(p),
 _p2(p2)
 {}
 
 Segment::Segment( const Point &p, const Point &p2):
-FormeGeom("black"),
+FormeGeom(),
 _p1(p),
 _p2(p2)
 {}
@@ -51,7 +51,7 @@ void Segment::dessin(const Dessinable &d) const{
 
 string Segment::toString()const {
     ostringstream ser;
-    ser << "segment: "<< Couleurs::stringToHexa(_couleur) << ", ";
+    ser << "segment: "<< _couleur << ", ";
     ser << _p1.getX() <<", " << _p1.getY() << ", " << _p2.getX() << ", " << _p2.getY();
     return ser.str();
 }

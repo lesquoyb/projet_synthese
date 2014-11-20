@@ -13,7 +13,7 @@ private:
 public:
 
     Cercle(const Point& centre,double rayon);
-    Cercle(const string& couleur,const Point& centre, double rayon);
+    Cercle(const Couleurs::Couleur &couleur, const Point& centre, double rayon);
 
     Point getCentre()const{return _centre;}
     double getRayon()const{return _rayon;}

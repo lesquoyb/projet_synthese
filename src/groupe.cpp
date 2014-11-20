@@ -3,7 +3,7 @@
 #include <algorithm>
 
 
-Groupe::Groupe(const string &coul): FormeGeom(coul){}
+Groupe::Groupe(const Couleurs::Couleur &coul): FormeGeom(coul){}
 Groupe::Groupe():FormeGeom(){}
 
 Groupe* Groupe::rotation(const Point &p, const Angle &angle)const{
@@ -52,13 +52,7 @@ Groupe* Groupe::translation(const Vecteur &v)const{
 }
 
 void Groupe::dessin(const Dessinable &d) const{
-    //TODO test
-    for_each(_composition.begin(),_composition.end(),[&d](FormeGeom*f){f->dessin(d);});
-    /*
-    for(const FormeGeom* f : _composition){
-        f->dessin(d);
-    }
-    */
+    for_each(_composition.begin(),_composition.end(), [&d](FormeGeom* f ) { f->dessin(d); } );
 }
 
 Groupe* Groupe::getCoordEntiere()const{
@@ -67,11 +61,8 @@ Groupe* Groupe::getCoordEntiere()const{
 }
 
 double Groupe::aire() const{
-    //TODO avec for_each
     double aire = 0;
-    for(const FormeGeom* f : _composition){
-        aire += f->aire();
-    }
+    for_each(_composition.begin(),_composition.end(), [&aire](FormeGeom* f ) { aire += f->aire(); } );
     return aire;
 }
 
@@ -91,7 +82,7 @@ Groupe::~Groupe(){
 
 string Groupe::toString()const{
     ostringstream ser;
-    ser << "polygone: " << Couleurs::stringToHexa(_couleur) << ", ";
+    ser << "polygone: " << Couleurs::couleurToHexa(_couleur) << ", ";
     for(FormeGeom* f : _composition){
         ser << f->toString() << "; ";
     }

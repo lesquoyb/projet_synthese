@@ -15,11 +15,6 @@ CPPTEST(TestCouleurs)
             equals(Couleurs::isCouleur("violet"), false);
         });
 
-        TESTCASE(ExceptionCouleurInexistante,{
-             errorExpected({
-                 Segment s("violet",Point(1,0),Point(0,0));
-             });
-         });
 
 ENDTEST
 

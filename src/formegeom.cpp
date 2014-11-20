@@ -3,20 +3,13 @@
 #include "../exceptions/exceptioncouleurinexistante.h"
 
 FormeGeom::FormeGeom():
-_couleur("black")
+_couleur(Couleurs::black)
 {}
 
-FormeGeom::FormeGeom(const string &coul = "black"){
 
-    if(Couleurs::isCouleur(coul)){
-        _couleur = coul;
-    }
-    else{
-        throw ExceptionCouleurInexistante(coul);
-    }
-}
-
-FormeGeom::~FormeGeom(){}
+FormeGeom::FormeGeom(const Couleurs::Couleur &coul):
+    _couleur(coul)
+{}
 
 
 void FormeGeom::sauvegarder(const string nomDeFichier)const{

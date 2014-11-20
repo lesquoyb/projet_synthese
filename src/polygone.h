@@ -14,7 +14,7 @@ private:
 
 public:
 
-    Polygone(const string &couleur,const Point &p1, const Point &p2, const Point &p3);
+    Polygone(const Couleurs::Couleur &couleur,const Point &p1, const Point &p2, const Point &p3);
     Polygone(const Point &p1, const Point &p2, const Point &p3);
 	Polygone(const Polygone&);
 

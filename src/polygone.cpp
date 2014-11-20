@@ -1,7 +1,7 @@
 #include "polygone.h"
 #include <algorithm>
 
-Polygone::Polygone(const string &couleur, const Point &p1, const Point &p2, const Point &p3):
+Polygone::Polygone(const Couleurs::Couleur &couleur, const Point &p1, const Point &p2, const Point &p3):
 FormeGeom(couleur)
 {
     _points.push_back(p1);
@@ -78,7 +78,7 @@ void Polygone::dessin(const Dessinable &d) const{
 
 string Polygone::toString()const {
     ostringstream ser;
-    ser << "polygone: " << Couleurs::stringToHexa(_couleur) << ", ";
+    ser << "polygone: " << _couleur << ", ";
     for(Point point : _points){
         ser << point.getX() << ", " << point.getY() << ", ";
     }
