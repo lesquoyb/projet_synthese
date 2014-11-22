@@ -20,14 +20,14 @@ int main(){
     TestLauncher1 test;
     test.run();
 
-    Segment s(Couleurs::red,Point(1,2),Point(50,50));
-    Segment s2(Couleurs::red,Point(150,300),Point(50,50));
-    Triangle t(Couleurs::red,Point(300,300),Point(50,50),Point(300,50));
+    Segment s(Couleurs::Couleur::red,Vecteur(1,2),Vecteur(50,50));
+    Segment s2(Couleurs::Couleur::red,Vecteur(150,300),Vecteur(50,50));
+    Triangle t(Couleurs::Couleur::red,Vecteur(300,300),Vecteur(50,50),Vecteur(300,50));
 
-    Cercle c(Point(0,0),90);
-    Polygone p(Couleurs::yellow,Point(500,10),Point(400,100),Point(400,490));
-    p.ajouterPoint(Point(500,490));
-    p.ajouterPoint(Point(600,250));
+    Cercle c(Vecteur(0,0),90);
+    Polygone p(Couleurs::Couleur::yellow,Vecteur(500,10),Vecteur(400,100),Vecteur(400,490));
+    p.ajouterPoint(Vecteur(500,490));
+    p.ajouterPoint(Vecteur(600,250));
 
     Groupe g;
     Groupe g2;
@@ -37,15 +37,20 @@ int main(){
     g2.ajouter(&t);
     g2.ajouter(&c);
     g.ajouter(&g2);
-    Connexion* connexion= new Connexion("192.168.1.10",9111);
+  //  Connexion* connexion= new Connexion("192.168.1.10",9111);
+    s.sauvegarder("lolilol");
+    ifstream stream;
+    stream.open("lolilol",ios_base::in );
+    FormeGeom* seg = FormeGeom::chargement("lolilol");
+    cout << endl << seg->toString() << endl;
 
-
+/*
     string entree;
     while(1){
         g.dessin(DessinManager(connexion));
         cin >> entree;
     }
-
+*/
 
 /*
     Point p1(2,1);

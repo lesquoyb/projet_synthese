@@ -20,6 +20,7 @@ _connexion(c){}
 
 
 void DessinManager::dessinerTriangle(const Triangle &t) const{
+    cout << t.toString();
 
     _connexion->envoyer(t.toString().c_str());
 
@@ -50,6 +51,7 @@ void DessinManager::dessinerSegment(const Segment &s) const{
 
 
 void DessinManager::dessinerCercle(const Cercle &c) const{
+    cout << c.toString();
 
     _connexion->envoyer(c.toString().c_str());
 
@@ -63,6 +65,7 @@ void DessinManager::dessinerCercle(const Cercle &c) const{
 
 
 void DessinManager::dessinerPolygone(const Polygone &p) const{
+    cout << p.toString();
 
     _connexion->envoyer(p.toString().c_str());
 

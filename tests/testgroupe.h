@@ -10,9 +10,9 @@
 
 CPPTEST(TestGroupe)
 
-        Point origine(0,0);
-        Segment seg(Point(1,2),Point(2,2));
-        Triangle tri(Point(1,2),Point(2,2),origine);
+        Vecteur origine(0,0);
+        Segment seg(Vecteur(1,2),Vecteur(2,2));
+        Triangle tri(Vecteur(1,2),Vecteur(2,2),origine);
         Cercle cer(origine,10);
         Angle droit(-90);
         Vecteur vUn(1,1);

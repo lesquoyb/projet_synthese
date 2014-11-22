@@ -62,16 +62,25 @@ Connexion::~Connexion(){
 	#endif
 }
 
+void Connexion::init(){
+
+#ifdef WIN32
+    if(!initialisee){
+        //initialisation winsock
+        WSADATA wsaData;
+        if (WSAStartup(MAKEWORD(2, 0), &wsaData)){
+            throw Erreur("L'initialisation a échoué");
+        }
+        initialisee = true;
+    }
+
+#endif
+}
 
 Connexion::Connexion(const string &ip, int host){
 
-	#ifdef WIN32
-		//initialisation winsock
-		WSADATA wsaData;
-		if (WSAStartup(MAKEWORD(2, 0), &wsaData)){
-			throw Erreur("L'initialisation a échoué");
-		}
-	#endif
+
+        init();
 
 	//création du socket 
 	int familleAdresses = AF_INET;          // IPv4
@@ -97,4 +106,5 @@ Connexion::Connexion(const string &ip, int host){
         oss << "la connexion a échouée, c'est peut être dû à une mauvaise adresse ip ou un mauvais port" << endl;
         cout << oss.str();
     }
+
 }

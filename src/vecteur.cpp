@@ -1,6 +1,7 @@
 #include <sstream>
 #include "point.h"
 #include "vecteur.h"
+#include "matricecarree2.h"
 
 using namespace std;
 
@@ -10,7 +11,7 @@ Vecteur::Vecteur(const double &x, const double &y):
     _y(y)
     {}
 
-Vecteur::Vecteur(const Point &p1, const Point & p2):
+Vecteur::Vecteur(const Vecteur &p1, const Vecteur & p2):
     _x( p2.getX() - p1.getX()),
     _y( p2.getY() - p1.getY())
     {}
@@ -39,3 +40,18 @@ Vecteur::operator string()const{
 }
 
 
+/**
+ * @brief Point::rotation
+ * @param p le point à partir duquel il faut effectuer la rotation
+ * @param a l'angle de la rotation
+ * @return le point résultat
+ * Permet de calculer le point issus de la rotation du point courrant par rapport à p et a
+ */
+Vecteur Vecteur::rotation(const Vecteur &p, const Angle &a) const{
+    Vecteur rot(MatriceCarree2::getMatriceRotation(a) * Vecteur(p,*this));
+    return  Vecteur(  p.getX() + rot.getX() , p.getY() + rot.getY() );
+}
+
+Vecteur Vecteur::homothetie(const Vecteur &p, double scale) const{
+    return p + (scale* Vecteur(p,*this));
+}

@@ -2,8 +2,8 @@
 #define VECTEUR_H
 #include <string>
 #include <iostream>
-
-class Point;
+#include "angle.h"
+#include <math.h>
 
 class Vecteur{
 
@@ -15,10 +15,14 @@ public:
 
 
    explicit Vecteur(const double &x=0,const double &y=0);
-   Vecteur(const Point &p1,const Point &p2);
+   Vecteur(const Vecteur &p1,const Vecteur &p2);
 
     double getX()const;
     double getY()const;
+
+   Vecteur rotation(const Vecteur &p,const Angle &a)const;
+
+   Vecteur homothetie(const Vecteur&p, double scale)const;
 
 
    bool operator==(const Vecteur& v)const{return (_x == v._x) && (_y == v._y);} //// suspect
@@ -31,11 +35,13 @@ public:
 
    inline const Vecteur operator* (const double &a)const;
 
-    inline const Vecteur operator-()const;
+   inline const Vecteur operator-()const;
 
-    double norme()const;
+   double norme()const;
 
-    operator std::string()const;
+   operator std::string()const;
+
+   Vecteur getCoordEntieres()const{return Vecteur(round(_x),round(_y));} //TODO supprimer
 
 };
 
@@ -67,7 +73,7 @@ inline const Vecteur Vecteur::operator- (const Vecteur &v)const{
 }
 
 const double Vecteur::operator* (const Vecteur &v)const{
-    return _x * v._x + _y * v._y;
+    return (_x * v._x + _y * v._y) ;
 }
 
 

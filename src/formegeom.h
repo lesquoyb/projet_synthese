@@ -13,7 +13,7 @@
 
 using namespace std;
 
-class Point;
+class Vecteur;
 class Angle;
 
 class FormeGeom{
@@ -29,15 +29,15 @@ public:
     FormeGeom(const Couleurs::Couleur &coul);
 
     void sauvegarder(const string nomDeFichier)const;
-    static FormeGeom* chargement(ifstream &nomDeFichier);
+    static FormeGeom* chargement(const string &nomDeFichier);
 
     virtual ~FormeGeom(){}
 
     virtual FormeGeom* getCoordEntiere()const = 0;
     virtual string toString()const = 0;
     virtual double aire()const = 0;
-    virtual FormeGeom* rotation(const Point &p, const Angle& angle)const = 0;
-    virtual FormeGeom* homothetie(const Point& p, const double scale)const = 0;
+    virtual FormeGeom* rotation(const Vecteur &p, const Angle& angle)const = 0;
+    virtual FormeGeom* homothetie(const Vecteur& p, const double scale)const = 0;
     virtual FormeGeom* translation(const Vecteur& v)const = 0;
     virtual FormeGeom* clone()const = 0;
     virtual void dessin(const Dessinable&)const = 0 ;

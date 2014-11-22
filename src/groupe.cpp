@@ -6,7 +6,7 @@
 Groupe::Groupe(const Couleurs::Couleur &coul): FormeGeom(coul){}
 Groupe::Groupe():FormeGeom(){}
 
-Groupe* Groupe::rotation(const Point &p, const Angle &angle)const{
+Groupe* Groupe::rotation(const Vecteur &p, const Angle &angle)const{
     //TODO: avec for_each
 	Groupe* ret = new Groupe(_couleur);
     for(FormeGeom* f:_composition){
@@ -33,7 +33,7 @@ void Groupe::supprimer(const FormeGeom* f){
 
 }
 
-Groupe* Groupe::homothetie(const Point &p, const double scale)const{
+Groupe* Groupe::homothetie(const Vecteur &p, const double scale)const{
     //TODO: test
     Groupe* ret = new Groupe(_couleur);
     for(FormeGeom* f:_composition){

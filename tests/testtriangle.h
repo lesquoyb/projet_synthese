@@ -6,10 +6,10 @@
 CPPTEST(TestTriangle)
 
 
-    Point origine(0,0);
-    Point pUn(1,1);
-    Point pZeroUn(0,1);
-    Point pRot90(-1,1);
+    Vecteur origine(0,0);
+    Vecteur pUn(1,1);
+    Vecteur pZeroUn(0,1);
+    Vecteur pRot90(-1,1);
     Triangle un(origine,pUn,pZeroUn);
 
 
@@ -18,11 +18,11 @@ CPPTEST(TestTriangle)
     });
 
     TESTCASE(rotationSimple,{
-         equals(*un.rotation(origine,Angle(90))->getCoordEntiere() , Triangle(origine,pRot90,Point(-1,0)));
+         equals(*un.rotation(origine,Angle(90))->getCoordEntiere() , Triangle(origine,pRot90,Vecteur(-1,0)));
      });
 
     TESTCASE(translationSimple,{
-         equals(*un.translation(Vecteur(origine,pUn)),Triangle(pUn,Point(2,2),Point(1,2)));
+         equals(*un.translation(Vecteur(origine,pUn)),Triangle(pUn,Vecteur(2,2),Vecteur(1,2)));
      });
 
     TESTCASE(homothetieSimple, {

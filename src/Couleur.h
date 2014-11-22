@@ -5,25 +5,33 @@
 #include <string>
 using namespace std;
 
+
+
 class Couleurs {
 
-private:
-
-    static const int nbCouleurs = 6;
-    static const string correspondances[];
-    static const string hexa[];
 
 public:
 
-    enum Couleur{black,white,yellow,red,green,blue};
+    enum Couleur {black = 0 ,white,yellow,red,green,blue, nbCouleurs};
 
     static string couleurToString(const Couleur& couleur);
 
     static string couleurToHexa(const Couleur& couleur);
 
+    static Couleur hexaToCouleur(const string & hexa);
+
     static bool isCouleur(const string& coul);
 
     friend ostream& operator<< (ostream& , const Couleur &c);
+
+
+
+private:
+
+    static const string correspondances[];
+    static const string hexa[];
+
+
 };
 
 

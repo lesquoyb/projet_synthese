@@ -19,7 +19,7 @@ TESTCASE(multi0,{
  });
 
 TESTCASE(constructeurPoints,{
-     equals(vUn,Vecteur(Point(0,0),Point(1,1)));
+     equals(vUn,Vecteur(Vecteur(0,0),Vecteur(1,1)));
  });
 
 TESTCASE(produitScalaire,{

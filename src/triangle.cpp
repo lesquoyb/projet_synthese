@@ -1,14 +1,14 @@
 #include "triangle.h"
 
 
-Triangle::Triangle(const Point &p1, const Point &p2, const Point &p3):
+Triangle::Triangle(const Vecteur &p1, const Vecteur &p2, const Vecteur &p3):
 FormeGeom(),
 _p1(p1),
 _p2(p2),
 _p3(p3)
 {}
 
-Triangle::Triangle(const Couleurs::Couleur &couleur, const Point &p1, const Point &p2, const Point &p3):
+Triangle::Triangle(const Couleurs::Couleur &couleur, const Vecteur &p1, const Vecteur &p2, const Vecteur &p3):
 FormeGeom(couleur),
 _p1(p1),
 _p2(p2),
@@ -28,16 +28,16 @@ double Triangle::aire() const{
     return sqrt( demiPerimetre * (demiPerimetre - distP1P2) * (demiPerimetre - distP1P3) * (demiPerimetre - distP3P2) );
 }
 
-Triangle* Triangle::rotation(const Point &p, const Angle &angle)const{
+Triangle* Triangle::rotation(const Vecteur &p, const Angle &angle)const{
     return new Triangle(_p1.rotation(p,angle),_p2.rotation(p,angle),_p3.rotation(p,angle));
 }
 
-Triangle* Triangle::homothetie(const Point &p, const double scale)const{
+Triangle* Triangle::homothetie(const Vecteur &p, const double scale)const{
     return new Triangle(_p1.homothetie(p,scale),_p2.homothetie(p,scale),_p3.homothetie(p,scale));
 }
 
 Triangle* Triangle::translation(const Vecteur &v)const{
-    return new Triangle(_p1.translation(v),_p2.translation(v),_p3.translation(v));
+    return new Triangle(_p1 + v,_p2 + v,_p3 + v );
 }
 
 void Triangle::dessin(const Dessinable &d) const{

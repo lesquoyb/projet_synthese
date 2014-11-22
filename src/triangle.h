@@ -7,22 +7,22 @@ class Triangle : public FormeGeom{
 
 private:
 
-    Point _p1, _p2, _p3;
+    Vecteur _p1, _p2, _p3;
 
 public:
 
-    Triangle(const Point& p1,const Point&p2,const Point& p3);
-    Triangle(const Couleurs::Couleur & couleur,const Point& p1,const Point&p2,const Point& p3);
+    Triangle(const Vecteur& p1,const Vecteur&p2,const Vecteur& p3);
+    Triangle(const Couleurs::Couleur & couleur,const Vecteur& p1,const Vecteur&p2,const Vecteur& p3);
 
-    Point getP1()const{return _p1;}
-    Point getP2()const{return _p2;}
-    Point getP3()const{return _p3;}
+    Vecteur getP1()const{return _p1;}
+    Vecteur getP2()const{return _p2;}
+    Vecteur getP3()const{return _p3;}
 
     virtual double aire()const;
     virtual string toString()const ;
     virtual Triangle* getCoordEntiere()const;
-    virtual Triangle* rotation(const Point &p, const Angle& angle)const;
-    virtual Triangle* homothetie(const Point& p, const double scale)const;
+    virtual Triangle* rotation(const Vecteur &p, const Angle& angle)const;
+    virtual Triangle* homothetie(const Vecteur& p, const double scale)const;
     virtual Triangle* translation(const Vecteur& v)const;
     virtual Triangle* clone()const{return new Triangle(*this);}
     virtual void dessin(const Dessinable&)const;

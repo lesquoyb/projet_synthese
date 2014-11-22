@@ -1,9 +1,10 @@
 #include "formegeom.h"
 #include "Couleur.h"
 #include "../exceptions/exceptioncouleurinexistante.h"
+#include "chargementCOR/chargementfacade.h"
 
 FormeGeom::FormeGeom():
-_couleur(Couleurs::black)
+_couleur(Couleurs::Couleur::black)
 {}
 
 
@@ -18,4 +19,12 @@ void FormeGeom::sauvegarder(const string nomDeFichier)const{
     ostream os(&fb);
     os << toString();
     fb.close();
+}
+
+
+
+FormeGeom* FormeGeom::chargement(const string &nomDeFichier){
+    ifstream is;
+    is.open(nomDeFichier,ios_base::in);
+    return chargementFacade().run(is);
 }

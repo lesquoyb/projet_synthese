@@ -23,8 +23,8 @@ public:
 
     virtual string toString()const;
     virtual Groupe* getCoordEntiere()const;
-    virtual Groupe* rotation(const Point &p,const Angle &angle)const;
-    virtual Groupe* homothetie(const Point&,const double)const;
+    virtual Groupe* rotation(const Vecteur &p,const Angle &angle)const;
+    virtual Groupe* homothetie(const Vecteur&,const double)const;
     virtual Groupe* translation(const Vecteur&)const;
     virtual void dessin(const Dessinable&d)const;
     virtual double aire() const;

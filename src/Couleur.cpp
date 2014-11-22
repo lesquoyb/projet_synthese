@@ -31,6 +31,27 @@ string Couleurs::couleurToHexa(const Couleur &couleur){
 }
 
 
+/**
+ * @brief Couleurs::hexaToCouleur
+ * Attention si la couleur passée n'existe pas, on renvoi nbCouleur.
+ * @param hexa
+ * @return
+ */
+Couleurs::Couleur Couleurs::hexaToCouleur(const string & hexa){
+    string donnee = hexa;
+    if(hexa.find("#") == 0 ){
+        donnee = hexa.substr(1);
+    }
+    int i = 0;
+    for (; i < nbCouleurs ; i++){
+        if(donnee == Couleurs::hexa[i]){
+            break;
+        }
+    }
+    return static_cast<Couleur>(i);
+}
+
+
 string Couleurs::couleurToString(const Couleur &couleur){
     return couleurToHexa(couleur);
 }
