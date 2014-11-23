@@ -1,6 +1,5 @@
 #ifndef ANGLE_H
 #define ANGLE_H
-#include "Tools.h"
 
 class Angle{
 

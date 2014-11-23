@@ -82,11 +82,11 @@ Groupe::~Groupe(){
 
 string Groupe::toString()const{
     ostringstream ser;
-    ser << "polygone: " << Couleurs::couleurToHexa(_couleur) << ", ";
+    ser << "groupe( " << ';' << Couleurs::couleurToHexa(_couleur) << ";";
     for(FormeGeom* f : _composition){
         ser << f->toString() << "; ";
     }
-    return ser.str().substr(0,ser.str().length()- 2); // on enlève 2 car c'est la taille du dernier "; "
+    return ser.str() + ")";
 }
 
 ostream& operator<<(ostream &stream,const Groupe &g){

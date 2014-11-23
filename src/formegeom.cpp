@@ -26,5 +26,5 @@ void FormeGeom::sauvegarder(const string nomDeFichier)const{
 FormeGeom* FormeGeom::chargement(const string &nomDeFichier){
     ifstream is;
     is.open(nomDeFichier,ios_base::in);
-    return chargementFacade().run(is);
+    return ChargementFacade(is).run();
 }

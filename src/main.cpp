@@ -3,7 +3,6 @@
 #include <string>
 #include <string.h>
 #include "erreur.h"
-
 #include "cercle.h"
 #include "triangle.h"
 #include "segment.h"
@@ -11,9 +10,9 @@
 
 #include "dessinManager.h"
 #include "formegeom.h"
-#include "Tools.h"
 
 #include "tests/testlauncher.h"
+
 
 int main(){
 
@@ -37,20 +36,32 @@ int main(){
     g2.ajouter(&t);
     g2.ajouter(&c);
     g.ajouter(&g2);
-  //  Connexion* connexion= new Connexion("192.168.1.10",9111);
+  //  Connexion* connexion= new Connexion("192.168.2.3",9111);
+
     s.sauvegarder("lolilol");
-    ifstream stream;
-    stream.open("lolilol",ios_base::in );
-    FormeGeom* seg = FormeGeom::chargement("lolilol");
-    cout << endl << seg->toString() << endl;
+    t.sauvegarder("tritri");
+    c.sauvegarder("cercle");
+    p.sauvegarder("poly");
+    g.sauvegarder("groupe");
+    FormeGeom* forme = FormeGeom::chargement("lolilol");
+    cout << endl << forme->toString() << endl;
+     forme = FormeGeom::chargement("tritri");
+    cout << endl << forme->toString() << endl;
+    forme = FormeGeom::chargement("cercle");
+    cout << endl << forme->toString() << endl;
+    forme = FormeGeom::chargement("poly");
+    cout << endl << forme->toString() << endl;
+    forme = FormeGeom::chargement("groupe");
+    cout << endl << forme->toString() << endl;
 
 /*
+
+
     string entree;
     while(1){
         g.dessin(DessinManager(connexion));
         cin >> entree;
     }
-*/
 
 /*
     Point p1(2,1);

@@ -1,12 +1,7 @@
 #ifndef CHARGEMENTSEGMENT_H
 #define CHARGEMENTSEGMENT_H
 #include "expertchargement.h"
-#include <iostream>
-#include <string>
-#include <fstream>
-#include <sstream>
-#include <algorithm>
-#include <iterator>
+#include "../segment.h"
 
 using namespace std;
 
@@ -16,8 +11,8 @@ class ChargementSegment : public ExpertChargement{
 public:
 
 
-    virtual Segment* chargement(ifstream &objet) const{
-        string contenu = lireFichier(objet);
+    virtual Segment* chargement(string &objet) const{
+        string contenu = objet;
         string type = "segment:";
         if(contenu.find(type) == 0){
             contenu = contenu.substr(type.size()); // on enlève le type de la chaine

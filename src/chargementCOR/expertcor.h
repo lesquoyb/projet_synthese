@@ -26,12 +26,12 @@ public:
         try{
             retour* ret = traitement1(objet);
             if( ret == NULL and suivant != NULL){
-                return  suivant->traitement1(objet);
+                return  suivant->traitement(objet);
             }
             return ret;
         }
         catch(ExceptionTraitementImpossible e){
-            cout << e.what();
+            std::cout << e.what();
             return NULL;
         }
 

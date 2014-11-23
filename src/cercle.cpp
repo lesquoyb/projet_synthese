@@ -1,6 +1,5 @@
 #include "cercle.h"
 #include "point.h"
-#include "Tools.h"
 
 
 Cercle* Cercle::getCoordEntiere()const{

@@ -9,12 +9,13 @@ class Facade {
 protected:
 
     ExpertCOR<retour,aTraiter>* _first;
+    aTraiter _objet;
 
 public:
 
 
-    retour* run(aTraiter &objet){
-        return _first->traitement(objet);
+    retour* run(){
+        return _first->traitement(_objet);
     }
 
 };

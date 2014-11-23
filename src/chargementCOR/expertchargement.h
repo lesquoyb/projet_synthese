@@ -1,46 +1,24 @@
 #ifndef ExpertChargement_H
 #define ExpertChargement_H
 #include "expertcor.h"
-#include "../segment.h"
-#include <istream>
+#include <iostream>
+#include <vector>
+#include <string>
+#include <fstream>
+#include <sstream>
+#include <iostream>
+#include <string>
+#include "../formegeom.h"
+#include "../tools.h"
 
-using std::ifstream;
-using std::string;
-using std::vector;
+using namespace std;
+using namespace tools;
 
-class ExpertChargement : public ExpertCOR<FormeGeom,ifstream>{
-
-protected:
-
-    const string lireFichier(ifstream &fichier)const{
-        string str;
-        ostringstream oss;
-        while( getline( fichier, str ) ){
-            oss << str;
-        }
-        return trim(oss.str());
-    }
-
-    vector<string> split(const string &s, char delim) const{
-        vector<string> elems;
-        stringstream ss(s);
-        string item;
-        while (getline(ss, item, delim)) {
-            elems.push_back(item);
-        }
-        return elems;
-    }
-
-    const string trim(const string &s)const{
-        int i, j;
-        for(i = 0 ; i < s.size() and s[i] == ' '  ; i++){}
-        for(j = s.size()-1 ; j > 0 and s[j] == ' '; j++ ){}
-        return s.substr(i,j);
-    }
+class ExpertChargement : public ExpertCOR<FormeGeom,string>{
 
 public:
 
-    virtual FormeGeom* chargement(ifstream &objet) const = 0;
+    virtual FormeGeom* chargement(string &objet) const = 0;
 
 
     /**
@@ -48,11 +26,8 @@ public:
      * @param objet
      * @return l'objet parsé ou NULL si non trouvé.
      */
-    virtual FormeGeom* traitement1(ifstream &objet) const{
+    virtual FormeGeom* traitement1(string &objet) const{
 
-        if(objet.is_open() == false){
-            throw ExceptionTraitementImpossible("fichier fermé");
-        }
         return chargement(objet);
     }
 

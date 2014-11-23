@@ -1,22 +1,35 @@
-#include "Tools.h"
-#include "formegeom.h"
-#include <stdlib.h>
-#include <stdio.h>
-#include <algorithm>
-#include <iostream>
-#include <fstream>
-using namespace std;
+#include "tools.h"
 
 
 
-void sauvegarder(const vector<FormeGeom *> &v, const string&s){
-
-    std::filebuf fb;
-    fb.open (s,std::ios::out);
-    std::ostream os(&fb);
-    for(FormeGeom* f : v){
-        os << f->toString() << endl;
-
+vector<string> tools::split(const string &s, char delim) {
+    vector<string> elems;
+    stringstream ss(s);
+    string item;
+    while (getline(ss, item, delim)) {
+        elems.push_back(item);
     }
-    fb.close();
+    return elems;
 }
+
+const string tools::trim(const string &s){
+    string copy(s);
+    int i, j;
+    for(i = 0 ; i < s.size() and (s[i] == ' ' or s[i] == '\n' or s[i] == '\r' ); i++){}
+    copy.erase(s.find_last_not_of(" \n\r\t")+1);
+    return copy.substr(i);
+}
+
+
+
+const string tools::lireFichier(ifstream &fichier){
+    string str;
+    ostringstream oss;
+    while( getline( fichier, str ) ){
+        oss << str;
+    }
+    return trim(oss.str());
+}
+
+
+

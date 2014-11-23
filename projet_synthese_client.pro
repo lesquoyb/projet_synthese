@@ -27,9 +27,10 @@ SOURCES += src/formegeom.cpp \
     src/polygone.cpp \
     src/dessinManager.cpp \
     src/erreur.cpp \
-    src/tools.cpp \
     src/connexion.cpp \
-    src/matricecarree2.cpp
+    src/matricecarree2.cpp \
+    src/chargementCOR/chargementgroupe.cpp \
+    src/tools.cpp
 
 HEADERS  += src/Couleur.h \
     src/formegeom.h \
@@ -44,7 +45,6 @@ HEADERS  += src/Couleur.h \
     src/segment.h \
     tests/testsegment.h \
     src/cercle.h \
-    src/Tools.h \
     src/triangle.h \
     tests/testtriangle.h \
     src/polygone.h \
@@ -76,7 +76,8 @@ HEADERS  += src/Couleur.h \
     src/chargementCOR/chargementtriangle.h \
     src/chargementCOR/chargementcercle.h \
     src/chargementCOR/chargementpolygone.h \
-    src/chargementCOR/chargementgroupe.h
+    src/chargementCOR/chargementgroupe.h \
+    src/tools.h
 
 FORMS    += src/mainwindow.ui
 
