@@ -25,7 +25,7 @@
 
 #else
 
-    #include <winsock2.h> // singleton ici
+    #include <winsock2.h>
     #pragma comment(lib, "ws2_32.lib") // sp�cifique � VISUAL C++ peut �tre � retirer
     #if (MSVC++ 12.0 _MSC_VER == 1800)
         #define strdup _strdup
@@ -46,6 +46,7 @@ class Connexion{
 private:
 
     SOCKET _sock;
+
     static bool initialisee;
 	
     static void init();

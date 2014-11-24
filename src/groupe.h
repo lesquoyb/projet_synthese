@@ -3,7 +3,7 @@
 #include "formegeom.h"
 #include <vector>
 
-class Groupe : public FormeGeom{
+class Groupe : public FormeGeom {
 
 private:
 
@@ -17,7 +17,8 @@ public:
     Groupe();
 
     void ajouter(FormeGeom *);
-	void supprimer(const FormeGeom*);
+    void supprimer(const double &index);
+    void enlever(const FormeGeom* forme);
     int getNbElem()const{return _composition.size();}
     FormeGeom* get(int i)const {return _composition.at(i);}
 

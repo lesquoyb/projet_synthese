@@ -17,19 +17,45 @@ Groupe* Groupe::rotation(const Vecteur &p, const Angle &angle)const{
 
 
 void Groupe::ajouter( FormeGeom* f){
-	//TODO: vérifier qu'il n'y est pas déjà
-	//TODO: changer le groupe si nécessaire
-    //TODO: changer la couleur
-    //TODO: verif que non null
-    _composition.push_back(f);
-
+    //TODO: tester
+    if(f != NULL){
+        if(f->appartientA() != this){
+            if(f->appartientA() != NULL ){
+                f->appartientA()->enlever(f);
+            }
+            f->setCouleur(_couleur);
+            _composition.push_back(f);
+        }
+    }
 }
 
-void Groupe::supprimer(const FormeGeom* f){
-	//TODO: verifier que la forme est bien dans ce groupe
-	//TODO: vérifier que pointeur non null
-    //TODO:
+/**
+ * @brief Groupe::enlever
+ * enlève forme du groupe, ne le supprime pas de la mémoire.
+ * @param forme
+ */
+void Groupe::enlever(const FormeGeom* forme){
+    //TODO: tester
+    if (forme != NULL){
+        if(forme->appartientA() == this){
+         _composition.erase(find(_composition.begin(),_composition.end(),forme));
+        }
+    }
+}
 
+
+/**
+ * @brief Groupe::supprimer
+ * enlève la forme de la liste et de la mémoire.
+ * @param f
+ */
+void Groupe::supprimer(const double &index){
+    //TODO:tester
+    if(index < _composition.size()){
+         FormeGeom* temp = _composition[index];
+         _composition.erase(_composition.begin()+index);
+         delete temp;
+    }
 
 }
 
@@ -75,9 +101,15 @@ FormeGeom(g._couleur)
 }
 
 
-
+/**
+ * @brief Groupe::~Groupe
+ * Supprime tous les objets dans le groupe pour éviter les fuites mémoires qui peuvent être causée en faisant: "groupe.ajouter(new Segment(... , ... ));".
+ */
 Groupe::~Groupe(){
-    //TODO
+    //TODO:tester
+    for(FormeGeom* f : _composition){
+        delete f;
+    }
 }
 
 string Groupe::toString()const{

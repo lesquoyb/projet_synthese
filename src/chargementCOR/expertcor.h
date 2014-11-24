@@ -24,7 +24,7 @@ public:
 
     virtual retour* traitement(aTraiter &objet)const{
         try{
-            retour* ret = traitement1(objet);
+            retour* ret = traitementSpecialise(objet);
             if( ret == NULL and suivant != NULL){
                 return  suivant->traitement(objet);
             }
@@ -43,7 +43,7 @@ public:
      * @param objet
      * @return
      */
-    virtual retour* traitement1(aTraiter &objet) const = 0;
+    virtual retour* traitementSpecialise(aTraiter &objet) const = 0;
 
 
 };

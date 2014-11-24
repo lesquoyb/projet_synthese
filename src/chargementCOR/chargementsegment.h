@@ -11,7 +11,7 @@ class ChargementSegment : public ExpertChargement{
 public:
 
 
-    virtual Segment* chargement(string &objet) const{
+    virtual Segment* traitementSpecialise(string &objet) const{
         string contenu = objet;
         string type = "segment:";
         if(contenu.find(type) == 0){
@@ -38,18 +38,3 @@ public:
 
 #endif // CHARGEMENTSEGMENT_H
 
-
-/*
-if(contenu.find(type.c_str()) == 0){
-    string content[] = toParse.substring(type.length()).split(",");
-    if(content.length == 5){
-        string couleur = content[0].trim();
-        int x1 =  Integer.parseInt(content[1].trim());
-        int y1 =  Integer.parseInt(content[2].trim());
-        int x2 =  Integer.parseInt(content[3].trim());
-        int y2 =  Integer.parseInt(content[4].trim());
-        return true;
-    }
-}
-return false;
-*/

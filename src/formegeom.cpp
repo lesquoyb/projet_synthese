@@ -4,12 +4,14 @@
 #include "chargementCOR/chargementfacade.h"
 
 FormeGeom::FormeGeom():
-_couleur(Couleurs::Couleur::black)
+_couleur(Couleurs::Couleur::black),
+_appartientA(NULL)
 {}
 
 
 FormeGeom::FormeGeom(const Couleurs::Couleur &coul):
-    _couleur(coul)
+    _couleur(coul),
+    _appartientA(NULL)
 {}
 
 

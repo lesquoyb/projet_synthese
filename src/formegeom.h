@@ -15,12 +15,15 @@ using namespace std;
 
 class Vecteur;
 class Angle;
+class Groupe;
 
 class FormeGeom{
 
 protected:
 
+
     Couleurs::Couleur _couleur;
+    Groupe* _appartientA;
 
 
 public:
@@ -30,6 +33,9 @@ public:
 
     void sauvegarder(const string nomDeFichier)const;
     static FormeGeom* chargement(const string &nomDeFichier);
+    Groupe* appartientA()const{return _appartientA;}
+    void setCouleur(const Couleurs::Couleur &c){_couleur = c;}
+    Couleurs::Couleur getCouleur()const{return _couleur;}
 
     virtual ~FormeGeom(){}
 

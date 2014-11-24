@@ -15,7 +15,7 @@ class ChargementCercle : public ExpertChargement{
 public:
 
 
-    virtual Cercle* chargement(string &objet) const{
+    virtual Cercle* traitementSpecialise(string &objet) const{
         string contenu = objet;
         string type = "cercle:";
         if(contenu.find(type) == 0){

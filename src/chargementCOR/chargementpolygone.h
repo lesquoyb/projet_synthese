@@ -15,7 +15,7 @@ class ChargementPolygone : public ExpertChargement{
 public:
 
 
-    virtual Polygone* chargement(string &objet) const{
+    virtual Polygone* traitementSpecialise(string &objet) const{
         string contenu = objet;
         string type = "polygone:";
         if(contenu.find(type) == 0){

@@ -1,0 +1,83 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[francais]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\author{Baptiste Lesquoy}
+\title{Rapport de projet de synthèse}
+\begin{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%% PAGE DE GARDE
+\maketitle
+\newpage
+
+
+%%%%%%%%%%%%%%%%%%%%%%% TABLE DES MATIÈRES
+\tableofcontents
+\newpage
+
+\chapter{hiérarchies de classes}
+Que ce soit côté client ou côté serveur, le but lors de la création des hiérarchies de classes du projet a toujours été de rester le plus générique possible afin d'éliminer toute redondance dans le code, et si possible d'avoir un programme modulable et dont les différents bloc pourraient être utiliser dans un autre contexte.
+
+\section{Client}
+La partie client (réalisée en C++) du projet peut être décomposée en trois hiérarchies de classes principales:
+\begin{itemize}
+\item La base du client
+\item Les tests unitaires
+\item L'implémentation du Design Pattern "Chain Of Responsibility"
+\end{itemize}
+
+\subsection{La base du client}
+La base du client a été modélisée comme ceci:
+\begin{figure}
+\includegraphics[scale=1]{}
+\end{figure}
+
+\subsection{Les tests unitaires}
+\subsection{L'implémentation du Design Pattern COR}
+
+
+\section{Serveur}
+%%%%% cpp
+%%%%%%%%%%% plus générique possible (connexion, framework, cor => réutilisable/ template)
+%%%%%%%%%%% parler problème des points (forme1pt, 2pt etc. envisagés mais abandonnée, idem pour hériter de Polygone, parler de liskov)
+%%%%%%%%%% un fichier de sauvegarde par forme
+%%%%% java 
+
+\newpage
+
+
+
+
+\chapter{Fonctionnement de l'application distribuée}
+%%%%%%%%%% connexion cpp multiplateforme
+%%%%%%%%%% schéma de communication
+%%%%%%%%%% protocole de com	 => xml et json == overkill + human readability not required
+
+\chapter{Organisation du projet}
+
+\section{méthodes}
+Afin d'organiser correctement le projet il a été décidé de 
+%%scrum / méthodes agiles
+%% tests unitaires 
+
+\section{Outils utilisés}
+%%trello
+%%github
+%%=> dev d'un outil de test unitaire
+
+\chapter{ce que ça m'a apporté}
+%%%% réutilisable
+
+\chapter{Manuel d'utilisation}
+
+
+
+
+
+
+\end{document}

@@ -15,7 +15,7 @@ class ChargementTriangle : public ExpertChargement{
 public:
 
 
-    virtual Triangle* chargement(string &objet) const{
+    virtual Triangle* traitementSpecialise(string &objet) const{
         string contenu = objet;
         string type = "triangle:";
         if(contenu.find(type) == 0){

@@ -36,6 +36,8 @@ public:
     void addTest(CppTest* t){
         _tests.push_back(t);
     }
+
+
 };
 
 #endif // TESTFACADE_H

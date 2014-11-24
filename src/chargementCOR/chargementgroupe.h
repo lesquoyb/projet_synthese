@@ -15,7 +15,7 @@ class ChargementGroupe : public ExpertChargement{
 public:
 
 
-    virtual Groupe* chargement(string &objet) const;
+    virtual Groupe* traitementSpecialise(string &objet) const;
 
 
 };

@@ -2,7 +2,7 @@
 #include "chargementfacade.h"
 #include <algorithm>
 
-Groupe* ChargementGroupe::chargement(string &objet) const{
+Groupe* ChargementGroupe::traitementSpecialise(string &objet) const{
         string contenu = objet;
         string type = "groupe(";
         if(contenu.find(type) == 0){

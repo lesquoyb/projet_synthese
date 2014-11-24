@@ -18,7 +18,6 @@ class ExpertChargement : public ExpertCOR<FormeGeom,string>{
 
 public:
 
-    virtual FormeGeom* chargement(string &objet) const = 0;
 
 
     /**
@@ -26,10 +25,7 @@ public:
      * @param objet
      * @return l'objet parsé ou NULL si non trouvé.
      */
-    virtual FormeGeom* traitement1(string &objet) const{
-
-        return chargement(objet);
-    }
+    virtual FormeGeom* traitementSpecialise(string &objet) const = 0;
 
 
 };

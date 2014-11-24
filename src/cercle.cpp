@@ -25,13 +25,13 @@ void Cercle::dessin(const Dessinable &d) const{
 Cercle::Cercle(const Vecteur &centre, double rayon):
 FormeGeom(),
 _centre(centre),
-_rayon(rayon)
+_rayon(abs(rayon))
 {}
 
 Cercle::Cercle(const Couleurs::Couleur &couleur,const Vecteur &centre, double rayon):
 FormeGeom(couleur),
 _centre(centre),
-_rayon(rayon)
+_rayon(abs(rayon))
 {}
 
 double Cercle::aire() const{

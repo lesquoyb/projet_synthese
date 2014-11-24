@@ -85,4 +85,13 @@ OTHER_FILES += \
     contraintes.ods \
     technos.txt \
     DiagrammeDeClasses.dia \
-    DiagrammeDeClasses.png
+    DiagrammeDeClasses.png \
+    rapport/contraintes.ods \
+    rapport/DiagrammeDeClasses.dia \
+    rapport/DiagrammeDeClassesTemporaire.dia \
+    rapport/fonctionnement_chargement.dia \
+    rapport/fonctionnement_client_serveur.dia \
+    rapport/tests_unitaires.dia \
+    rapport/DiagrammeDeClasses.png \
+    rapport/rapport.tex \
+    rapport/technos.txt
