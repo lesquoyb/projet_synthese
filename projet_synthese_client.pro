@@ -30,7 +30,9 @@ SOURCES += src/formegeom.cpp \
     src/connexion.cpp \
     src/matricecarree2.cpp \
     src/chargementCOR/chargementgroupe.cpp \
-    src/tools.cpp
+    src/tools.cpp \
+    src/objetgeom.cpp \
+    src/formecomposee.cpp
 
 HEADERS  += src/Couleur.h \
     src/formegeom.h \
@@ -77,7 +79,9 @@ HEADERS  += src/Couleur.h \
     src/chargementCOR/chargementcercle.h \
     src/chargementCOR/chargementpolygone.h \
     src/chargementCOR/chargementgroupe.h \
-    src/tools.h
+    src/tools.h \
+    src/objetgeom.h \
+    src/formecomposee.h
 
 FORMS    += src/mainwindow.ui
 

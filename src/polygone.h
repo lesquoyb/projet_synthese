@@ -10,7 +10,7 @@ class Polygone : public FormeGeom{
 
 private:
 
-    vector<Vecteur> _points;
+    vector<Point> _points;
 
 public:
 
@@ -18,15 +18,15 @@ public:
     Polygone(const Vecteur &p1, const Vecteur &p2, const Vecteur &p3);
 	Polygone(const Polygone&);
 
-    vector<Vecteur> getPoints()const{return _points;}
-    void ajouterPoint(const Vecteur &p){return _points.push_back(p);}
+    vector<Point> getPoints()const{return _points;}
+    void ajouterPoint(const Point &p){return _points.push_back(p);}
 
 
     virtual string toString()const;
     virtual double aire()const;
     virtual Polygone* getCoordEntiere()const;
-	virtual Polygone* rotation(const Vecteur &p, const Angle& angle)const;
-	virtual Polygone* homothetie(const Vecteur& p, const double scale) const;
+    virtual Polygone* rotation(const Point &p, const Angle& angle)const;
+    virtual Polygone* homothetie(const Point &p, const double scale) const;
 	virtual Polygone* translation(const Vecteur& v)const;
     virtual Polygone* clone()const{return new Polygone(*this);}
     virtual void dessin(const Dessinable&)const ;

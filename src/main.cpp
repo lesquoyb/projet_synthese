@@ -30,14 +30,17 @@ int main(){
 
     Groupe g;
     Groupe g2;
+
     g.ajouter(&p);
     g.ajouter(&s);
     g.ajouter(&s2);
     g2.ajouter(&t);
     g2.ajouter(&c);
     g.ajouter(&g2);
-  //  Connexion* connexion= new Connexion("192.168.2.3",9111);
 
+   Connexion* connexion= new Connexion("127.0.0.1",9111);
+   g.dessin(DessinManager(connexion));
+/*
     s.sauvegarder("lolilol");
     t.sauvegarder("tritri");
     c.sauvegarder("cercle");
@@ -54,35 +57,32 @@ int main(){
     forme = FormeGeom::chargement("groupe");
     cout << endl << forme->toString() << endl;
 
+*/
+
 /*
-
-
     string entree;
     while(1){
-        g.dessin(DessinManager(connexion));
+        DessinManager dessin(connexion);
+        g.dessin(dessin);
+
+        s.dessin(dessin);
+        t.dessin(dessin);
+        c.dessin(dessin);
+        p.dessin(dessin);
         cin >> entree;
     }
+*/
 
-/*
     Point p1(2,1);
     cout << "point départ: " << p1 << endl;
     cout << "homothétie (-2,5) echelle 0.5" << endl;
     cout << "arrivée: " << *(p1.homothetie(Point(-2,5),0.5)) << endl;
-*/
+
+
+
 /*
-    string fileAdd;
-    cout << "dans quel fichier voulez vous sauver ?"<< endl;
-    cin >> fileAdd;
-    sauvegarder(liste, fileAdd);
-
-
-
 
     DessinManager dessin ;
-    s.dessin(dessin);
-    t.dessin(dessin);
-    c.dessin(dessin);
-    p.dessin(dessin);
 
     cout << "continuer ?" <<endl;
     cin >> entree;

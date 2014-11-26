@@ -2,6 +2,7 @@
 #include "point.h"
 #include "vecteur.h"
 #include "matricecarree2.h"
+#include "point.h"
 
 using namespace std;
 
@@ -10,10 +11,16 @@ Vecteur::Vecteur(const double &x, const double &y):
     _x(x),
     _y(y)
     {}
+Vecteur::Vecteur(const Point &p1,const Point &p2):
+_x( p2.getX() - p1.getX()),
+_y( p2.getY() - p1.getY())
+{}
 
-Vecteur::Vecteur(const Vecteur &p1, const Vecteur & p2):
-    _x( p2.getX() - p1.getX()),
-    _y( p2.getY() - p1.getY())
+
+
+Vecteur::Vecteur(const Vecteur &v1, const Vecteur & v2):
+    _x( v2.getX() - v1.getX()),
+    _y( v2.getY() - v1.getY())
     {}
 
 double Vecteur::getX() const{

@@ -3,10 +3,12 @@
 #include <algorithm>
 
 
-Groupe::Groupe(const Couleurs::Couleur &coul): FormeGeom(coul){}
-Groupe::Groupe():FormeGeom(){}
+Groupe::Groupe(const Couleurs::Couleur &coul): FormeComposee<FormeGeom,Groupe>(coul){}
+Groupe::Groupe():FormeComposee<FormeGeom,Groupe>(){}
 
-Groupe* Groupe::rotation(const Vecteur &p, const Angle &angle)const{
+
+/*
+Groupe* Groupe::rotation(const Point &p, const Angle &angle)const{
     //TODO: avec for_each
 	Groupe* ret = new Groupe(_couleur);
     for(FormeGeom* f:_composition){
@@ -14,8 +16,9 @@ Groupe* Groupe::rotation(const Vecteur &p, const Angle &angle)const{
     }
 	return ret;
 }
+*/
 
-
+/*
 void Groupe::ajouter( FormeGeom* f){
     //TODO: tester
     if(f != NULL){
@@ -29,6 +32,8 @@ void Groupe::ajouter( FormeGeom* f){
     }
 }
 
+*/
+
 /**
  * @brief Groupe::enlever
  * enlève forme du groupe, ne le supprime pas de la mémoire.
@@ -38,7 +43,7 @@ void Groupe::enlever(const FormeGeom* forme){
     //TODO: tester
     if (forme != NULL){
         if(forme->appartientA() == this){
-         _composition.erase(find(_composition.begin(),_composition.end(),forme));
+         _composants.erase(find(_composants.begin(),_composants.end(),forme));
         }
     }
 }
@@ -51,35 +56,35 @@ void Groupe::enlever(const FormeGeom* forme){
  */
 void Groupe::supprimer(const double &index){
     //TODO:tester
-    if(index < _composition.size()){
-         FormeGeom* temp = _composition[index];
-         _composition.erase(_composition.begin()+index);
+    if(index < _composants.size()){
+         FormeGeom* temp = _composants[index];
+         _composants.erase(_composants.begin()+index);
          delete temp;
     }
 
 }
 
-Groupe* Groupe::homothetie(const Vecteur &p, const double scale)const{
+Groupe* Groupe::homothetie(const Point &p, const double scale)const{
     //TODO: test
     Groupe* ret = new Groupe(_couleur);
-    for(FormeGeom* f:_composition){
+    for(FormeGeom* f:_composants){
         ret->ajouter(f->homothetie(p,scale));
     }
     return ret;
 }
 
+
 Groupe* Groupe::translation(const Vecteur &v)const{
     //TODO: test
     Groupe* ret = new Groupe(_couleur);
-    for(FormeGeom* f:_composition){
+    for(FormeGeom* f:_composants){
         ret->ajouter(f->translation(v));
     }
     return ret;
 }
 
-void Groupe::dessin(const Dessinable &d) const{
-    for_each(_composition.begin(),_composition.end(), [&d](FormeGeom* f ) { f->dessin(d); } );
-}
+
+
 
 Groupe* Groupe::getCoordEntiere()const{
     //TODO
@@ -88,18 +93,26 @@ Groupe* Groupe::getCoordEntiere()const{
 
 double Groupe::aire() const{
     double aire = 0;
-    for_each(_composition.begin(),_composition.end(), [&aire](FormeGeom* f ) { aire += f->aire(); } );
+    for_each(_composants.begin(),_composants.end(), [&aire](FormeGeom* f ) { aire += f->aire(); } );
     return aire;
 }
 
-Groupe::Groupe(const Groupe &g):
-FormeGeom(g._couleur)
+Groupe::Groupe(const FormeComposee<FormeGeom, Groupe> &g):
+FormeComposee<FormeGeom,Groupe>(g.getCouleur())
+{
+    for(FormeGeom* f: g.getComposants()){
+        _composants.push_back(f->clone());
+    }
+}
+/*
+Groupe::Groupe(const FormeComposee<FormeGeom, Groupe> &g):
+FormeComposee<FormeGeom,Groupe>(g._couleur)
 {
     for(FormeGeom* f: g._composition){
         _composition.push_back(f->clone());
     }
 }
-
+*/
 
 /**
  * @brief Groupe::~Groupe
@@ -107,15 +120,17 @@ FormeGeom(g._couleur)
  */
 Groupe::~Groupe(){
     //TODO:tester
+    /*
     for(FormeGeom* f : _composition){
         delete f;
     }
+    */
 }
 
 string Groupe::toString()const{
     ostringstream ser;
     ser << "groupe( " << ';' << Couleurs::couleurToHexa(_couleur) << ";";
-    for(FormeGeom* f : _composition){
+    for(FormeGeom* f : _composants){
         ser << f->toString() << "; ";
     }
     return ser.str() + ")";
@@ -125,6 +140,14 @@ ostream& operator<<(ostream &stream,const Groupe &g){
     stream << g.toString();
     return stream;
 }
+
+
+
+
+
+
+
+
 
 
 

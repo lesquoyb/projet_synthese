@@ -26,7 +26,7 @@
 #else
 
     #include <winsock2.h>
-    #pragma comment(lib, "ws2_32.lib") // sp�cifique � VISUAL C++ peut �tre � retirer
+    #pragma comment(lib, "ws2_32.lib") // sp�cifique � VISUAL C++
     #if (MSVC++ 12.0 _MSC_VER == 1800)
         #define strdup _strdup
     #endif

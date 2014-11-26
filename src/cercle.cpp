@@ -6,29 +6,29 @@ Cercle* Cercle::getCoordEntiere()const{
     return new Cercle(_centre.getCoordEntieres(),_rayon);
 }
 
-Cercle* Cercle::rotation(const Vecteur &p, const Angle &angle)const{
-    return new Cercle(_couleur,_centre.rotation(p,angle),_rayon);
+Cercle* Cercle::rotation(const Point &p, const Angle &angle)const{
+    return new Cercle(_couleur,*_centre.rotation(p,angle),_rayon);
 }
 
-Cercle* Cercle::homothetie(const Vecteur &p, const double scale)const{
-    return new Cercle(_couleur,_centre.homothetie(p,scale), _rayon * scale);
+Cercle* Cercle::homothetie(const Point &p, const double scale)const{
+    return new Cercle(_couleur,*_centre.homothetie(p,scale), abs(_rayon * scale));
 }
 
 Cercle* Cercle::translation(const Vecteur &v)const{
-    return new Cercle(_couleur,_centre + v,_rayon);
+    return new Cercle(_couleur,*_centre.translation(v),_rayon);
 }
 
 void Cercle::dessin(const Dessinable &d) const{
     d.dessinerCercle(*this);
 }
 
-Cercle::Cercle(const Vecteur &centre, double rayon):
+Cercle::Cercle(const Point &centre, double rayon):
 FormeGeom(),
 _centre(centre),
 _rayon(abs(rayon))
 {}
 
-Cercle::Cercle(const Couleurs::Couleur &couleur,const Vecteur &centre, double rayon):
+Cercle::Cercle(const Couleurs::Couleur &couleur,const Point &centre, double rayon):
 FormeGeom(couleur),
 _centre(centre),
 _rayon(abs(rayon))

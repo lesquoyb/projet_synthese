@@ -1,13 +1,13 @@
 #include "segment.h"
 
 
-Segment::Segment(const Couleurs::Couleur &couleur, const Vecteur &p, const Vecteur &p2):
+Segment::Segment(const Couleurs::Couleur &couleur, const Point &p, const Point &p2):
 FormeGeom(couleur),
 _p1(p),
 _p2(p2)
 {}
 
-Segment::Segment( const Vecteur &p, const Vecteur &p2):
+Segment::Segment(const Point &p, const Point &p2):
 FormeGeom(),
 _p1(p),
 _p2(p2)
@@ -27,18 +27,18 @@ ostream& operator<<(ostream & stream, const Segment&s){
     return stream;
 }
 
-Segment* Segment::rotation(const Vecteur &p, const Angle &angle)const{
-    return new Segment(_couleur,_p1.rotation(p,angle),_p2.rotation(p,angle));
+Segment* Segment::rotation(const Point &p, const Angle &angle)const{
+    return new Segment(_couleur,*_p1.rotation(p,angle),*_p2.rotation(p,angle));
 }
 
-Segment* Segment::homothetie(const Vecteur &p, const double scale)const{
-    Vecteur p1 = _p1.homothetie(p,scale);
-    Vecteur p2 = _p2.homothetie(p,scale);
+Segment* Segment::homothetie(const Point &p, const double scale)const{
+    Point p1 = *_p1.homothetie(p,scale);
+    Point p2 = *_p2.homothetie(p,scale);
     return new Segment(_couleur,p1,p2);
 }
 
 Segment* Segment::translation(const Vecteur &v)const{
-    return new Segment(_couleur, _p1 + v, _p2 + v );
+    return new Segment(_couleur, *_p1.translation(v), *_p2.translation(v) );
 }
 
 double Segment::aire() const{

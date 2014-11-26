@@ -6,8 +6,9 @@ using namespace std;
 #include <string>
 #include <iostream>
 
-class Erreur
-{
+class Erreur{
+
+
 public:
 	const static int LONGUEURMESSAGE = 100;
 	char message[1 + LONGUEURMESSAGE];

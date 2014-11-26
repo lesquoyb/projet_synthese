@@ -7,20 +7,19 @@ class Segment : public FormeGeom{
 
 private:
 
-    Vecteur _p1, _p2;
+    Point _p1, _p2;
 
 public:
 
-    Segment(const Couleurs::Couleur& couleur,const Vecteur& p, const Vecteur &p2 );
-    Segment( const Vecteur &p, const Vecteur &p2);
+    Segment(const Couleurs::Couleur& couleur,const Point& p, const Point &p2 );
+    Segment( const Point &p, const Point &p2);
 
-
-    Vecteur getPoint1()const{return _p1;}
-    Vecteur getPoint2()const{return _p2;}
+    Point getPoint1()const{return _p1;}
+    Point getPoint2()const{return _p2;}
 
     virtual string toString()const;
-	virtual Segment* rotation(const Vecteur &p, const Angle& angle) const;
-	virtual Segment* homothetie(const Vecteur& p, const double scale)const;
+    virtual Segment* rotation(const Point &p, const Angle& angle) const;
+    virtual Segment* homothetie(const Point &p, const double scale)const;
 	virtual Segment* translation(const Vecteur& v)const;
     virtual double aire() const;
     virtual Segment* clone()const{return new Segment(*this);}

@@ -5,6 +5,9 @@
 #include "angle.h"
 #include <math.h>
 
+
+
+class Point;
 class Vecteur{
 
 private:
@@ -15,7 +18,8 @@ public:
 
 
    explicit Vecteur(const double &x=0,const double &y=0);
-   Vecteur(const Vecteur &p1,const Vecteur &p2);
+   Vecteur(const Point &p1,const Point &p2);
+   Vecteur(const Vecteur &v1, const Vecteur &v2);
 
     double getX()const;
     double getY()const;
