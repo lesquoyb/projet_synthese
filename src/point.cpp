@@ -34,7 +34,7 @@ Point* Point::rotation(const Point &p, const Angle &a) const{
     return  new Point(  p._coord + rot );
 }
 
-Point* Point::homothetie(const Point &p, double scale) const{
+Point* Point::homothetie(const Point &p, const double &scale) const{
     return new Point(*p.translation(scale* Vecteur(p,*this)));
 }
 

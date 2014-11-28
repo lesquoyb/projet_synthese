@@ -22,7 +22,7 @@ public:
     virtual string toString()const ;
     virtual Triangle* getCoordEntiere()const;
     virtual Triangle* rotation(const Point &p, const Angle& angle)const;
-    virtual Triangle* homothetie(const Point &p, const double scale)const;
+    virtual Triangle* homothetie(const Point &p, const double &scale)const;
     virtual Triangle* translation(const Vecteur& v)const;
     virtual Triangle* clone()const{return new Triangle(*this);}
     virtual void dessin(const Dessinable&)const;

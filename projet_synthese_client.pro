@@ -31,8 +31,7 @@ SOURCES += src/formegeom.cpp \
     src/matricecarree2.cpp \
     src/chargementCOR/chargementgroupe.cpp \
     src/tools.cpp \
-    src/objetgeom.cpp \
-    src/formecomposee.cpp
+    src/objetgeom.cpp
 
 HEADERS  += src/Couleur.h \
     src/formegeom.h \

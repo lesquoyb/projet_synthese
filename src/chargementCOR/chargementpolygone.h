@@ -34,9 +34,11 @@ public:
                 double y2 = stod(valeurs[4].c_str());
                 double x3 = stod(valeurs[5].c_str());
                 double y3 = stod(valeurs[6].c_str());
-                Polygone* p = new Polygone(couleur,Vecteur(x1,y1),Vecteur(x2,y2),Vecteur(x3,y3));
+                Polygone* p = new Polygone(couleur,Point(x1,y1),Point(x2,y2),Point(x3,y3));
                 for (int i = 7 ; i < valeurs.size() ; i+=2){
-                    p->ajouterPoint(Vecteur(stod(valeurs[i]),stod(valeurs[i+1])));
+                    //p->ajouterPoint(Point(stod(valeurs[i]),stod(valeurs[i+1])));
+                    Point* pTemp = new Point(stod(valeurs[i]),stod(valeurs[i+1]));
+                    p->ajouter(pTemp);
                 }
                 if(couleur != Couleurs::nbCouleurs){
                     return p;

@@ -19,8 +19,8 @@ private:
 public:
 
     Point(const Point &p);
-    Point(const Vecteur&);
-    Point(double x, double y);
+    explicit Point(const Vecteur&);
+    explicit Point(double x, double y);
 
     Vecteur getCoord()const {return _coord;}
 
@@ -42,7 +42,7 @@ public:
 
 
     virtual Point* rotation(const Point &p, const Angle &a) const;
-    virtual Point* homothetie(const Point &p, double scale) const;
+    virtual Point* homothetie(const Point &p,const double &scale) const;
     virtual Point* translation(const Vecteur &v)const;
 
 

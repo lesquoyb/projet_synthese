@@ -4,6 +4,13 @@
 
 
 Groupe::Groupe(const Couleurs::Couleur &coul): FormeComposee<FormeGeom,Groupe>(coul){}
+Groupe::Groupe(const FormeComposee<FormeGeom,Groupe> &f):
+    FormeComposee<FormeGeom,Groupe>(f.getCouleur())
+{
+    for (size_t i = 0; i < f.getComposants().size(); ++i){
+        _composants.push_back(f.getComposants()[i]);
+     }
+}
 Groupe::Groupe():FormeComposee<FormeGeom,Groupe>(){}
 
 
@@ -11,15 +18,14 @@ Groupe::Groupe():FormeComposee<FormeGeom,Groupe>(){}
 Groupe* Groupe::rotation(const Point &p, const Angle &angle)const{
     //TODO: avec for_each
 	Groupe* ret = new Groupe(_couleur);
-    for(FormeGeom* f:_composition){
+    for(FormeGeom* f:_composants){
         ret->ajouter(f->rotation(p,angle));
     }
 	return ret;
 }
 */
-
 /*
-void Groupe::ajouter( FormeGeom* f){
+void Groupe::ajouter(const FormeGeom* f){
     //TODO: tester
     if(f != NULL){
         if(f->appartientA() != this){
@@ -31,8 +37,8 @@ void Groupe::ajouter( FormeGeom* f){
         }
     }
 }
-
 */
+
 
 /**
  * @brief Groupe::enlever
@@ -64,25 +70,6 @@ void Groupe::supprimer(const double &index){
 
 }
 
-Groupe* Groupe::homothetie(const Point &p, const double scale)const{
-    //TODO: test
-    Groupe* ret = new Groupe(_couleur);
-    for(FormeGeom* f:_composants){
-        ret->ajouter(f->homothetie(p,scale));
-    }
-    return ret;
-}
-
-
-Groupe* Groupe::translation(const Vecteur &v)const{
-    //TODO: test
-    Groupe* ret = new Groupe(_couleur);
-    for(FormeGeom* f:_composants){
-        ret->ajouter(f->translation(v));
-    }
-    return ret;
-}
-
 
 
 
@@ -97,22 +84,40 @@ double Groupe::aire() const{
     return aire;
 }
 
-Groupe::Groupe(const FormeComposee<FormeGeom, Groupe> &g):
-FormeComposee<FormeGeom,Groupe>(g.getCouleur())
-{
-    for(FormeGeom* f: g.getComposants()){
-        _composants.push_back(f->clone());
-    }
-}
-/*
-Groupe::Groupe(const FormeComposee<FormeGeom, Groupe> &g):
+
+
+
+Groupe::Groupe(const Groupe &g):
 FormeComposee<FormeGeom,Groupe>(g._couleur)
 {
-    for(FormeGeom* f: g._composition){
-        _composition.push_back(f->clone());
-    }
+     for (size_t i = 0; i < g._composants.size(); ++i){
+        FormeGeom* f1 = g._composants[i];
+        FormeGeom* f = f1->clone();
+         _composants.push_back(f);
+     }
 }
-*/
+
+
+void Groupe::dessin(const Dessinable &d) const{
+    for_each(_composants.begin(),_composants.end(),[&d](FormeGeom* f) {f->dessin(d);});
+}
+
+Groupe* Groupe::homothetie(const Point &p, const double &d) const{
+    Groupe* g2 = new Groupe(_couleur);
+    for_each(_composants.begin(),_composants.end(),[&,p,g2,d](FormeGeom* f) {g2->ajouter(f->homothetie(p,d));});
+    return g2;
+}
+Groupe* Groupe::translation(const Vecteur &v) const{
+    Groupe* g2 = new Groupe(_couleur);
+    for_each(_composants.begin(),_composants.end(),[&,v,g2](FormeGeom* f) {
+        FormeGeom* f1 = f->translation(v);
+        g2->ajouter(f1);
+    });
+    return g2;
+}
+
+
+
 
 /**
  * @brief Groupe::~Groupe

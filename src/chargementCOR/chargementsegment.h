@@ -26,7 +26,7 @@ public:
             double y2 = stod(valeurs[4].c_str());
             Couleurs::Couleur couleur = Couleurs::hexaToCouleur(valeurs[0]);
             if(couleur != Couleurs::nbCouleurs){
-                return new Segment(couleur,Vecteur(x1,y1),Vecteur(x2,y2));
+                return new Segment(couleur,Point(x1,y1),Point(x2,y2));
             }
         }
 

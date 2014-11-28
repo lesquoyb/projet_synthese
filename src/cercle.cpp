@@ -10,7 +10,7 @@ Cercle* Cercle::rotation(const Point &p, const Angle &angle)const{
     return new Cercle(_couleur,*_centre.rotation(p,angle),_rayon);
 }
 
-Cercle* Cercle::homothetie(const Point &p, const double scale)const{
+Cercle* Cercle::homothetie(const Point &p, const double &scale)const{
     return new Cercle(_couleur,*_centre.homothetie(p,scale), abs(_rayon * scale));
 }
 

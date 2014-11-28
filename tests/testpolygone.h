@@ -5,15 +5,14 @@
 
 CPPTEST(TestPolygone)
 
-
-    Vecteur origine(0,0);
-    Vecteur pUn(1,1);
-    Vecteur pZeroUn(0,1);
-    Vecteur pRot90(-1,1);
+    Point origine(0,0);
+    Point pUn(1,1);
+    Point pZeroUn(0,1);
+    Point pRot90(-1,1);
     Polygone p(origine,pUn,pZeroUn);
-    Polygone irregulier(Vecteur(-1,2),Vecteur(7,5),Vecteur(4,3));
-    irregulier.ajouterPoint(Vecteur(6,-1));
-    irregulier.ajouterPoint(Vecteur(3,1));
+    Polygone irregulier(Point(-1,2),Point(7,5),Point(4,3));
+    irregulier.ajouterPoint(Point(6,-1));
+    irregulier.ajouterPoint(Point(3,1));
 
 
 
@@ -28,11 +27,11 @@ CPPTEST(TestPolygone)
 
 
     TESTCASE(rotationSimple,{
-         equals(*p.rotation(origine,Angle(90))->getCoordEntiere() , Polygone(origine,pRot90,Vecteur(-1,0)));
-     });
+        equals( *Polygone(*p.rotation(origine,Angle(90))).getCoordEntiere() , Polygone(origine,pRot90,Point(-1,0)));
+    });
 
     TESTCASE(translationSimple,{
-         equals(*p.translation(Vecteur(origine,pUn)),Polygone(pUn,Vecteur(2,2),Vecteur(1,2)));
+         equals(*p.translation(Vecteur(origine,pUn)),Polygone(pUn,Point(2,2),Point(1,2)));
      });
 
     TESTCASE(homothetieSimple, {

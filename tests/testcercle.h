@@ -8,10 +8,10 @@
 CPPTEST(TestCercle)
 
 
-    Vecteur origine(0,0);
-    Vecteur pUn(1,1);
-    Vecteur pZeroUn(0,1);
-    Vecteur pRot90(-1,1);
+    Point origine(0,0);
+    Point pUn(1,1);
+    Point pZeroUn(0,1);
+    Point pRot90(-1,1);
     Cercle un(origine,5);
 
 
@@ -20,7 +20,7 @@ CPPTEST(TestCercle)
     });
 
     TESTCASE(rotationSimple,{
-         equals(*un.rotation(pUn,Angle(90))->getCoordEntiere() , Cercle(Vecteur(2,0),un.getRayon()));
+         equals(*un.rotation(pUn,Angle(90))->getCoordEntiere() , Cercle(Point(2,0),un.getRayon()));
      });
 
     TESTCASE(translationSimple,{

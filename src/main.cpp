@@ -19,27 +19,28 @@ int main(){
     TestLauncher1 test;
     test.run();
 
-    Segment s(Couleurs::Couleur::red,Vecteur(1,2),Vecteur(50,50));
-    Segment s2(Couleurs::Couleur::red,Vecteur(150,300),Vecteur(50,50));
-    Triangle t(Couleurs::Couleur::red,Vecteur(300,300),Vecteur(50,50),Vecteur(300,50));
+    Segment s(Couleurs::red,Point(1,2),Point(50,50));
+    Segment s2(Couleurs::Couleur::red,Point(150,300),Point(50,50));
+    Triangle t(Couleurs::Couleur::red,Point(300,300),Point(50,50),Point(300,50));
 
-    Cercle c(Vecteur(0,0),90);
-    Polygone p(Couleurs::Couleur::yellow,Vecteur(500,10),Vecteur(400,100),Vecteur(400,490));
-    p.ajouterPoint(Vecteur(500,490));
-    p.ajouterPoint(Vecteur(600,250));
+    Cercle c(Point(0,0),90);
+    Polygone p(Couleurs::Couleur::yellow, Point(500,10),Point(400,100),Point(400,490));
+    p.ajouterPoint(Point(500,490));
+    p.ajouterPoint(Point(600,250));
 
     Groupe g;
-    Groupe g2;
 
     g.ajouter(&p);
     g.ajouter(&s);
     g.ajouter(&s2);
-    g2.ajouter(&t);
-    g2.ajouter(&c);
-    g.ajouter(&g2);
+    g.ajouter(&t);
+    g.ajouter(&c);
+  //  g.ajouter(&g2);
 
-   Connexion* connexion= new Connexion("127.0.0.1",9111);
-   g.dessin(DessinManager(connexion));
+//   Connexion* connexion= new Connexion("127.0.0.1",9111);
+   Groupe g2(*g.translation(Vecteur(1,1)));
+
+ //  g.dessin(DessinManager(connexion));
 /*
     s.sauvegarder("lolilol");
     t.sauvegarder("tritri");

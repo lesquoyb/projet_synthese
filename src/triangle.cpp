@@ -32,7 +32,7 @@ Triangle* Triangle::rotation(const Point &p, const Angle &angle)const{
     return new Triangle(*_p1.rotation(p,angle),*_p2.rotation(p,angle),*_p3.rotation(p,angle));
 }
 
-Triangle* Triangle::homothetie(const Point &p, const double scale)const{
+Triangle* Triangle::homothetie(const Point &p, const double &scale)const{
     return new Triangle(*_p1.homothetie(p,scale),*_p2.homothetie(p,scale),*_p3.homothetie(p,scale));
 }
 

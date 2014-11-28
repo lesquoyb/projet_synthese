@@ -29,7 +29,7 @@ public:
             double rayon = stod(valeurs[3].c_str());
             Couleurs::Couleur couleur = Couleurs::hexaToCouleur(valeurs[0]);
             if(couleur != Couleurs::nbCouleurs){
-                return new Cercle(couleur,Vecteur(x1,y1),rayon);
+                return new Cercle(couleur,Point(x1,y1),rayon);
             }
         }
         return NULL;

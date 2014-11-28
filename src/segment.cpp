@@ -31,7 +31,7 @@ Segment* Segment::rotation(const Point &p, const Angle &angle)const{
     return new Segment(_couleur,*_p1.rotation(p,angle),*_p2.rotation(p,angle));
 }
 
-Segment* Segment::homothetie(const Point &p, const double scale)const{
+Segment* Segment::homothetie(const Point &p, const double &scale)const{
     Point p1 = *_p1.homothetie(p,scale);
     Point p2 = *_p2.homothetie(p,scale);
     return new Segment(_couleur,p1,p2);

@@ -32,7 +32,7 @@ public:
             double y3 = stod(valeurs[6].c_str());
             Couleurs::Couleur couleur = Couleurs::hexaToCouleur(valeurs[0]);
             if(couleur != Couleurs::nbCouleurs){
-                return new Triangle(couleur,Vecteur(x1,y1),Vecteur(x2,y2),Vecteur(x3,y3));
+                return new Triangle(couleur,Point(x1,y1),Point(x2,y2),Point(x3,y3));
             }
         }
 
