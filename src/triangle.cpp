@@ -2,18 +2,23 @@
 
 
 Triangle::Triangle(const Point &p1, const Point &p2, const Point &p3):
-FormeGeom(),
-_p1(p1),
-_p2(p2),
-_p3(p3)
-{}
+    FormeGeom(),
+    _p1(p1),
+    _p2(p2),
+    _p3(p3)
+    {}
 
 Triangle::Triangle(const Couleurs::Couleur &couleur, const Point &p1, const Point &p2, const Point &p3):
-FormeGeom(couleur),
-_p1(p1),
-_p2(p2),
-_p3(p3)
-{}
+    FormeGeom(couleur),
+    _p1(p1),
+    _p2(p2),
+    _p3(p3)
+    {}
+
+Triangle* Triangle::clone()const{
+    return new Triangle(*this);
+}
+
 
 /**
  * @brief Triangle::aire

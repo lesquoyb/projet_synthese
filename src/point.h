@@ -22,8 +22,7 @@ public:
     explicit Point(const Vecteur&);
     explicit Point(double x, double y);
 
-    Vecteur getCoord()const {return _coord;}
-
+    inline Vecteur getCoord()const;
     inline double getX()const;
     inline double getY()const;
 
@@ -34,9 +33,11 @@ public:
     virtual Point* translation(const Vecteur &v)const;
     virtual string toString()const;
 
+    virtual ~Point(){}
+
 };
 
-
+inline Vecteur Point::getCoord()const {return _coord;}
 inline double Point::getX()const{return _coord.getX();}
 inline double Point::getY()const{return _coord.getY();}
 

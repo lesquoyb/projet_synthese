@@ -13,33 +13,17 @@ public:
     Groupe(const Couleurs::Couleur &coul);
     Groupe();
 
-    vector<FormeGeom*> getComposants()const {return _composants;}
 
-    virtual void ajouter(FormeGeom *f){
-        //TODO: tester
-        if(f != NULL){
-            if(f->appartientA() != this){
-                if(f->appartientA() != NULL ){
-                    f->appartientA()->enlever(f);
-                }
-                f->setAppartientA(this);
-                f->setCouleur(_couleur);
-                _composants.push_back(f);
-            }
-        }
-    }
+    virtual void ajouter(FormeGeom *f);
 
 
     void supprimer(const double &index);
     void enlever(const FormeGeom* forme);
 
 
-
-    int getNbElem()const{return _composants.size();}
-    FormeGeom* get(int i)const {return _composants.at(i);}
+    inline FormeGeom* get(size_t i)const ;
 
     virtual string toString()const;
-    virtual Groupe* getCoordEntiere()const;
 
     virtual void dessin(const Dessinable&d)const;
     virtual double aire() const;
@@ -48,5 +32,19 @@ public:
     virtual ~Groupe();
 
 };
+
+
+/**
+ * @brief get
+ * @param i
+ * @return l'objet à la position i, NULL si la position est mauvaise.
+ * Attention ne pas détruire l'objet avant que le groupe ne soit lui même détruit.
+ */
+inline FormeGeom* Groupe::get(size_t i)const {
+    if( i < _composants.size() ) {
+        return _composants.at(i);
+    }
+    return NULL;
+}
 
 #endif // GROUPE_H

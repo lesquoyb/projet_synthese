@@ -10,6 +10,7 @@
 #include "testgroupe.h"
 #include "testvecteur.h"
 #include "testangle.h"
+#include "testforme.h"
 
 
 TESTLAUNCHER(TestLauncher1)
@@ -23,6 +24,7 @@ TESTLAUNCHER(TestLauncher1)
     addTest(new TestGroupe());
     addTest(new TestVecteur());
     addTest(new TestAngle());
+    addTest(new TestForme());
 
 ENDLAUNCHER
 

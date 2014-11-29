@@ -14,30 +14,20 @@ Groupe::Groupe(const FormeComposee<FormeGeom,Groupe> &f):
 Groupe::Groupe():FormeComposee<FormeGeom,Groupe>(){}
 
 
-/*
-Groupe* Groupe::rotation(const Point &p, const Angle &angle)const{
-    //TODO: avec for_each
-	Groupe* ret = new Groupe(_couleur);
-    for(FormeGeom* f:_composants){
-        ret->ajouter(f->rotation(p,angle));
-    }
-	return ret;
-}
-*/
-/*
-void Groupe::ajouter(const FormeGeom* f){
-    //TODO: tester
-    if(f != NULL){
-        if(f->appartientA() != this){
-            if(f->appartientA() != NULL ){
-                f->appartientA()->enlever(f);
+
+void Groupe::ajouter(FormeGeom* f){
+        //TODO: tester
+        if(f != NULL){
+            if(f->appartientA() != this){
+                if(f->appartientA() != NULL ){
+                    f->appartientA()->enlever(f);
+                }
+                f->setAppartientA(this);
+                f->setCouleur(_couleur);
+                _composants.push_back(f);
             }
-            f->setCouleur(_couleur);
-            _composition.push_back(f);
         }
     }
-}
-*/
 
 
 /**
@@ -72,12 +62,6 @@ void Groupe::supprimer(const double &index){
 
 
 
-
-Groupe* Groupe::getCoordEntiere()const{
-    //TODO
-    return new Groupe(*this);
-}
-
 double Groupe::aire() const{
     double aire = 0;
     for_each(_composants.begin(),_composants.end(), [&aire](FormeGeom* f ) { aire += f->aire(); } );
@@ -88,14 +72,8 @@ double Groupe::aire() const{
 
 
 Groupe::Groupe(const Groupe &g):
-FormeComposee<FormeGeom,Groupe>(g._couleur)
-{
-     for (size_t i = 0; i < g._composants.size(); ++i){
-        FormeGeom* f1 = g._composants[i];
-        FormeGeom* f = f1->clone();
-         _composants.push_back(f);
-     }
-}
+    FormeComposee<FormeGeom,Groupe>(g._couleur)
+    {}
 
 
 void Groupe::dessin(const Dessinable &d) const{
@@ -108,16 +86,9 @@ void Groupe::dessin(const Dessinable &d) const{
 
 /**
  * @brief Groupe::~Groupe
- * Supprime tous les objets dans le groupe pour éviter les fuites mémoires qui peuvent être causée en faisant: "groupe.ajouter(new Segment(... , ... ));".
+ * Rien à faire car les objets dans le groupe doivent être gérés en dehors de celui-ci.
  */
-Groupe::~Groupe(){
-    //TODO:tester
-    /*
-    for(FormeGeom* f : _composition){
-        delete f;
-    }
-    */
-}
+Groupe::~Groupe(){}
 
 string Groupe::toString()const{
     ostringstream ser;

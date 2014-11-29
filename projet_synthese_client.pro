@@ -80,7 +80,8 @@ HEADERS  += src/Couleur.h \
     src/chargementCOR/chargementgroupe.h \
     src/tools.h \
     src/objetgeom.h \
-    src/formecomposee.h
+    src/formecomposee.h \
+    tests/testforme.h
 
 FORMS    += src/mainwindow.ui
 

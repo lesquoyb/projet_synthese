@@ -37,10 +37,10 @@ int main(){
     g.ajouter(&c);
   //  g.ajouter(&g2);
 
-//   Connexion* connexion= new Connexion("127.0.0.1",9111);
+   Connexion* connexion= new Connexion("127.0.0.1",9111);
    Groupe g2(*g.translation(Vecteur(1,1)));
 
- //  g.dessin(DessinManager(connexion));
+   g.dessin(DessinManager(connexion));
 /*
     s.sauvegarder("lolilol");
     t.sauvegarder("tritri");

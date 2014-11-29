@@ -25,7 +25,7 @@ public:
                 valeurs[i] = trim(valeurs[i]);
             }
 
-            if ( (valeurs.size() > 7 ) && ( ( valeurs.size() % 2) == 1 ) ){
+            if ( (valeurs.size() >= 7 ) && ( ( valeurs.size() % 2) == 1 ) ){
                 Couleurs::Couleur couleur = Couleurs::hexaToCouleur(valeurs[0]);
 
                 double x1 = stod(valeurs[1].c_str());

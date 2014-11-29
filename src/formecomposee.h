@@ -28,8 +28,9 @@ public:
     }
 
 
-    vector<C*> getComposants()const{return _composants;}
+    inline int getNbElem()const;
 
+    inline vector<C*> getComposants()const;
 
     virtual FormeComposee<C,T>* rotation(const Point &p, const Angle &angle) const{
             //TODO: avec for_each
@@ -45,7 +46,7 @@ public:
     virtual FormeComposee<C,T>* homothetie(const Point &p, const double &d) const{
         T* g2 = new T(*this);
         int i = 0;
-        for_each(_composants.begin(),_composants.end(),[&,p,&g2,d,&i](C* f) { g2->_composants[i] = f->homothetie(p,d); i++; });
+        for_each(_composants.begin(),_composants.end(),[&](C* f) { g2->_composants[i] = f->homothetie(p,d); i++; });
         return g2;
     }
 
@@ -53,11 +54,19 @@ public:
     virtual FormeComposee<C,T>* translation(const Vecteur &v) const{
         T* g2 = new T(*this);
         int i = 0;
-        for_each(_composants.begin(),_composants.end(),[&,v,&g2,&i](C* f) { g2->_composants[i] = f->translation(v);  i++;});
+        for_each(_composants.begin(),_composants.end(),[&](C* f) { g2->_composants[i] = f->translation(v);  i++;});
         return g2;
     }
 
 
 
 };
+
+template<class C,class T>
+inline int FormeComposee<C,T>::getNbElem()const{return _composants.size();}
+
+template<class C, class T>
+inline vector<C*> FormeComposee<C,T>::getComposants()const {return _composants;}
+
+
 #endif // FORMECOMPOSEE_H

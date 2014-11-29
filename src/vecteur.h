@@ -35,7 +35,7 @@ public:
 
    inline const Vecteur operator- (const Vecteur &v)const;
 
-   inline const double operator *(const Vecteur &v)const;
+   inline double operator *(const Vecteur &v)const;
 
    inline const Vecteur operator* (const double &a)const;
 
@@ -75,7 +75,7 @@ inline const Vecteur Vecteur::operator- (const Vecteur &v)const{
     return *this+ -v;
 }
 
-const double Vecteur::operator* (const Vecteur &v)const{
+double Vecteur::operator* (const Vecteur &v)const{
     return (_x * v._x + _y * v._y) ;
 }
 
