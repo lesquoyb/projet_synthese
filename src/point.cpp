@@ -1,6 +1,7 @@
 #include "point.h"
 #include "matricecarree2.h"
 #include "vecteur.h"
+#include <sstream>
 
 
 Point::Point(const Vecteur &v):
@@ -42,11 +43,13 @@ Point* Point::translation(const Vecteur &v)const{
     return new Point(v + _coord);
 }
 
+string Point::toString() const{
+    std::ostringstream oss;
+    oss << _coord.getX() << ", " << _coord.getY();
+    return oss.str();
+}
+
 double Point::getDist(const Point &p)const{
     return Vecteur(*this,p).norme();
 }
 
-
-bool Point::operator==(const Point &p)const{
-    return p._coord == _coord;
-}

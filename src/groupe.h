@@ -5,10 +5,6 @@
 
 class Groupe : public  FormeComposee<FormeGeom,Groupe>{
 
-private:
-
-
-   // vector<FormeGeom*> _composants;
 
 public:
 
@@ -45,19 +41,11 @@ public:
     virtual string toString()const;
     virtual Groupe* getCoordEntiere()const;
 
-  //  virtual Groupe* rotation(const Point &p,const Angle &angle)const;
-    virtual Groupe* homothetie(const Point &p,const double &d)const;
-    virtual Groupe* translation(const Vecteur&v)const;
     virtual void dessin(const Dessinable&d)const;
     virtual double aire() const;
 
     virtual Groupe* clone()const{return new Groupe(*this);}
     virtual ~Groupe();
-
-    friend ostream& operator<<(ostream&,const Groupe &g);
-
-
-
 
 };
 

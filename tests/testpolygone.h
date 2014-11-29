@@ -27,15 +27,15 @@ CPPTEST(TestPolygone)
 
 
     TESTCASE(rotationSimple,{
-        equals( *Polygone(*p.rotation(origine,Angle(90))).getCoordEntiere() , Polygone(origine,pRot90,Point(-1,0)));
+        equals( Polygone(*p.rotation(origine,Angle(90))).toString() , Polygone(origine,pRot90,*pZeroUn.rotation(origine,Angle(90))).toString());
     });
 
     TESTCASE(translationSimple,{
-         equals(*p.translation(Vecteur(origine,pUn)),Polygone(pUn,Point(2,2),Point(1,2)));
+         equals(Polygone(*p.translation(Vecteur(origine,pUn))).toString(),Polygone(pUn,Point(2,2),Point(1,2)).toString());
      });
 
     TESTCASE(homothetieSimple, {
-         equals(*p.homothetie(origine,1), p);
+         equals(Polygone(*p.homothetie(origine,1)).toString(), p.toString());
      });
 
     TESTCASE(toString,{

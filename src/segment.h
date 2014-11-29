@@ -25,9 +25,6 @@ public:
     virtual Segment* clone()const{return new Segment(*this);}
     virtual void dessin(const Dessinable&) const;
 
-    virtual Segment *getCoordEntiere()const;
-    friend bool operator==(const Segment&s, const Segment &s2);
-    friend ostream& operator<<(ostream & , const Segment&s);
 
 
 };

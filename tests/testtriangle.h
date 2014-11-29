@@ -10,6 +10,7 @@ CPPTEST(TestTriangle)
     Point pUn(1,1);
     Point pZeroUn(0,1);
     Point pRot90(-1,1);
+    Point p3Rot = *pZeroUn.rotation(origine,Angle(90));
     Triangle un(origine,pUn,pZeroUn);
 
 
@@ -18,15 +19,15 @@ CPPTEST(TestTriangle)
     });
 
     TESTCASE(rotationSimple,{
-         equals(*un.rotation(origine,Angle(90))->getCoordEntiere() , Triangle(origine,pRot90,Point(-1,0)));
+         equals(un.rotation(origine,Angle(90))->toString() , Triangle(origine,pRot90,p3Rot).toString());
      });
 
     TESTCASE(translationSimple,{
-         equals(*un.translation(Vecteur(origine,pUn)),Triangle(pUn,Point(2,2),Point(1,2)));
+         equals(un.translation(Vecteur(origine,pUn))->toString(),Triangle(pUn,Point(2,2),Point(1,2)).toString());
      });
 
     TESTCASE(homothetieSimple, {
-         equals(*un.homothetie(origine,1), un);
+         equals(un.homothetie(origine,1)->toString(), un.toString());
      });
 
     TESTCASE(toString,{

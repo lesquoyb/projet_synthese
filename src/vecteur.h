@@ -45,7 +45,6 @@ public:
 
    operator std::string()const;
 
-   Vecteur getCoordEntieres()const{return Vecteur(round(_x),round(_y));} //TODO supprimer
 
 };
 

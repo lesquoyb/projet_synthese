@@ -14,19 +14,6 @@ _p2(p2)
 {}
 
 
-bool operator==(const Segment&s, const Segment &s2){
-    return (s._p1 == s2._p1) && (s._p2  == s2._p2) && (s._couleur == s2._couleur);
-}
-
-Segment* Segment::getCoordEntiere()const{
-    return new Segment(this->_couleur, this->_p1.getCoordEntieres(),this->_p2.getCoordEntieres());
-}
-
-ostream& operator<<(ostream & stream, const Segment&s){
-    stream << "couleur: " << s._couleur <<" p1: " << s._p1 << " p2: " << s._p2;
-    return stream;
-}
-
 Segment* Segment::rotation(const Point &p, const Angle &angle)const{
     return new Segment(_couleur,*_p1.rotation(p,angle),*_p2.rotation(p,angle));
 }

@@ -74,11 +74,6 @@ int main(){
     }
 */
 
-    Point p1(2,1);
-    cout << "point départ: " << p1 << endl;
-    cout << "homothétie (-2,5) echelle 0.5" << endl;
-    cout << "arrivée: " << *(p1.homothetie(Point(-2,5),0.5)) << endl;
-
 
 
 /*

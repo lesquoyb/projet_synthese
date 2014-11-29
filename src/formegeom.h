@@ -40,7 +40,6 @@ public:
 
     virtual ~FormeGeom(){}
 
-    virtual FormeGeom* getCoordEntiere()const = 0;
     virtual string toString()const = 0;
     virtual FormeGeom* rotation(const Point &p, const Angle& angle)const = 0;
     virtual FormeGeom* homothetie(const Point &p, const double &scale)const = 0;

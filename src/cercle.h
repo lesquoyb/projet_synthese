@@ -19,7 +19,6 @@ public:
     double getRayon()const{return _rayon;}
 
     virtual string toString()const;
-    virtual Cercle* getCoordEntiere()const;
     virtual double aire()const ;
     virtual Cercle* rotation(const Point &p, const Angle& angle) const;
     virtual Cercle* homothetie(const Point &p, const double &scale)const ;
@@ -27,8 +26,6 @@ public:
     virtual void dessin(const Dessinable&)const;
     virtual Cercle* clone()const{return new Cercle(*this);}
 
-    friend bool operator==(const Cercle &t,const Cercle &t2);
-    friend ostream& operator<<(ostream & stream, const Cercle &t);
 };
 
 #endif // CERCLE_H

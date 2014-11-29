@@ -20,15 +20,12 @@ public:
 
     virtual double aire()const;
     virtual string toString()const ;
-    virtual Triangle* getCoordEntiere()const;
     virtual Triangle* rotation(const Point &p, const Angle& angle)const;
     virtual Triangle* homothetie(const Point &p, const double &scale)const;
     virtual Triangle* translation(const Vecteur& v)const;
     virtual Triangle* clone()const{return new Triangle(*this);}
     virtual void dessin(const Dessinable&)const;
 
-    friend bool operator==(const Triangle &t,const Triangle &t2);
-    friend ostream& operator<<(ostream & stream, const Triangle &t);
 
 };
 

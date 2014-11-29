@@ -51,21 +51,6 @@ string Triangle::toString()const {
     return ser.str(); // on enlève 2 car c'est la taille du dernier ", "
 }
 
-Triangle* Triangle::getCoordEntiere()const{
-    return new Triangle(_p1.getCoordEntieres(),_p2.getCoordEntieres(),_p3.getCoordEntieres());
-}
-
-bool operator==(const Triangle &t,const Triangle &t2){
-    return (t._couleur == t2._couleur) && (t._p1 == t2._p1) && (t._p2 == t2._p2) && (t._p3 == t2._p3);
-}
-
-
-ostream& operator<<(ostream & stream, const Triangle &t){
-    stream << t.toString();
-    return stream;
-}
-
-
 
 
 

@@ -102,19 +102,6 @@ void Groupe::dessin(const Dessinable &d) const{
     for_each(_composants.begin(),_composants.end(),[&d](FormeGeom* f) {f->dessin(d);});
 }
 
-Groupe* Groupe::homothetie(const Point &p, const double &d) const{
-    Groupe* g2 = new Groupe(_couleur);
-    for_each(_composants.begin(),_composants.end(),[&,p,g2,d](FormeGeom* f) {g2->ajouter(f->homothetie(p,d));});
-    return g2;
-}
-Groupe* Groupe::translation(const Vecteur &v) const{
-    Groupe* g2 = new Groupe(_couleur);
-    for_each(_composants.begin(),_composants.end(),[&,v,g2](FormeGeom* f) {
-        FormeGeom* f1 = f->translation(v);
-        g2->ajouter(f1);
-    });
-    return g2;
-}
 
 
 
@@ -141,10 +128,6 @@ string Groupe::toString()const{
     return ser.str() + ")";
 }
 
-ostream& operator<<(ostream &stream,const Groupe &g){
-    stream << g.toString();
-    return stream;
-}
 
 
 

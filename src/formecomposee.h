@@ -14,9 +14,10 @@ protected:
 
 public:
 
-    vector<C*> getComposants()const{return _composants;}
     FormeComposee():FormeGeom(){}
+
     FormeComposee(const Couleurs::Couleur &couleur):FormeGeom(couleur){}
+
     FormeComposee(const Couleurs::Couleur &couleur, const vector<C*> &comp):
         FormeComposee(couleur)
     {
@@ -25,6 +26,9 @@ public:
             _composants.push_back(temp);
         }
     }
+
+
+    vector<C*> getComposants()const{return _composants;}
 
 
     virtual FormeComposee<C,T>* rotation(const Point &p, const Angle &angle) const{
@@ -37,6 +41,22 @@ public:
             }
             return ret;
     }
+
+    virtual FormeComposee<C,T>* homothetie(const Point &p, const double &d) const{
+        T* g2 = new T(*this);
+        int i = 0;
+        for_each(_composants.begin(),_composants.end(),[&,p,&g2,d,&i](C* f) { g2->_composants[i] = f->homothetie(p,d); i++; });
+        return g2;
+    }
+
+
+    virtual FormeComposee<C,T>* translation(const Vecteur &v) const{
+        T* g2 = new T(*this);
+        int i = 0;
+        for_each(_composants.begin(),_composants.end(),[&,v,&g2,&i](C* f) { g2->_composants[i] = f->translation(v);  i++;});
+        return g2;
+    }
+
 
 
 };

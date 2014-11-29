@@ -24,33 +24,17 @@ public:
 
     Vecteur getCoord()const {return _coord;}
 
-
-
-    bool operator==(const Point &p)const;
-
-
-
-    friend ostream& operator<<(ostream& , const Point &);
-
-    inline Point getCoordEntieres()const;
     inline double getX()const;
     inline double getY()const;
 
     double getDist(const Point &p)const;
 
-
-
-
     virtual Point* rotation(const Point &p, const Angle &a) const;
     virtual Point* homothetie(const Point &p,const double &scale) const;
     virtual Point* translation(const Vecteur &v)const;
-
+    virtual string toString()const;
 
 };
-
-inline Point Point::getCoordEntieres()const{
-    return Point(round(_coord.getX()),round(_coord.getY()));
-}
 
 
 inline double Point::getX()const{return _coord.getX();}

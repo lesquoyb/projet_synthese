@@ -17,15 +17,15 @@ CPPTEST(TestSegment)
     });
 
     TESTCASE(rotationSimple,{
-         equals(*un.rotation(origine,Angle(90))->getCoordEntiere() , Segment(origine,pRot90));
+         equals(un.rotation(origine,Angle(90))->toString() , Segment(origine,pRot90).toString());
      });
 
     TESTCASE(translationSimple,{
-         equals(*un.translation(Vecteur(origine,pUn)),Segment(pUn,Point(2,2)));
+         equals(un.translation(Vecteur(origine,pUn))->toString(),Segment(pUn,Point(2,2)).toString());
      });
 
     TESTCASE(homothetieSimple, {
-         equals(*un.homothetie(origine,1), un);
+         equals(un.homothetie(origine,1)->toString(), un.toString());
      });
 
     TESTCASE(toString,{
