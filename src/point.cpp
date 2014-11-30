@@ -36,7 +36,10 @@ Point* Point::rotation(const Point &p, const Angle &a) const{
 }
 
 Point* Point::homothetie(const Point &p, const double &scale) const{
-    return new Point(*p.translation(scale* Vecteur(p,*this)));
+    Point* p1 = p.translation(scale* Vecteur(p,*this));
+    Point* ret = new Point(*p1);
+    delete p1;
+    return ret;
 }
 
 Point* Point::translation(const Vecteur &v)const{

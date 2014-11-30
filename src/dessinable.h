@@ -9,7 +9,7 @@ class Triangle;
 
 /**
  * @brief The Dessinable class
- * Il s'agit d'une interface décrivant le comportement que doit avoir les classes de dessin.
+ * Il s'agit d'une interface décrivant le comportement que doivent avoir les classes de dessin.
  * Cette classe sers donc majoritairement à assurer l'évolutivité de l'application en indiquant
  * aux autres classes voulant dessiner les formes géometriques quelles méthodes elles doivent implémenter.
  */

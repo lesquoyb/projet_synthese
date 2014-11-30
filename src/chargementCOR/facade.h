@@ -18,6 +18,10 @@ public:
         return _first->traitement(_objet);
     }
 
+    ~Facade(){
+        delete _first;
+    }
+
 };
 
 #endif // FACADE_H

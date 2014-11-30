@@ -1,6 +1,11 @@
 #ifndef ANGLE_H
 #define ANGLE_H
 
+/**
+ * @brief The Angle class
+ * Classe représentant un angle.
+ * On l'instancie avec un angle exprimé en degré.
+ */
 class Angle{
 
 private:
@@ -11,6 +16,7 @@ public:
 
 
     static constexpr double PI= 3.14159265359;
+
 
     Angle(const double degre):_degre(degre){}
 

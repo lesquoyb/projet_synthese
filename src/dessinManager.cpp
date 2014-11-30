@@ -20,9 +20,10 @@ _connexion(c){}
 
 
 void DessinManager::dessinerTriangle(const Triangle &t) const{
-    cout << t.toString();
 
-    _connexion->envoyer(t.toString().c_str());
+    string message = t.toString();
+    cout << message;
+    _connexion->envoyer(message.c_str());
 
 	if (_connexion->recevoir() != 0){
 		cout << "le serveur a bien reçu le triangle" << endl;
@@ -35,9 +36,9 @@ void DessinManager::dessinerTriangle(const Triangle &t) const{
 
 
 void DessinManager::dessinerSegment(const Segment &s) const{
-    cout << s.toString();
-
-    _connexion->envoyer(s.toString().c_str());
+    string message = s.toString();
+    cout << message;
+    _connexion->envoyer(message.c_str());
 
 	if (_connexion->recevoir() != 0){
 		cout << "le serveur a bien reçu le segment" << endl;
@@ -51,9 +52,9 @@ void DessinManager::dessinerSegment(const Segment &s) const{
 
 
 void DessinManager::dessinerCercle(const Cercle &c) const{
-    cout << c.toString();
-
-    _connexion->envoyer(c.toString().c_str());
+    string message = c.toString();
+    cout << message;
+    _connexion->envoyer(message.c_str());
 
 	if (_connexion->recevoir() != 0){
 		cout << "le serveur a bien reçu le cercle" << endl;
@@ -65,9 +66,9 @@ void DessinManager::dessinerCercle(const Cercle &c) const{
 
 
 void DessinManager::dessinerPolygone(const Polygone &p) const{
-    cout << p.toString();
-
-    _connexion->envoyer(p.toString().c_str());
+    string message = p.toString();
+    cout << message;
+    _connexion->envoyer(message.c_str());
 
 	if (_connexion->recevoir() != 0){
 		cout << "le serveur a bien reçu le polygone" << endl;
@@ -80,8 +81,6 @@ void DessinManager::dessinerPolygone(const Polygone &p) const{
 
 
 
-DessinManager::~DessinManager(){
-	//TODO
-}
+DessinManager::~DessinManager(){}
 
 

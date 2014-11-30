@@ -18,12 +18,16 @@ bool Connexion::initialisee = false;
 * Il ne faut pas ajouter "\r\n" à la fin du message, la fonction s'en charge.
 */
 void Connexion::envoyer(const char *message)const{
-    char* envoie = strcat(strdup(message), "\r\n");
-	int l = strlen(envoie);
-
-	if (send(_sock, envoie, l, 0) == SOCKET_ERROR){
+    char* temp = (char*) malloc(sizeof(char) * (strlen(message) + strlen("\r\n") +2) ); // +2 car il faut compter les \0
+    strcpy(temp,message);
+    strcat(temp, "\r\n");
+    char* envoie = strdup(temp);
+    int l = strlen(envoie);
+    if (send(_sock, envoie, l, 0) == SOCKET_ERROR){
 		throw Erreur("échec de l'envoi de la requête" + WSAGetLastError());
-	}
+    }
+    free(envoie);
+    free(temp);
 }
 
 
@@ -37,8 +41,8 @@ int Connexion::recevoir()const{
 	if (recv(_sock, reponse, 1, 0) == SOCKET_ERROR){
 		throw Erreur("La réception de la réponse a échoué");
 	}
-	cout << "reponse: " << reponse[0] << endl;
-	return atoi(reponse);
+    cout << "reponse: " << reponse[0] << endl;
+    return atoi(reponse);
 }
 
 

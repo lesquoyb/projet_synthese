@@ -34,6 +34,7 @@ public:
         init();
     }
 
+
 };
 
 #endif // CHARGEMENTFACADE_H

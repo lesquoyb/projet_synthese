@@ -45,6 +45,10 @@ public:
      */
     virtual retour* traitementSpecialise(aTraiter &objet) const = 0;
 
+    virtual ~ExpertCOR(){
+        delete suivant;
+    }
+
 
 };
 

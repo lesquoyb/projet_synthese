@@ -30,13 +30,6 @@ string Couleurs::couleurToHexa(const Couleur &couleur){
     return "#"+hexa[couleur];
 }
 
-
-/**
- * @brief Couleurs::hexaToCouleur
- * Attention si la couleur passée n'existe pas, on renvoi nbCouleur.
- * @param hexa
- * @return
- */
 Couleurs::Couleur Couleurs::hexaToCouleur(const string & hexa){
     string donnee = hexa;
     if(hexa.find("#") == 0 ){

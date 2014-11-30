@@ -42,7 +42,14 @@ Triangle* Triangle::homothetie(const Point &p, const double &scale)const{
 }
 
 Triangle* Triangle::translation(const Vecteur &v)const{
-    return new Triangle(*_p1.translation(v),*_p2.translation(v),*_p3.translation( v) );
+    Point* p1 = _p1.translation(v);
+    Point* p2 = _p2.translation(v);
+    Point* p3 = _p3.translation(v);
+    Triangle* t = new Triangle(*p1,*p2,*p3 );
+    delete p1;
+    delete p2;
+    delete p3;
+    return t;
 }
 
 void Triangle::dessin(const Dessinable &d) const{

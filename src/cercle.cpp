@@ -11,7 +11,10 @@ Cercle* Cercle::homothetie(const Point &p, const double &scale)const{
 }
 
 Cercle* Cercle::translation(const Vecteur &v)const{
-    return new Cercle(_couleur,*_centre.translation(v),_rayon);
+    Point* p = _centre.translation(v);
+    Cercle* c = new Cercle(_couleur,*p,_rayon);
+    delete p;
+    return c;
 }
 
 void Cercle::dessin(const Dessinable &d) const{

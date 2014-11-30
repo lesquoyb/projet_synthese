@@ -2,7 +2,10 @@
 #define CERCLE_H
 #include "formegeom.h"
 
-
+/**
+ * @brief The Cercle class
+ * Cette classe représente un cercle, c'est à dire un point pour le centre et un double représentant le rayon.
+ */
 class Cercle : public FormeGeom{
 
 private:
@@ -27,6 +30,8 @@ public:
     virtual double aire()const ;
     virtual void dessin(const Dessinable&)const;
     virtual Cercle* clone()const{return new Cercle(*this);}
+
+    virtual ~Cercle(){}
 
 };
 
