@@ -34,11 +34,25 @@ double Triangle::aire() const{
 }
 
 Triangle* Triangle::rotation(const Point &p, const Angle &angle)const{
-    return new Triangle(*_p1.rotation(p,angle),*_p2.rotation(p,angle),*_p3.rotation(p,angle));
+    Point* p1 = _p1.rotation(p,angle);
+    Point* p2 = _p2.rotation(p,angle);
+    Point* p3 = _p3.rotation(p,angle);
+    Triangle* t = new Triangle(*p1,*p2,*p3 );
+    delete p1;
+    delete p2;
+    delete p3;
+    return t;
 }
 
 Triangle* Triangle::homothetie(const Point &p, const double &scale)const{
-    return new Triangle(*_p1.homothetie(p,scale),*_p2.homothetie(p,scale),*_p3.homothetie(p,scale));
+    Point* p1 = _p1.homothetie(p,scale);
+    Point* p2 = _p2.homothetie(p,scale);
+    Point* p3 = _p3.homothetie(p,scale);
+    Triangle* t = new Triangle(*p1,*p2,*p3 );
+    delete p1;
+    delete p2;
+    delete p3;
+    return t;
 }
 
 Triangle* Triangle::translation(const Vecteur &v)const{

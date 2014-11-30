@@ -75,7 +75,10 @@ string Polygone::toString()const {
     for(Point* point : _composants){
         ser << point->toString() << ", ";
     }
-    return ser.str().substr(0,ser.str().length()- 2); // on enlève 2 car c'est la taille du dernier ", "
+    string message = ser.str();
+    int i = message.length() - 2 ; // on enlève 2 car c'est la taille du dernier ", "
+    string inter = message.substr(0, i);
+    return inter;
 }
 
 

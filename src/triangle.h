@@ -28,6 +28,8 @@ public:
     virtual Triangle* clone()const;
     virtual void dessin(const Dessinable&)const;
 
+    virtual ~Triangle(){}
+
 
 };
 

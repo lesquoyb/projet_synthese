@@ -81,6 +81,5 @@ void DessinManager::dessinerPolygone(const Polygone &p) const{
 
 
 
-DessinManager::~DessinManager(){}
 
 

@@ -10,6 +10,7 @@
 
 #include "dessinManager.h"
 #include "formegeom.h"
+#include "groupe.h"
 
 #include "tests/testlauncher.h"
 
@@ -30,11 +31,11 @@ int main(){
 
     Groupe g;
 
-    g.ajouter(&p);
-    g.ajouter(&s);
-    g.ajouter(&s2);
-    g.ajouter(&t);
-    g.ajouter(&c);
+    g.ajouter(p);
+    g.ajouter(s);
+    g.ajouter(s2);
+    g.ajouter(t);
+    g.ajouter(c);
   //  g.ajouter(&g2);
 
    Connexion* connexion= new Connexion("127.0.0.1",9111);

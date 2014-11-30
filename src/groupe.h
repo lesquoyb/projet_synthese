@@ -3,6 +3,12 @@
 #include "formecomposee.h"
 #include <vector>
 
+/**
+ * @brief The Groupe class
+ * Un groupe est un ensemble de formes composées.
+ * Chaque forme le constituant est une copie de la forme originale.
+ * L'ajout d'une forme dans un groupe change sa couleur pour celle du groupe.
+ */
 class Groupe : public  FormeComposee<FormeGeom,Groupe>{
 
 
@@ -14,7 +20,7 @@ public:
     Groupe();
 
 
-    virtual void ajouter(FormeGeom *f);
+    virtual void ajouter(const FormeGeom &f);
 
 
     void supprimer(const double &index);

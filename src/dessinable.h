@@ -22,6 +22,7 @@ public:
     virtual void dessinerTriangle(const Triangle &t)const = 0;
     virtual void dessinerSegment(const Segment &s)const = 0;
     virtual void dessinerPolygone(const Polygone &p)const = 0;
+    virtual ~Dessinable(){}
 
 };
 

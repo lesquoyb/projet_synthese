@@ -47,6 +47,8 @@ public:
 
     friend ostream& operator<< (ostream& , const Couleur &c);
 
+    virtual ~Couleurs(){}
+
 
 
 private:

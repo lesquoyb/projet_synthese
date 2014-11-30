@@ -19,7 +19,7 @@ Point::Point(const Point &p):
 
 
 ostream& operator<<(ostream& stream,const Point& p ){
-    stream << "x: " << p.getX() << ",y: " << p.getY();
+    stream << p.toString();
     return stream;
 }
 
@@ -36,10 +36,7 @@ Point* Point::rotation(const Point &p, const Angle &a) const{
 }
 
 Point* Point::homothetie(const Point &p, const double &scale) const{
-    Point* p1 = p.translation(scale* Vecteur(p,*this));
-    Point* ret = new Point(*p1);
-    delete p1;
-    return ret;
+    return  p.translation(scale* Vecteur(p,*this));
 }
 
 Point* Point::translation(const Vecteur &v)const{

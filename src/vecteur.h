@@ -45,6 +45,7 @@ public:
 
    operator std::string()const;
 
+   virtual ~Vecteur(){}
 
 };
 

@@ -59,6 +59,8 @@ public:
     }
 
 
+    virtual ~FormeComposee<C,T>(){}
+
 
 };
 

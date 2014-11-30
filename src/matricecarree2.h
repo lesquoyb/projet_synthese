@@ -23,6 +23,8 @@ public:
     static inline MatriceCarree2 getMatriceRotation(const Angle &a);
     static const MatriceCarree2 matriceIdentitee;
 
+    virtual ~MatriceCarree2(){}
+
 };
 
 

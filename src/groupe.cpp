@@ -15,18 +15,23 @@ Groupe::Groupe():FormeComposee<FormeGeom,Groupe>(){}
 
 
 
-void Groupe::ajouter(FormeGeom* f){
+void Groupe::ajouter(const FormeGeom &f){
         //TODO: tester
-        if(f != NULL){
-            if(f->appartientA() != this){
+        //if(f != NULL){
+            FormeGeom* temp = f.clone();
+            temp->setCouleur(_couleur);
+            _composants.push_back(temp);
+           /* if(f->appartientA() != this){
                 if(f->appartientA() != NULL ){
                     f->appartientA()->enlever(f);
                 }
                 f->setAppartientA(this);
+
                 f->setCouleur(_couleur);
-                _composants.push_back(f);
-            }
-        }
+                _composants.push_back(f->clone());
+                                */
+           // }
+        //}
     }
 
 
@@ -88,7 +93,11 @@ void Groupe::dessin(const Dessinable &d) const{
  * @brief Groupe::~Groupe
  * Rien à faire car les objets dans le groupe doivent être gérés en dehors de celui-ci.
  */
-Groupe::~Groupe(){}
+Groupe::~Groupe(){
+    for(FormeGeom* f : _composants){
+        delete f;
+    }
+}
 
 string Groupe::toString()const{
     ostringstream ser;

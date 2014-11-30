@@ -3,11 +3,17 @@
 
 
 Cercle* Cercle::rotation(const Point &p, const Angle &angle)const{
-    return new Cercle(_couleur,*_centre.rotation(p,angle),_rayon);
+    Point* c = _centre.rotation(p,angle);
+    Cercle* ret = new Cercle(_couleur,*c,_rayon);
+    delete c;
+    return ret;
 }
 
 Cercle* Cercle::homothetie(const Point &p, const double &scale)const{
-    return new Cercle(_couleur,*_centre.homothetie(p,scale), abs(_rayon * scale));
+    Point* c = _centre.homothetie(p,scale);
+    Cercle* ret = new Cercle(_couleur,*c, abs(_rayon * scale));
+    delete c;
+    return ret;
 }
 
 Cercle* Cercle::translation(const Vecteur &v)const{
@@ -40,7 +46,7 @@ double Cercle::aire() const{
 
 string Cercle::toString()const{
     ostringstream oss;
-    oss << "cercle: " <<  _couleur << ", " <<  _centre.getX() << ", " <<  _centre.getY() << ", " <<  _rayon;
+    oss << "cercle: " <<  _couleur << ", " <<  _centre.toString() << ", " <<  _rayon;
     return oss.str();
 }
 

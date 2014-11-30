@@ -20,7 +20,7 @@ private:
 public:
 
     DessinManager(Connexion* c);
-	~DessinManager();
+    virtual ~DessinManager(){}
 
     void dessinerCercle(const Cercle &c)const;
     void dessinerTriangle(const Triangle &t)const;

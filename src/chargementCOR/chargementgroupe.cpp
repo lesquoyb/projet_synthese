@@ -28,13 +28,15 @@ Groupe* ChargementGroupe::traitementSpecialise(string &objet) const{
                      g2 += *j + ";";
                  }
                  g2 += *end;
-                 ChargementFacade f(g2);
-                 g->ajouter(f.run());
+                 FormeGeom* f = ChargementFacade(g2).run();
+                 g->ajouter(*f);
+                 delete f;
                  valeurs.erase(it, end+1 );
             }
             for(string objet : valeurs){
-                ChargementFacade facade(objet);
-                g->ajouter(facade.run());
+                FormeGeom* f = ChargementFacade(objet).run();
+                g->ajouter(*f);
+                delete f;
             }
             return g;
         }

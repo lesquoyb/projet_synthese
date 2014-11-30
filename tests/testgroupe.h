@@ -17,9 +17,9 @@ CPPTEST(TestGroupe)
         Angle droit(-90);
         Vecteur vUn(1,1);
         Groupe g;
-        g.ajouter(&seg);
-        g.ajouter(&tri);
-        g.ajouter(&cer);
+        g.ajouter(seg);
+        g.ajouter(tri);
+        g.ajouter(cer);
 
 
 
