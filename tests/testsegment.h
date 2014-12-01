@@ -13,23 +13,23 @@ CPPTEST(TestSegment)
 
 
     TESTCASE(aire,{
-        equals(un.aire(),0);
+        Equals(un.aire(),0);
     });
 
     TESTCASE(rotationSimple,{
-         equals(un.rotation(origine,Angle(90))->toString() , Segment(origine,pRot90).toString());
+         Equals(un.rotation(origine,Angle(90))->toString() , Segment(origine,pRot90).toString());
      });
 
     TESTCASE(translationSimple,{
-         equals(un.translation(Vecteur(origine,pUn))->toString(),Segment(pUn,Point(2,2)).toString());
+         Equals(un.translation(Vecteur(origine,pUn))->toString(),Segment(pUn,Point(2,2)).toString());
      });
 
     TESTCASE(homothetieSimple, {
-         equals(un.homothetie(origine,1)->toString(), un.toString());
+         Equals(un.homothetie(origine,1)->toString(), un.toString());
      });
 
     TESTCASE(toString,{
-         equals(un.toString(),"segment: #000000, 0, 0, 1, 1");
+         Equals(un.toString(),"segment: #000000, 0, 0, 1, 1");
      });
 
 ENDTEST

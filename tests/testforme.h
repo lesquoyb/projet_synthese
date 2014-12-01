@@ -23,20 +23,20 @@ Polygone p(origine,Point(1,1),Point(2,2));
 TESTCASE(testSauvCharSegment,{
             seg.sauvegarder("testSegment.test");
             std::unique_ptr<FormeGeom> s (FormeGeom::chargement("testSegment.test"));
-            equals(s->toString(),seg.toString());
+            Equals(s->toString(),seg.toString());
          });
 
 
 TESTCASE(testSauvCharTriangle,{
              tri.sauvegarder("testTriangle.test");
              std::unique_ptr<FormeGeom> s (FormeGeom::chargement("testTriangle.test"));
-             equals(s->toString(),tri.toString());
+             Equals(s->toString(),tri.toString());
          });
 
 TESTCASE(testSauvCharCercle,{
              cer.sauvegarder("testCercle.test");
              std::unique_ptr<FormeGeom> s (FormeGeom::chargement("testCercle.test"));
-             equals(s->toString(),cer.toString());
+             Equals(s->toString(),cer.toString());
          });
 
 TESTCASE(testSauvCharPolygone,{
@@ -44,13 +44,13 @@ TESTCASE(testSauvCharPolygone,{
              std::unique_ptr<FormeGeom> s (FormeGeom::chargement("testPoly.test"));
              cout << "p: " << p.toString();
              cout << endl << "charg: " << s->toString();
-             equals(s->toString(),p.toString());
+             Equals(s->toString(),p.toString());
          });
 
 TESTCASE(testSauvCharGroupe,{
              g.sauvegarder("testGroupe.test");
              std::unique_ptr<FormeGeom> s (FormeGeom::chargement("testGroupe.test"));
-             equals(s->toString(),g.toString());
+             Equals(s->toString(),g.toString());
          });
 
 ENDTEST

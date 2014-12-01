@@ -34,9 +34,25 @@ public:
     /**
      * @brief hexaToCouleur
      * @param hexa
-     * @return la couleur correspondant à la valeur hexadécimale passée en paramètre.
+     * @return la couleur correspondant à la valeur hexadécimale passée en paramètre. Retourne Couleur::nbCouleurs si la couleur n'est pas trouvée.
      */
     static Couleur hexaToCouleur(const string & hexa);
+
+    /**
+     * @brief stringToCouleur
+     * @param nom
+     * @return la couleur correspondant au nom de couleur passé en paramètre. Retourne Couleur::nbCouleurs si la couleur n'est pas trouvée.
+     */
+    static Couleur stringToCouleur(const string &nom);
+
+
+    /**
+     * @brief intToCouleur
+     * @param i
+     * @return la couleur correspondant à l'indice, si l'indice ne correspond à aucune couleur, on retourne Couleurs::nbCouleurs .
+     */
+    static Couleur intToCouleur(int i );
+
 
     /**
      * @brief isCouleur

@@ -8,11 +8,11 @@
 CPPTEST(TestCouleurs)
 
         TESTCASE(CouleurToStringTestTrue,{
-          equals(Couleurs::isCouleur("black") ,  true);
+          Equals(Couleurs::isCouleur("black") ,  true);
          });
 
         TESTCASE(CouleurToStringTestFalse, {
-            equals(Couleurs::isCouleur("violet"), false);
+            Equals(Couleurs::isCouleur("violet"), false);
         });
 
 

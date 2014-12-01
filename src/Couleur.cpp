@@ -48,3 +48,19 @@ Couleurs::Couleur Couleurs::hexaToCouleur(const string & hexa){
 string Couleurs::couleurToString(const Couleur &couleur){
     return couleurToHexa(couleur);
 }
+
+
+Couleurs::Couleur Couleurs::stringToCouleur(const string &nom){
+    int i = 0;
+    for(; i < nbCouleurs ; i++){
+        if(nom == correspondances[i]) break;
+    }
+    return static_cast<Couleur>(i);
+}
+
+Couleurs::Couleur Couleurs::intToCouleur(int i ){
+    return static_cast<Couleur>( ( (i>nbCouleurs) or (i<0)  ) ? nbCouleurs : i );
+}
+
+
+

@@ -18,23 +18,23 @@ CPPTEST(TestCercle)
 
 
     TESTCASE(aire,{
-        equals(round(un.aire()*10)/10,78.5);
+        Equals(round(un.aire()*10)/10,78.5);
     });
 
     TESTCASE(rotationSimple,{
-         equals(un.rotation(pUn,Angle(90))->toString() , Cercle(unRot,un.getRayon()).toString());
+         Equals(un.rotation(pUn,Angle(90))->toString() , Cercle(unRot,un.getRayon()).toString());
      });
 
     TESTCASE(translationSimple,{
-         equals(un.translation(Vecteur(origine,pUn))->toString(),Cercle(pUn,un.getRayon()).toString());
+         Equals(un.translation(Vecteur(origine,pUn))->toString(),Cercle(pUn,un.getRayon()).toString());
      });
 
     TESTCASE(homothetieSimple, {
-         equals(un.homothetie(origine,2)->toString(), Cercle(origine, un.getRayon()*2).toString());
+         Equals(un.homothetie(origine,2)->toString(), Cercle(origine, un.getRayon()*2).toString());
      });
 
     TESTCASE(toString,{
-         equals(un.toString(),"cercle: #000000, 0, 0, 5");
+         Equals(un.toString(),"cercle: #000000, 0, 0, 5");
      });
 
 ENDTEST

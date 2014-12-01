@@ -13,7 +13,7 @@ CPPTEST(TestPoint)
     Vecteur vUn(1,1);
 
     TESTCASE(rotationSimple,{
-         equals(un.rotation(origine,Angle(90))->toString() ,rot90.toString());
+         Equals(un.rotation(origine,Angle(90))->toString() ,rot90.toString());
     });
 
     TESTCASE(rotationFausse,{
@@ -21,23 +21,23 @@ CPPTEST(TestPoint)
     });
 
     TESTCASE(rotation360,{
-        equals(un.rotation(origine,Angle(360))->toString(), un.toString() );
+        Equals(un.rotation(origine,Angle(360))->toString(), un.toString() );
      });
 
     TESTCASE(rotationAngleNeg,{
-       equals(un.rotation(origine,Angle(-90))->toString() , Point(1,-1).toString());
+       Equals(un.rotation(origine,Angle(-90))->toString() , Point(1,-1).toString());
      });
 
     TESTCASE(rotationSup360,{
-        equals(un.rotation(origine,Angle(450))->toString(), rot90.toString());
+        Equals(un.rotation(origine,Angle(450))->toString(), rot90.toString());
      });
 
     TESTCASE(rotationZero, {
-         equals(un.rotation(origine, Angle(0))->toString(), un.toString());
+         Equals(un.rotation(origine, Angle(0))->toString(), un.toString());
      });
 
     TESTCASE(translationSimple,{
-         equals(origine.translation(vUn)->toString(), un.toString());
+         Equals(origine.translation(vUn)->toString(), un.toString());
      });
 
     TESTCASE(translationFausse, {
@@ -45,15 +45,15 @@ CPPTEST(TestPoint)
      });
 
     TESTCASE(translationNeg, {
-         equals(origine.translation(Vecteur(-1,-1))->toString(), Point(-1,-1).toString());
+         Equals(origine.translation(Vecteur(-1,-1))->toString(), Point(-1,-1).toString());
      });
 
     TESTCASE(translationZero, {
-         equals(origine.translation(Vecteur(0,0))->toString(), origine.toString());
+         Equals(origine.translation(Vecteur(0,0))->toString(), origine.toString());
      });
 
     TESTCASE(homothetieSimple, {
-         equals(un.homothetie(origine,0.5)->toString(), Point(0.5,0.5).toString());
+         Equals(un.homothetie(origine,0.5)->toString(), Point(0.5,0.5).toString());
      });
 
     TESTCASE(homothetieFausse, {
@@ -61,23 +61,23 @@ CPPTEST(TestPoint)
      });
 
     TESTCASE(homothetieScaleNeg,{
-         equals(un.homothetie(origine, -1)->toString(), Point(-1,-1).toString());
+         Equals(un.homothetie(origine, -1)->toString(), Point(-1,-1).toString());
      });
 
     TESTCASE(homothetieScaleUn,{
-         equals(un.homothetie(origine, 1)->toString(), un.toString());
+         Equals(un.homothetie(origine, 1)->toString(), un.toString());
      });
 
     TESTCASE(homothetieSup1,{
-         equals(un.homothetie(origine, 2)->toString(), Point(2,2).toString());
+         Equals(un.homothetie(origine, 2)->toString(), Point(2,2).toString());
      });
 
     TESTCASE(homothetieSurOrigine, {
-         equals(origine.homothetie(un,1)->toString(),origine.toString());
+         Equals(origine.homothetie(un,1)->toString(),origine.toString());
      });
 
     TESTCASE( homothetieZero,{
-        equals(un.homothetie(origine,0)->toString(), origine.toString());
+        Equals(un.homothetie(origine,0)->toString(), origine.toString());
     });
 
 ENDTEST

@@ -25,7 +25,7 @@ CPPTEST(TestGroupe)
 
 
     TESTCASE(aire,{
-        equals(g.aire(),tri.aire()+cer.aire());
+        Equals(g.aire(),tri.aire()+cer.aire());
         return true;
     });
 

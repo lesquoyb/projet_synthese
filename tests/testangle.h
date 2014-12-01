@@ -8,7 +8,7 @@ CPPTEST(TestAngle)
     Angle droit(180);
 
     TESTCASE(getRadian,{
-         equals(round(droit.getRadian()*100)/100, round(Angle::PI*100)/100);
+         Equals(round(droit.getRadian()*100)/100, round(Angle::PI*100)/100);
      });
 
 ENDTEST

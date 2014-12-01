@@ -7,16 +7,25 @@
 #include "triangle.h"
 #include "segment.h"
 #include "polygone.h"
-
 #include "dessinManager.h"
 #include "formegeom.h"
 #include "groupe.h"
 
 #include "tests/testlauncher.h"
 
+#include <QApplication>
+#include "mainwindow.h"
 
-int main(){
 
+int main(int argc, char *argv[]){
+
+    QApplication a(argc, argv);
+    MainWindow w;
+    w.show();
+/*
+
+    MainWindow fenetre;
+    fenetre.show();
     TestLauncher1 test;
     test.run();
 
@@ -158,6 +167,8 @@ int main(){
 	int lol;
 	cin >> lol;
 */
-    delete connexion;
+  //  delete connexion;
+
+    return a.exec();
     return 0;
 }

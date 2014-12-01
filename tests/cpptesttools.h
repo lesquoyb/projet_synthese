@@ -6,7 +6,7 @@
 #define diff(arg1,arg2)             return diffFun(arg1,arg2)
 #define nEqualsND(arg1,arg2)        return !(arg1 == arg2)
 #define equalsND(arg1,arg2)         return arg1 == arg2
-#define equals(arg1,arg2)           return equalsFun(arg1,arg2)
+#define Equals(arg1,arg2)           return equalsFun(arg1,arg2)
 #define nEquals(arg1,arg2)          return notEqualsFun(arg1,arg2)
 #define errorExpected(func)         try{ auto test = [&]()func; test();return false;}catch(exception e){return true;}
 //#define expected(error,func)        try{ auto test = [&]()func;test();return false;}catch(error e){return true;} //TODO

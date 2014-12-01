@@ -17,29 +17,29 @@ CPPTEST(TestPolygone)
 
 
     TESTCASE(aire,{
-        equals(round(p.aire()*10)/10,0.5);
+        Equals(round(p.aire()*10)/10,0.5);
     });
 
 
     TESTCASE(aireIrregulier,{
-         equals(round(irregulier.aire()), 12);
+         Equals(round(irregulier.aire()), 12);
      });
 
 
     TESTCASE(rotationSimple,{
-        equals( Polygone(*p.rotation(origine,Angle(90))).toString() , Polygone(origine,pRot90,*pZeroUn.rotation(origine,Angle(90))).toString());
+        Equals( Polygone(*p.rotation(origine,Angle(90))).toString() , Polygone(origine,pRot90,*pZeroUn.rotation(origine,Angle(90))).toString());
     });
 
     TESTCASE(translationSimple,{
-         equals(Polygone(*p.translation(Vecteur(origine,pUn))).toString(),Polygone(pUn,Point(2,2),Point(1,2)).toString());
+         Equals(Polygone(*p.translation(Vecteur(origine,pUn))).toString(),Polygone(pUn,Point(2,2),Point(1,2)).toString());
      });
 
     TESTCASE(homothetieSimple, {
-         equals(Polygone(*p.homothetie(origine,1)).toString(), p.toString());
+         Equals(Polygone(*p.homothetie(origine,1)).toString(), p.toString());
      });
 
     TESTCASE(toString,{
-         equals(p.toString(),"polygone: #000000, 0, 0, 1, 1, 0, 1");
+         Equals(p.toString(),"polygone: #000000, 0, 0, 1, 1, 0, 1");
      });
 
 ENDTEST
