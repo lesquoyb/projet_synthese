@@ -11,11 +11,11 @@ Groupe* ChargementGroupe::traitementSpecialise(string &objet) const{
             vector<string> valeurs = split(contenu,';');
             valeurs.erase(valeurs.begin());//on enlève le type
             valeurs.pop_back();//on enlève la parenthèse finale
-             Couleurs::Couleur couleur = Couleurs::hexaToCouleur(trim(valeurs[0]));
+            // Couleurs::Couleur couleur = Couleurs::hexaToCouleur(trim(valeurs[0]));
              valeurs.erase(valeurs.begin()); // on enlève la couleur
 
              // s'il y a d'autres groupes dedans on relance le traitement:
-             for(int i = 0 ; i < valeurs.size() ; i++ ){valeurs[i] = trim(valeurs[i]);} // on supprime les espaces inutiles
+             for(size_t i = 0 ; i < valeurs.size() ; i++ ){valeurs[i] = trim(valeurs[i]);} // on supprime les espaces inutiles
              vector<string>::iterator it;
              while((it = find(valeurs.begin(),valeurs.end(),"groupe(")) != valeurs.end() ){
                 vector<string>::iterator end = it+1;

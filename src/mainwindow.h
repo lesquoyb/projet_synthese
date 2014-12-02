@@ -55,6 +55,14 @@ private slots:
 
     void on_sauver_clicked();
 
+    void on_supprimer_clicked();
+
+    void on_translation_clicked();
+
+    void on_rotation_clicked();
+
+    void on_homothetie_clicked();
+
 private:
 
     void rafraichirListe();

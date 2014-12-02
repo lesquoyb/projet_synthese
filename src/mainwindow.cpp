@@ -143,7 +143,7 @@ void MainWindow::on_ajout_groupe_clicked(){
 
         i = 0;
         for(Polygone* p : _polygones){
-            if (p == NULL){
+            if (p == f){
                 _polygones.erase(_polygones.begin()+i);
                 break;
             }
@@ -157,7 +157,7 @@ void MainWindow::on_ajout_groupe_clicked(){
 }
 
 void MainWindow::on_dessiner_tout_clicked(){
-    if(_dessinManager != NULL){
+    if(_connexion != NULL){
         for(FormeGeom* f : _formes){
             f->dessin(*_dessinManager);
         }
@@ -222,4 +222,118 @@ void MainWindow::on_sauver_clicked(){
            _formes[index]->sauvegarder(fileName.toStdString());
         }
     }
+}
+
+void MainWindow::on_supprimer_clicked(){
+    int index =  ui->listeFormes->currentRow();
+    if( index != -1 ){
+        FormeGeom* f = _formes[index];
+        int i = 0;
+        for(Groupe* g: _groupes){
+            if(g == f){
+                _groupes.erase(_groupes.begin()+i);
+                break;
+            }
+            i++;
+        }
+        i = 0;
+        for(Polygone* p : _polygones){
+            if (p == f){
+                _polygones.erase(_polygones.begin()+i);
+                break;
+            }
+            i++;
+        }
+        delete f;
+        _formes.erase( _formes.begin()+index);
+
+    }
+    rafraichirListe();
+}
+
+void MainWindow::on_translation_clicked(){
+    int index =  ui->listeFormes->currentRow();
+    if( index != -1 ){
+        Vecteur v(ui->deltaX->value(),ui->deltaY->value());
+        FormeGeom* temp = _formes[index];
+        FormeGeom* f = temp->translation(v);
+        int i = 0;
+        for(Groupe* g: _groupes){
+            if(g == temp){
+                _groupes[i] = (Groupe*) f;
+                break;
+            }
+            i++;
+        }
+        i = 0;
+        for(Polygone* p : _polygones){
+            if (p == temp){
+                _polygones[i] =  (Polygone*) f;
+                break;
+            }
+            i++;
+        }
+        _formes[index] = f;
+        delete temp;
+
+    }
+    rafraichirListe();
+}
+
+void MainWindow::on_rotation_clicked(){
+    int index =  ui->listeFormes->currentRow();
+    if( index != -1 ){
+        Point p(ui->rX->value(),ui->rY->value());
+        FormeGeom* temp = _formes[index];
+        FormeGeom* f = temp->rotation(p,ui->angle->value());
+        int i = 0;
+        for(Groupe* g: _groupes){
+            if(g == temp){
+                _groupes[i] = (Groupe*) f;
+                break;
+            }
+            i++;
+        }
+        i = 0;
+        for(Polygone* p : _polygones){
+            if (p == temp){
+                _polygones[i] =  (Polygone*) f;
+                break;
+            }
+            i++;
+        }
+        _formes[index] = f;
+        delete temp;
+
+    }
+    rafraichirListe();
+}
+
+void MainWindow::on_homothetie_clicked(){
+    int index =  ui->listeFormes->currentRow();
+    if( index != -1 ){
+        Point p(ui->hX->value(),ui->hY->value());
+        FormeGeom* temp = _formes[index];
+        FormeGeom* f = temp->homothetie(p,ui->scale->value());
+        int i = 0;
+        for(Groupe* g: _groupes){
+            if(g == temp){
+                _groupes[i] = (Groupe*) f;
+                break;
+            }
+            i++;
+        }
+        i = 0;
+        for(Polygone* p : _polygones){
+            if (p == temp){
+                _polygones[i] =  (Polygone*) f;
+                break;
+            }
+            i++;
+        }
+        _formes[index] = f;
+        delete temp;
+
+    }
+    rafraichirListe();
 }
