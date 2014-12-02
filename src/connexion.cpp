@@ -52,13 +52,13 @@ Connexion::~Connexion(){
 	if (shutdown(_sock, SD_BOTH) == SOCKET_ERROR){
 		ostringstream oss;
 		oss << "la coupure de connexion a échoué" << WSAGetLastError() << endl;
-		throw Erreur(oss.str().c_str());
+        cout << (oss.str().c_str());
 	}
 
 	if (closesocket(_sock)){
 		ostringstream oss;
 		oss << "La fermeture du socket a échoué" << WSAGetLastError() << endl;
-		throw Erreur(oss.str().c_str());
+        cout << (oss.str().c_str());
 
 	}
 	#ifdef WIN32
@@ -106,9 +106,7 @@ Connexion::Connexion(const string &ip, int host){
 
     // connexion du client au serveur
     if (connect(_sock, (SOCKADDR *)&sockaddr, sizeof(sockaddr)) == SOCKET_ERROR){
-        ostringstream oss;
-        oss << "la connexion a échouée, c'est peut être dû à une mauvaise adresse ip ou un mauvais port" << endl;
-        cout << oss.str();
+        throw Erreur("la connexion a échouée, c'est peut être dû à une mauvaise adresse ip ou un mauvais port");
     }
 
 }

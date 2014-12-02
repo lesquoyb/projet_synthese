@@ -20,6 +20,11 @@ CPPTEST(TestPolygone)
         Equals(round(p.aire()*10)/10,0.5);
     });
 
+    TESTCASE(aireCarre1X1,{
+         Polygone carre(Point(-1,-1),Point(-1,-2),Point(-2,-2));
+         carre.ajouterPoint(Point(-2,-1));
+                 Equals(carre.aire(),1);
+     });
 
     TESTCASE(aireIrregulier,{
          Equals(round(irregulier.aire()), 12);

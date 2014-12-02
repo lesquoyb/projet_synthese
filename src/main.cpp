@@ -19,6 +19,10 @@
 
 int main(int argc, char *argv[]){
 
+
+    TestLauncher1 test;
+    test.run();
+
     QApplication a(argc, argv);
     MainWindow w;
     w.show();
@@ -26,8 +30,6 @@ int main(int argc, char *argv[]){
 
     MainWindow fenetre;
     fenetre.show();
-    TestLauncher1 test;
-    test.run();
 
     Segment s(Couleurs::red,Point(1,2),Point(50,50));
     Segment s2(Couleurs::red,Point(150,300),Point(50,50));

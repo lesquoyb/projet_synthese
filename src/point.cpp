@@ -49,6 +49,10 @@ string Point::toString() const{
     return oss.str();
 }
 
+Point *Point::clone() const{
+    return new Point(*this);
+}
+
 double Point::getDist(const Point &p)const{
     return Vecteur(*this,p).norme();
 }

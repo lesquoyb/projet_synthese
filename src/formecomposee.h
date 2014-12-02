@@ -22,7 +22,7 @@ public:
         FormeComposee(couleur)
     {
         for (C* p: comp){
-            C* temp = new C(*p);
+            C* temp = p->clone();//new C(*p);
             _composants.push_back(temp);
         }
     }

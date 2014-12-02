@@ -98,3 +98,6 @@ OTHER_FILES += \
     rapport/DiagrammeDeClasses.png \
     rapport/rapport.tex \
     rapport/technos.txt
+
+RESOURCES += \
+    images.qrc

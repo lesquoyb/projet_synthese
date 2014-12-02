@@ -17,6 +17,7 @@ public:
     virtual ObjetGeom* homothetie(const Point &p, const double &scale)const = 0;
     virtual ObjetGeom* translation(const Vecteur& v)const = 0;
     virtual std::string toString()const = 0;
+    virtual ObjetGeom* clone()const = 0;
 
     virtual ~ObjetGeom(){}
 

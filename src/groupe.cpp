@@ -77,7 +77,7 @@ double Groupe::aire() const{
 
 
 Groupe::Groupe(const Groupe &g):
-    FormeComposee<FormeGeom,Groupe>(g._couleur)
+    FormeComposee<FormeGeom,Groupe>(g._couleur,g._composants)
     {}
 
 

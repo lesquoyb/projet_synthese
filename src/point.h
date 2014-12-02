@@ -32,6 +32,7 @@ public:
     virtual Point* homothetie(const Point &p,const double &scale) const;
     virtual Point* translation(const Vecteur &v)const;
     virtual string toString()const;
+    virtual Point* clone()const;
 
     virtual ~Point(){}
 
