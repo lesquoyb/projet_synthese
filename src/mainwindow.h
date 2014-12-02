@@ -13,9 +13,21 @@ namespace Ui {
 class MainWindow;
 }
 
+/**
+ * @brief The MainWindow class
+ * Fenetre principal du programme.
+ */
 class MainWindow : public QMainWindow{
 
     Q_OBJECT
+
+
+
+private:
+
+    void rafraichirListe();
+
+    Ui::MainWindow *ui;
 
     vector<FormeGeom*> _formes;
     vector<Polygone*> _polygones;
@@ -65,11 +77,6 @@ private slots:
 
     void on_actionAire_triggered();
 
-private:
-
-    void rafraichirListe();
-
-    Ui::MainWindow *ui;
 
 
 

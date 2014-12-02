@@ -90,13 +90,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="title">Référence du modèle de la classe ExpertCOR&lt; retour, aTraiter &gt;<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>The <a class="el" href="class_expert_c_o_r.html" title="The ExpertCOR class Spécialisation de l&#39;expert, l&#39;expert COR est fait pour être utilisé dans une Chai...">ExpertCOR</a> class Spécialisation de l'expert, l'expert COR est fait pour être utilisé dans une Chain Of Responsibility C'est pourquoi il est doté d'un poiteur sur un autre <a class="el" href="class_expert_c_o_r.html" title="The ExpertCOR class Spécialisation de l&#39;expert, l&#39;expert COR est fait pour être utilisé dans une Chai...">ExpertCOR</a>: le suivant dans la chaine. De plus il définie sa fonction de traitement de façon à ce qu'elle renvoie le résultat du suivant si jamais l'expert est incapable de traiter les données.  
+ <a href="class_expert_c_o_r.html#details">Plus de détails...</a></p>
+
+<p><code>#include &lt;<a class="el" href="expertcor_8h_source.html">expertcor.h</a>&gt;</code></p>
 <div class="dynheader">
 Graphe d'héritage de ExpertCOR&lt; retour, aTraiter &gt;:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_expert_c_o_r.png" usemap="#ExpertCOR&lt; retour, aTraiter &gt;_map" alt=""/>
   <map id="ExpertCOR&lt; retour, aTraiter &gt;_map" name="ExpertCOR&lt; retour, aTraiter &gt;_map">
-<area href="class_expert.html" alt="Expert&lt; retour, aTraiter &gt;" shape="rect" coords="0,0,186,24"/>
+<area href="class_expert.html" title="The Expert class La classe décrivant le comportement d&#39;un expert quelconque: il fait un traitement su..." alt="Expert&lt; retour, aTraiter &gt;" shape="rect" coords="0,0,186,24"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -112,7 +117,12 @@ virtual retour *&#160;</td><td class="memItemRight" valign="bottom"><b>traitemen
 <tr class="memdesc:a7574fdd9c8321c8d7e4be820740d0760"><td class="mdescLeft">&#160;</td><td class="mdescRight">traitement1 Si pas de suivant et echec du traitement, lève l'exception traitement impossible  <a href="#a7574fdd9c8321c8d7e4be820740d0760">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a7574fdd9c8321c8d7e4be820740d0760"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Documentation des fonctions membres</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><h3>template&lt;class retour, class aTraiter&gt;<br />
+class ExpertCOR&lt; retour, aTraiter &gt;</h3>
+
+<p>The <a class="el" href="class_expert_c_o_r.html" title="The ExpertCOR class Spécialisation de l&#39;expert, l&#39;expert COR est fait pour être utilisé dans une Chai...">ExpertCOR</a> class Spécialisation de l'expert, l'expert COR est fait pour être utilisé dans une Chain Of Responsibility C'est pourquoi il est doté d'un poiteur sur un autre <a class="el" href="class_expert_c_o_r.html" title="The ExpertCOR class Spécialisation de l&#39;expert, l&#39;expert COR est fait pour être utilisé dans une Chai...">ExpertCOR</a>: le suivant dans la chaine. De plus il définie sa fonction de traitement de façon à ce qu'elle renvoie le résultat du suivant si jamais l'expert est incapable de traiter les données. </p>
+</div><h2 class="groupheader">Documentation des fonctions membres</h2>
 <a class="anchor" id="a7574fdd9c8321c8d7e4be820740d0760"></a>
 <div class="memitem">
 <div class="memproto">
@@ -146,7 +156,7 @@ template&lt;class retour, class aTraiter&gt; </div>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd></dd></dl>
 
-<p>Implémenté dans <a class="el" href="class_expert_chargement.html#a7d7818bdd5f0a06b06bfc8047ec8fee5">ExpertChargement</a>, <a class="el" href="class_chargement_cercle.html#addd0be00b764eb7736aac2386bbafabd">ChargementCercle</a>, <a class="el" href="class_chargement_groupe.html#aa0487a2d01a2c8022fbaf854e79bafd6">ChargementGroupe</a>, <a class="el" href="class_chargement_polygone.html#a66c85c1a8a6aba246a283aaa18bfddd4">ChargementPolygone</a>, <a class="el" href="class_chargement_triangle.html#a5a56b270c58404c940900c5d93237876">ChargementTriangle</a>, et <a class="el" href="class_chargement_segment.html#ab03da7e3e7870d2522d72095ae827135">ChargementSegment</a>.</p>
+<p>Implémenté dans <a class="el" href="class_expert_chargement.html#a7d7818bdd5f0a06b06bfc8047ec8fee5">ExpertChargement</a>, <a class="el" href="class_chargement_cercle.html#addd0be00b764eb7736aac2386bbafabd">ChargementCercle</a>, <a class="el" href="class_chargement_triangle.html#a5a56b270c58404c940900c5d93237876">ChargementTriangle</a>, <a class="el" href="class_chargement_groupe.html#aa0487a2d01a2c8022fbaf854e79bafd6">ChargementGroupe</a>, <a class="el" href="class_chargement_polygone.html#a66c85c1a8a6aba246a283aaa18bfddd4">ChargementPolygone</a>, et <a class="el" href="class_chargement_segment.html#ab03da7e3e7870d2522d72095ae827135">ChargementSegment</a>.</p>
 
 </div>
 </div>
@@ -156,7 +166,7 @@ template&lt;class retour, class aTraiter&gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Mardi 2 Décembre 2014 14:26:05 pour Dessinator: client par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Mardi 2 Décembre 2014 22:20:36 pour Dessinator: client par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

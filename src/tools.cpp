@@ -14,7 +14,7 @@ vector<string> tools::split(const string &s, char delim) {
 
 const string tools::trim(const string &s){
     string copy(s);
-    int i;
+    size_t i;
     for(i = 0 ; i < s.size() and (s[i] == ' ' or s[i] == '\n' or s[i] == '\r' ); i++){}
     copy.erase(copy.find_last_not_of(" \n\r\t")+1);
     return copy.substr(i);

@@ -248,7 +248,7 @@ void MainWindow::on_translation_clicked(){
         Vecteur v(ui->deltaX->value(),ui->deltaY->value());
         FormeGeom* temp = _formes[index];
         FormeGeom* f = temp->translation(v);
-        int i = 0;
+        size_t i = 0;
         for(Groupe* g: _groupes){
             if(g == temp){
                 _groupes[i] = (Groupe*) f;
@@ -280,7 +280,7 @@ void MainWindow::on_rotation_clicked(){
         Point p(ui->rX->value(),ui->rY->value());
         FormeGeom* temp = _formes[index];
         FormeGeom* f = temp->rotation(p,ui->angle->value());
-        int i = 0;
+        size_t i = 0;
         for(Groupe* g: _groupes){
             if(g == temp){
                 _groupes[i] = (Groupe*) f;
@@ -312,7 +312,7 @@ void MainWindow::on_homothetie_clicked(){
         Point p(ui->hX->value(),ui->hY->value());
         FormeGeom* temp = _formes[index];
         FormeGeom* f = temp->homothetie(p,ui->scale->value());
-        int i = 0;
+        size_t i = 0;
         for(Groupe* g: _groupes){
             if(g == temp){
                 _groupes[i] = (Groupe*) f;

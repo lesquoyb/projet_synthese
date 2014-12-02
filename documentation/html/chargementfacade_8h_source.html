@@ -98,47 +98,47 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;facade.h&quot;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;../tools.h&quot;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="class_chargement_facade.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_chargement_facade.html">ChargementFacade</a> : <span class="keyword">public</span> <a class="code" href="class_facade.html">Facade</a>&lt;FormeGeom,string&gt;{</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;     <span class="keywordtype">void</span> init(){</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;         _first = <span class="keyword">new</span> <a class="code" href="class_chargement_cercle.html">ChargementCercle</a>();</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;         _first-&gt;ajouterSuivant(<span class="keyword">new</span> <a class="code" href="class_chargement_segment.html">ChargementSegment</a>());</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;         _first-&gt;ajouterSuivant(<span class="keyword">new</span> <a class="code" href="class_chargement_triangle.html">ChargementTriangle</a>());</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;         _first-&gt;ajouterSuivant(<span class="keyword">new</span> <a class="code" href="class_chargement_polygone.html">ChargementPolygone</a>());</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;         _first-&gt;ajouterSuivant(<span class="keyword">new</span> <a class="code" href="class_chargement_groupe.html">ChargementGroupe</a>());</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;     }</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="class_chargement_facade.html">ChargementFacade</a>(ifstream &amp;file){</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        _objet = lireFichier(file);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        init();</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    }</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="class_chargement_facade.html">ChargementFacade</a>(<span class="keywordtype">string</span> contenu){</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        _objet = contenu;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        init();</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;};</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#endif // CHARGEMENTFACADE_H</span></div>
-<div class="ttc" id="class_chargement_facade_html"><div class="ttname"><a href="class_chargement_facade.html">ChargementFacade</a></div><div class="ttdef"><b>Definition:</b> chargementfacade.h:11</div></div>
-<div class="ttc" id="class_chargement_polygone_html"><div class="ttname"><a href="class_chargement_polygone.html">ChargementPolygone</a></div><div class="ttdef"><b>Definition:</b> chargementpolygone.h:12</div></div>
-<div class="ttc" id="class_chargement_cercle_html"><div class="ttname"><a href="class_chargement_cercle.html">ChargementCercle</a></div><div class="ttdef"><b>Definition:</b> chargementcercle.h:12</div></div>
-<div class="ttc" id="class_chargement_segment_html"><div class="ttname"><a href="class_chargement_segment.html">ChargementSegment</a></div><div class="ttdef"><b>Definition:</b> chargementsegment.h:8</div></div>
-<div class="ttc" id="class_chargement_triangle_html"><div class="ttname"><a href="class_chargement_triangle.html">ChargementTriangle</a></div><div class="ttdef"><b>Definition:</b> chargementtriangle.h:12</div></div>
-<div class="ttc" id="class_facade_html"><div class="ttname"><a href="class_facade.html">Facade</a></div><div class="ttdef"><b>Definition:</b> facade.h:7</div></div>
-<div class="ttc" id="class_chargement_groupe_html"><div class="ttname"><a href="class_chargement_groupe.html">ChargementGroupe</a></div><div class="ttdef"><b>Definition:</b> chargementgroupe.h:12</div></div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_chargement_facade.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_chargement_facade.html">ChargementFacade</a> : <span class="keyword">public</span> <a class="code" href="class_facade.html">Facade</a>&lt;FormeGeom,string&gt;{</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;     <span class="keywordtype">void</span> init(){</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;         _first = <span class="keyword">new</span> <a class="code" href="class_chargement_cercle.html">ChargementCercle</a>();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;         _first-&gt;ajouterSuivant(<span class="keyword">new</span> <a class="code" href="class_chargement_segment.html">ChargementSegment</a>());</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;         _first-&gt;ajouterSuivant(<span class="keyword">new</span> <a class="code" href="class_chargement_triangle.html">ChargementTriangle</a>());</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;         _first-&gt;ajouterSuivant(<span class="keyword">new</span> <a class="code" href="class_chargement_polygone.html">ChargementPolygone</a>());</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;         _first-&gt;ajouterSuivant(<span class="keyword">new</span> <a class="code" href="class_chargement_groupe.html">ChargementGroupe</a>());</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;     }</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="class_chargement_facade.html">ChargementFacade</a>(ifstream &amp;file){</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        _objet = lireFichier(file);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        init();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="class_chargement_facade.html">ChargementFacade</a>(<span class="keywordtype">string</span> contenu){</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        _objet = contenu;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        init();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;};</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif // CHARGEMENTFACADE_H</span></div>
+<div class="ttc" id="class_chargement_facade_html"><div class="ttname"><a href="class_chargement_facade.html">ChargementFacade</a></div><div class="ttdoc">The ChargementFacade class Spécialisation de la façade pour s&#39;occuper d&#39;ExpertChargement. </div><div class="ttdef"><b>Definition:</b> chargementfacade.h:15</div></div>
+<div class="ttc" id="class_chargement_polygone_html"><div class="ttname"><a href="class_chargement_polygone.html">ChargementPolygone</a></div><div class="ttdoc">The ChargementPolygone class L&#39;expert en polygones. </div><div class="ttdef"><b>Definition:</b> chargementpolygone.h:15</div></div>
+<div class="ttc" id="class_chargement_cercle_html"><div class="ttname"><a href="class_chargement_cercle.html">ChargementCercle</a></div><div class="ttdoc">The ChargementCercle class Expert du cercle. </div><div class="ttdef"><b>Definition:</b> chargementcercle.h:16</div></div>
+<div class="ttc" id="class_chargement_segment_html"><div class="ttname"><a href="class_chargement_segment.html">ChargementSegment</a></div><div class="ttdoc">The ChargementSegment class L&#39;expert en segment. </div><div class="ttdef"><b>Definition:</b> chargementsegment.h:12</div></div>
+<div class="ttc" id="class_chargement_triangle_html"><div class="ttname"><a href="class_chargement_triangle.html">ChargementTriangle</a></div><div class="ttdoc">The ChargementTriangle class L&#39;expert en triangle. </div><div class="ttdef"><b>Definition:</b> chargementtriangle.h:16</div></div>
+<div class="ttc" id="class_facade_html"><div class="ttname"><a href="class_facade.html">Facade</a></div><div class="ttdoc">The Facade class Une façade faite pour rendre l&#39;utilisation des ExpertCOR plus facile. </div><div class="ttdef"><b>Definition:</b> facade.h:11</div></div>
+<div class="ttc" id="class_chargement_groupe_html"><div class="ttname"><a href="class_chargement_groupe.html">ChargementGroupe</a></div><div class="ttdoc">The ChargementGroupe class L&#39;Expert en groupe. </div><div class="ttdef"><b>Definition:</b> chargementgroupe.h:15</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Mardi 2 Décembre 2014 14:26:04 pour Dessinator: client par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Mardi 2 Décembre 2014 22:20:36 pour Dessinator: client par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

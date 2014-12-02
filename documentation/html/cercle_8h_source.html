@@ -88,51 +88,51 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define CERCLE_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;formegeom.h&quot;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="class_cercle.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_cercle.html">Cercle</a> : <span class="keyword">public</span> <a class="code" href="class_forme_geom.html">FormeGeom</a>{</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="class_point.html">Point</a> _centre;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">double</span> _rayon;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="class_cercle.html">Cercle</a>(<span class="keyword">const</span> <a class="code" href="class_point.html">Point</a> &amp;centre, <span class="keywordtype">double</span> rayon);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="class_cercle.html">Cercle</a>(<span class="keyword">const</span> Couleurs::Couleur &amp;couleur, <span class="keyword">const</span> <a class="code" href="class_point.html">Point</a> &amp;centre, <span class="keywordtype">double</span> rayon);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">inline</span> <a class="code" href="class_point.html">Point</a> getCentre()<span class="keyword">const</span>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">double</span> getRayon()<span class="keyword">const</span>;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="comment">//ObjetGeom</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_cercle.html">Cercle</a>* rotation(<span class="keyword">const</span> <a class="code" href="class_point.html">Point</a> &amp;p, <span class="keyword">const</span> <a class="code" href="class_angle.html">Angle</a>&amp; angle) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_cercle.html">Cercle</a>* homothetie(<span class="keyword">const</span> <a class="code" href="class_point.html">Point</a> &amp;p, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp;scale)<span class="keyword">const</span> ;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_cercle.html">Cercle</a>* translation(<span class="keyword">const</span> <a class="code" href="class_vecteur.html">Vecteur</a>&amp; v)<span class="keyword">const</span> ;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">string</span> toString()<span class="keyword">const</span>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="comment">//FormeGeom</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">double</span> aire()<span class="keyword">const</span> ;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> dessin(<span class="keyword">const</span> <a class="code" href="class_dessinable.html">Dessinable</a>&amp;)<span class="keyword">const</span>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_cercle.html">Cercle</a>* clone()<span class="keyword">const</span>{<span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="class_cercle.html">Cercle</a>(*<span class="keyword">this</span>);}</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="class_cercle.html">Cercle</a>(){}</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;};</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="class_cercle.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_cercle.html">Cercle</a> : <span class="keyword">public</span> <a class="code" href="class_forme_geom.html">FormeGeom</a>{</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="class_point.html">Point</a> _centre;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">double</span> _rayon;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="class_cercle.html">Cercle</a>(<span class="keyword">const</span> <a class="code" href="class_point.html">Point</a> &amp;centre, <span class="keywordtype">double</span> rayon);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="class_cercle.html">Cercle</a>(<span class="keyword">const</span> Couleurs::Couleur &amp;couleur, <span class="keyword">const</span> <a class="code" href="class_point.html">Point</a> &amp;centre, <span class="keywordtype">double</span> rayon);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">inline</span> <a class="code" href="class_point.html">Point</a> getCentre()<span class="keyword">const</span>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">double</span> getRayon()<span class="keyword">const</span>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">//ObjetGeom</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_cercle.html">Cercle</a>* rotation(<span class="keyword">const</span> <a class="code" href="class_point.html">Point</a> &amp;p, <span class="keyword">const</span> <a class="code" href="class_angle.html">Angle</a>&amp; angle) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_cercle.html">Cercle</a>* homothetie(<span class="keyword">const</span> <a class="code" href="class_point.html">Point</a> &amp;p, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp;scale)<span class="keyword">const</span> ;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_cercle.html">Cercle</a>* translation(<span class="keyword">const</span> <a class="code" href="class_vecteur.html">Vecteur</a>&amp; v)<span class="keyword">const</span> ;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">string</span> toString()<span class="keyword">const</span>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="comment">//FormeGeom</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">double</span> aire()<span class="keyword">const</span> ;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> dessin(<span class="keyword">const</span> <a class="code" href="class_dessinable.html">Dessinable</a>&amp;)<span class="keyword">const</span>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_cercle.html">Cercle</a>* clone()<span class="keyword">const</span>{<span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="class_cercle.html">Cercle</a>(*<span class="keyword">this</span>);}</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="class_cercle.html">Cercle</a>(){}</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;};</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">inline</span> <a class="code" href="class_point.html">Point</a> Cercle::getCentre()<span class="keyword">const</span>{<span class="keywordflow">return</span> _centre;}</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">double</span> Cercle::getRayon()<span class="keyword">const</span>{<span class="keywordflow">return</span> _rayon;}</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#endif // CERCLE_H</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">inline</span> <a class="code" href="class_point.html">Point</a> Cercle::getCentre()<span class="keyword">const</span>{<span class="keywordflow">return</span> _centre;}</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">double</span> Cercle::getRayon()<span class="keyword">const</span>{<span class="keywordflow">return</span> _rayon;}</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif // CERCLE_H</span></div>
 <div class="ttc" id="class_vecteur_html"><div class="ttname"><a href="class_vecteur.html">Vecteur</a></div><div class="ttdef"><b>Definition:</b> vecteur.h:11</div></div>
 <div class="ttc" id="class_forme_geom_html"><div class="ttname"><a href="class_forme_geom.html">FormeGeom</a></div><div class="ttdef"><b>Definition:</b> formegeom.h:20</div></div>
 <div class="ttc" id="class_angle_html"><div class="ttname"><a href="class_angle.html">Angle</a></div><div class="ttdoc">The Angle class Classe représentant un angle. On l&#39;instancie avec un angle exprimé en degré...</div><div class="ttdef"><b>Definition:</b> angle.h:9</div></div>
 <div class="ttc" id="class_dessinable_html"><div class="ttname"><a href="class_dessinable.html">Dessinable</a></div><div class="ttdoc">The Dessinable class Il s&#39;agit d&#39;une interface décrivant le comportement que doivent avoir les classe...</div><div class="ttdef"><b>Definition:</b> dessinable.h:16</div></div>
-<div class="ttc" id="class_cercle_html"><div class="ttname"><a href="class_cercle.html">Cercle</a></div><div class="ttdoc">The Cercle class Cette classe représente un cercle, c&#39;est à dire un point pour le centre et un double...</div><div class="ttdef"><b>Definition:</b> cercle.h:9</div></div>
+<div class="ttc" id="class_cercle_html"><div class="ttname"><a href="class_cercle.html">Cercle</a></div><div class="ttdoc">The Cercle class Cette classe représente un cercle, c&#39;est à dire un point pour le centre et un double...</div><div class="ttdef"><b>Definition:</b> cercle.h:10</div></div>
 <div class="ttc" id="class_point_html"><div class="ttname"><a href="class_point.html">Point</a></div><div class="ttdef"><b>Definition:</b> point.h:13</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Mardi 2 Décembre 2014 14:26:04 pour Dessinator: client par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Mardi 2 Décembre 2014 22:20:36 pour Dessinator: client par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

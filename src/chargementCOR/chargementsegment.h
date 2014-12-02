@@ -21,7 +21,7 @@ public:
         if(contenu.find(type) == 0){
             contenu = contenu.substr(type.size()); // on enlève le type de la chaine
             vector<string> valeurs = split(contenu,',');
-            for( int i = 0 ; i < valeurs.size() ; i++ ){
+            for( size_t i = 0 ; i < valeurs.size() ; i++ ){
                 valeurs[i] = trim(valeurs[i]);
             }
             double x1 = stod(valeurs[1].c_str());
