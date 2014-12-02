@@ -1260,9 +1260,9 @@
    <widget class="QPushButton" name="supprimer">
     <property name="geometry">
      <rect>
-      <x>680</x>
+      <x>650</x>
       <y>530</y>
-      <width>151</width>
+      <width>131</width>
       <height>29</height>
      </rect>
     </property>
@@ -1273,9 +1273,9 @@
    <widget class="QPushButton" name="dessiner_forme">
     <property name="geometry">
      <rect>
-      <x>1010</x>
+      <x>1060</x>
       <y>530</y>
-      <width>131</width>
+      <width>121</width>
       <height>29</height>
      </rect>
     </property>
@@ -1286,9 +1286,9 @@
    <widget class="QPushButton" name="dessiner_tout">
     <property name="geometry">
      <rect>
-      <x>1160</x>
+      <x>1190</x>
       <y>530</y>
-      <width>111</width>
+      <width>101</width>
       <height>29</height>
      </rect>
     </property>
@@ -1338,9 +1338,9 @@
    <widget class="QPushButton" name="sauver">
     <property name="geometry">
      <rect>
-      <x>850</x>
+      <x>930</x>
       <y>530</y>
-      <width>131</width>
+      <width>121</width>
       <height>29</height>
      </rect>
     </property>
@@ -1414,6 +1414,19 @@
       </item>
      </layout>
     </widget>
+   </widget>
+   <widget class="QPushButton" name="chargement">
+    <property name="geometry">
+     <rect>
+      <x>790</x>
+      <y>530</y>
+      <width>131</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>charger une forme</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">

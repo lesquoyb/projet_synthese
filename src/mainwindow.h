@@ -51,6 +51,10 @@ private slots:
 
     void on_connexion_clicked();
 
+    void on_chargement_clicked();
+
+    void on_sauver_clicked();
+
 private:
 
     void rafraichirListe();

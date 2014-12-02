@@ -18,9 +18,18 @@ Groupe* ChargementGroupe::traitementSpecialise(string &objet) const{
              for(int i = 0 ; i < valeurs.size() ; i++ ){valeurs[i] = trim(valeurs[i]);} // on supprime les espaces inutiles
              vector<string>::iterator it;
              while((it = find(valeurs.begin(),valeurs.end(),"groupe(")) != valeurs.end() ){
-                vector<string>::iterator end ,temp = it;
-                while(( temp = find(temp+1,valeurs.end(),")")) != valeurs.end() ){
-                    end = temp;
+                vector<string>::iterator end = it+1;
+                int ouvert = 0;
+                for( ; end < valeurs.end() ; end++){
+                    if(*end == "groupe("){
+                        ouvert++;
+                    }
+                    if(*end == ")"){
+                        ouvert--;
+                        if(ouvert < 0){
+                            break;
+                        }
+                    }
                 }
 
                 string g2;

@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "erreur.h"
+#include <qfiledialog.h>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -192,5 +193,33 @@ void MainWindow::on_connexion_clicked(){
     else{
         ui->status_reseau->setPixmap(QPixmap(":images/ressources/images/echec.png"));
 
+    }
+}
+
+void MainWindow::on_chargement_clicked(){
+    QString fileName = QFileDialog::getOpenFileName(this, tr("Chargement d'une forme géométrique"), "",tr("Text Files (*.txt);;Dessinator files (*.dess)"));
+    if (fileName != "") {
+       FormeGeom* f = FormeGeom::chargement(fileName.toStdString());
+       if (f != NULL){
+           if(f->toString().find("groupe") == 0){
+                _groupes.push_back((Groupe*)f);
+           }
+           if(f->toString().find("polygone") == 0 ){
+               _polygones.push_back((Polygone*)f);
+           }
+           _formes.push_back(f);
+           rafraichirListe();
+       }
+    }
+
+}
+
+void MainWindow::on_sauver_clicked(){
+    int index =  ui->listeFormes->currentRow();
+    if( index != -1 ){
+        QString fileName = QFileDialog::getOpenFileName(this, tr("Sauvegarde d'une forme géométrique"), "",tr("Text Files (*.txt);;Dessinator files (*.dess)"));
+        if (fileName != "") {
+           _formes[index]->sauvegarder(fileName.toStdString());
+        }
     }
 }
