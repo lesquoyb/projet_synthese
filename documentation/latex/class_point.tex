@@ -1,0 +1,82 @@
+\hypertarget{class_point}{\section{Référence de la classe Point}
+\label{class_point}\index{Point@{Point}}
+}
+Graphe d'héritage de Point\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_point}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_point_af0c0f20db1616447bc78184ed537ef6e}{{\bfseries Point} (const \hyperlink{class_point}{Point} \&p)}\label{class_point_af0c0f20db1616447bc78184ed537ef6e}
+
+\item 
+\hypertarget{class_point_a6761ef774ae06ee3226c8050756e0e03}{{\bfseries Point} (const \hyperlink{class_vecteur}{Vecteur} \&)}\label{class_point_a6761ef774ae06ee3226c8050756e0e03}
+
+\item 
+\hypertarget{class_point_a78b55e8d5466bb8c2cf60fa55f2562ff}{{\bfseries Point} (double x, double y)}\label{class_point_a78b55e8d5466bb8c2cf60fa55f2562ff}
+
+\item 
+\hypertarget{class_point_a4663f6c2c3c7ab8a3d675194797f91e2}{\hyperlink{class_vecteur}{Vecteur} {\bfseries get\+Coord} () const }\label{class_point_a4663f6c2c3c7ab8a3d675194797f91e2}
+
+\item 
+\hypertarget{class_point_af52a20a376f8f31e87658837565d3812}{double {\bfseries get\+X} () const }\label{class_point_af52a20a376f8f31e87658837565d3812}
+
+\item 
+\hypertarget{class_point_aac5008459bf0e0053ce744a69187bae7}{double {\bfseries get\+Y} () const }\label{class_point_aac5008459bf0e0053ce744a69187bae7}
+
+\item 
+\hypertarget{class_point_ac585bbd5c399089f595c08549fb14181}{double {\bfseries get\+Dist} (const \hyperlink{class_point}{Point} \&p) const }\label{class_point_ac585bbd5c399089f595c08549fb14181}
+
+\item 
+virtual \hyperlink{class_point}{Point} $\ast$ \hyperlink{class_point_a32bc5c9d0e07f0e4b54187ffcd3c8a67}{rotation} (const \hyperlink{class_point}{Point} \&p, const \hyperlink{class_angle}{Angle} \&a) const 
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_point_a32bc5c9d0e07f0e4b54187ffcd3c8a67}{Point\+::rotation}. \end{DoxyCompactList}\item 
+\hypertarget{class_point_adbe4e8c3740d0f3c5fc6f9911333a116}{virtual \hyperlink{class_point}{Point} $\ast$ {\bfseries homothetie} (const \hyperlink{class_point}{Point} \&p, const double \&scale) const }\label{class_point_adbe4e8c3740d0f3c5fc6f9911333a116}
+
+\item 
+\hypertarget{class_point_aefa1818234b978fadfc93d700443b588}{virtual \hyperlink{class_point}{Point} $\ast$ {\bfseries translation} (const \hyperlink{class_vecteur}{Vecteur} \&v) const }\label{class_point_aefa1818234b978fadfc93d700443b588}
+
+\item 
+\hypertarget{class_point_a8d93fac0417f879dd676180f028dbbe5}{virtual string {\bfseries to\+String} () const }\label{class_point_a8d93fac0417f879dd676180f028dbbe5}
+
+\item 
+\hypertarget{class_point_a9c8211178675a15a4fd3501d45cbd9cc}{virtual \hyperlink{class_point}{Point} $\ast$ {\bfseries clone} () const }\label{class_point_a9c8211178675a15a4fd3501d45cbd9cc}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{class_point_a32bc5c9d0e07f0e4b54187ffcd3c8a67}{\index{Point@{Point}!rotation@{rotation}}
+\index{rotation@{rotation}!Point@{Point}}
+\subsubsection[{rotation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Point} $\ast$ Point\+::rotation (
+\begin{DoxyParamCaption}
+\item[{const {\bf Point} \&}]{p, }
+\item[{const {\bf Angle} \&}]{a}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_point_a32bc5c9d0e07f0e4b54187ffcd3c8a67}
+
+
+\hyperlink{class_point_a32bc5c9d0e07f0e4b54187ffcd3c8a67}{Point\+::rotation}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p} & le point à partir duquel il faut effectuer la rotation \\
+\hline
+{\em a} & l'angle de la rotation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+le point résultat Permet de calculer le point issus de la rotation du point courrant par rapport à p et a 
+\end{DoxyReturn}
+
+
+Implémente \hyperlink{class_objet_geom}{Objet\+Geom}.
+
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+point.\+h\item 
+point.\+cpp\end{DoxyCompactItemize}

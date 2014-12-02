@@ -1,0 +1,81 @@
+\hypertarget{class_vecteur}{\section{Référence de la classe Vecteur}
+\label{class_vecteur}\index{Vecteur@{Vecteur}}
+}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_vecteur_a46d3489a12a0233448648651532607ff}{{\bfseries Vecteur} (const double \&x=0, const double \&y=0)}\label{class_vecteur_a46d3489a12a0233448648651532607ff}
+
+\item 
+\hypertarget{class_vecteur_a95e860a6f134384a5ae870c1960e54b6}{{\bfseries Vecteur} (const \hyperlink{class_point}{Point} \&p1, const \hyperlink{class_point}{Point} \&p2)}\label{class_vecteur_a95e860a6f134384a5ae870c1960e54b6}
+
+\item 
+\hypertarget{class_vecteur_a5b328da1ba17bca82048359d59c0abc3}{{\bfseries Vecteur} (const \hyperlink{class_vecteur}{Vecteur} \&v1, const \hyperlink{class_vecteur}{Vecteur} \&v2)}\label{class_vecteur_a5b328da1ba17bca82048359d59c0abc3}
+
+\item 
+\hypertarget{class_vecteur_a42f7a7f1dc44e088c278d3b3363c5a33}{double {\bfseries get\+X} () const }\label{class_vecteur_a42f7a7f1dc44e088c278d3b3363c5a33}
+
+\item 
+\hypertarget{class_vecteur_a323d689fb951261b557ea65b10af3893}{double {\bfseries get\+Y} () const }\label{class_vecteur_a323d689fb951261b557ea65b10af3893}
+
+\item 
+\hyperlink{class_vecteur}{Vecteur} \hyperlink{class_vecteur_a9d61176ddcefcc1dcf0ae2d5fd2e9ee7}{rotation} (const \hyperlink{class_vecteur}{Vecteur} \&p, const \hyperlink{class_angle}{Angle} \&a) const 
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_point_a32bc5c9d0e07f0e4b54187ffcd3c8a67}{Point\+::rotation}. \end{DoxyCompactList}\item 
+\hypertarget{class_vecteur_ab012afb15826a7d5858a3b45ea763a57}{\hyperlink{class_vecteur}{Vecteur} {\bfseries homothetie} (const \hyperlink{class_vecteur}{Vecteur} \&p, double scale) const }\label{class_vecteur_ab012afb15826a7d5858a3b45ea763a57}
+
+\item 
+\hypertarget{class_vecteur_ae748a1c896716a7983e53e1dbfdbb815}{bool {\bfseries operator==} (const \hyperlink{class_vecteur}{Vecteur} \&v) const }\label{class_vecteur_ae748a1c896716a7983e53e1dbfdbb815}
+
+\item 
+\hypertarget{class_vecteur_ae22b87d8ad6628b235bed15de8d8aaa2}{const \hyperlink{class_vecteur}{Vecteur} {\bfseries operator+} (const \hyperlink{class_vecteur}{Vecteur} \&v) const }\label{class_vecteur_ae22b87d8ad6628b235bed15de8d8aaa2}
+
+\item 
+\hypertarget{class_vecteur_ac01814448a6ecce07a03088c00504fb0}{const \hyperlink{class_vecteur}{Vecteur} {\bfseries operator-\/} (const \hyperlink{class_vecteur}{Vecteur} \&v) const }\label{class_vecteur_ac01814448a6ecce07a03088c00504fb0}
+
+\item 
+\hypertarget{class_vecteur_a45870b151569e48d0286ad2761e4c655}{double {\bfseries operator$\ast$} (const \hyperlink{class_vecteur}{Vecteur} \&v) const }\label{class_vecteur_a45870b151569e48d0286ad2761e4c655}
+
+\item 
+\hypertarget{class_vecteur_a5b537a840a32a9399456bc8a65b2f7ed}{const \hyperlink{class_vecteur}{Vecteur} {\bfseries operator$\ast$} (const double \&a) const }\label{class_vecteur_a5b537a840a32a9399456bc8a65b2f7ed}
+
+\item 
+\hypertarget{class_vecteur_a1b5f3856ab3c36ab39a168a9ba92accb}{const \hyperlink{class_vecteur}{Vecteur} {\bfseries operator-\/} () const }\label{class_vecteur_a1b5f3856ab3c36ab39a168a9ba92accb}
+
+\item 
+\hypertarget{class_vecteur_afa6e8ccd9771f87419077954cf96677a}{double {\bfseries norme} () const }\label{class_vecteur_afa6e8ccd9771f87419077954cf96677a}
+
+\item 
+\hypertarget{class_vecteur_a98103b18e3e8529e6d5f600689d67833}{{\bfseries operator std\+::string} () const }\label{class_vecteur_a98103b18e3e8529e6d5f600689d67833}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{class_vecteur_a9d61176ddcefcc1dcf0ae2d5fd2e9ee7}{\index{Vecteur@{Vecteur}!rotation@{rotation}}
+\index{rotation@{rotation}!Vecteur@{Vecteur}}
+\subsubsection[{rotation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vecteur} Vecteur\+::rotation (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vecteur} \&}]{p, }
+\item[{const {\bf Angle} \&}]{a}
+\end{DoxyParamCaption}
+) const}}\label{class_vecteur_a9d61176ddcefcc1dcf0ae2d5fd2e9ee7}
+
+
+\hyperlink{class_point_a32bc5c9d0e07f0e4b54187ffcd3c8a67}{Point\+::rotation}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p} & le point à partir duquel il faut effectuer la rotation \\
+\hline
+{\em a} & l'angle de la rotation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+le point résultat Permet de calculer le point issus de la rotation du point courrant par rapport à p et a 
+\end{DoxyReturn}
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+vecteur.\+h\item 
+vecteur.\+cpp\end{DoxyCompactItemize}

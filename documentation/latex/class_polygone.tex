@@ -1,0 +1,103 @@
+\hypertarget{class_polygone}{\section{Référence de la classe Polygone}
+\label{class_polygone}\index{Polygone@{Polygone}}
+}
+
+
+The \hyperlink{class_polygone}{Polygone} class Cette classe représente un poygone, c'est à dire une ensemble de points dans un ordre donné. Un polygone contient au moins trois points. Les points stockés dans un polygone sont des copies des points envoyés. L'ordre dans lequel on ajoute les points correspond à l'ordre dans lequel ils seront reliés\+: si on insère un point dans un polygone, il sera relié à au dernier point inséré et au premier de la liste.  
+
+
+
+
+{\ttfamily \#include $<$polygone.\+h$>$}
+
+Graphe d'héritage de Polygone\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_polygone}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_polygone_a2b5e7a67425d3c6e6f0b4d0c998928ae}{{\bfseries Polygone} (const Couleurs\+::\+Couleur \&couleur, const \hyperlink{class_point}{Point} \&p1, const \hyperlink{class_point}{Point} \&p2, const \hyperlink{class_point}{Point} \&p3)}\label{class_polygone_a2b5e7a67425d3c6e6f0b4d0c998928ae}
+
+\item 
+\hypertarget{class_polygone_ad5dd11ef57a4955446e3d47c90c9a801}{{\bfseries Polygone} (const \hyperlink{class_point}{Point} \&p1, const \hyperlink{class_point}{Point} \&p2, const \hyperlink{class_point}{Point} \&p3)}\label{class_polygone_ad5dd11ef57a4955446e3d47c90c9a801}
+
+\item 
+\hypertarget{class_polygone_a1aef610ad14c85f49e2557d4104cfbc0}{{\bfseries Polygone} (const \hyperlink{class_forme_composee}{Forme\+Composee}$<$ \hyperlink{class_point}{Point}, \hyperlink{class_polygone}{Polygone} $>$ \&f)}\label{class_polygone_a1aef610ad14c85f49e2557d4104cfbc0}
+
+\item 
+\hypertarget{class_polygone_a668cda1260040ee9d9a273e619e89c77}{{\bfseries Polygone} (const \hyperlink{class_polygone}{Polygone} \&p)}\label{class_polygone_a668cda1260040ee9d9a273e619e89c77}
+
+\item 
+void \hyperlink{class_polygone_a866ae8e0988baecdd582b22924986c9e}{ajouter\+Point} (const \hyperlink{class_point}{Point} \&p)
+\begin{DoxyCompactList}\small\item\em ajouter\+Point \end{DoxyCompactList}\item 
+\hypertarget{class_polygone_afc3b49ce264ac9351decd6a949ee4195}{void {\bfseries supprimer\+Dernier} ()}\label{class_polygone_afc3b49ce264ac9351decd6a949ee4195}
+
+\item 
+\hyperlink{class_point}{Point} $\ast$ \hyperlink{class_polygone_a7a10a1addd6e669b9657f72d6a3ac014}{get} (size\+\_\+t i) const 
+\begin{DoxyCompactList}\small\item\em get \end{DoxyCompactList}\item 
+\hypertarget{class_polygone_ab12c615571471004936009f198a8ce2e}{virtual string {\bfseries to\+String} () const }\label{class_polygone_ab12c615571471004936009f198a8ce2e}
+
+\item 
+\hypertarget{class_polygone_a933d95c281ba00ce39baf52fe3063b5e}{virtual double {\bfseries aire} () const }\label{class_polygone_a933d95c281ba00ce39baf52fe3063b5e}
+
+\item 
+\hypertarget{class_polygone_af9ae1d761d5a7f6834e46138eddd925f}{virtual \hyperlink{class_polygone}{Polygone} $\ast$ {\bfseries clone} () const }\label{class_polygone_af9ae1d761d5a7f6834e46138eddd925f}
+
+\item 
+\hypertarget{class_polygone_a1715df4b7ffd9b1e983c082d5d61c1ab}{virtual void {\bfseries dessin} (const \hyperlink{class_dessinable}{Dessinable} \&) const }\label{class_polygone_a1715df4b7ffd9b1e983c082d5d61c1ab}
+
+\item 
+\hypertarget{class_polygone_ae293043ea9d180259771515a6496cd8c}{virtual \hyperlink{class_polygone_ae293043ea9d180259771515a6496cd8c}{$\sim$\+Polygone} ()}\label{class_polygone_ae293043ea9d180259771515a6496cd8c}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_polygone_ae293043ea9d180259771515a6496cd8c}{Polygone\+::$\sim$\+Polygone} On doit supprimer les membres du vector car il s'agit de copies créées par l'instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Membres hérités additionnels}
+
+
+\subsection{Description détaillée}
+The \hyperlink{class_polygone}{Polygone} class Cette classe représente un poygone, c'est à dire une ensemble de points dans un ordre donné. Un polygone contient au moins trois points. Les points stockés dans un polygone sont des copies des points envoyés. L'ordre dans lequel on ajoute les points correspond à l'ordre dans lequel ils seront reliés\+: si on insère un point dans un polygone, il sera relié à au dernier point inséré et au premier de la liste. 
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{class_polygone_a866ae8e0988baecdd582b22924986c9e}{\index{Polygone@{Polygone}!ajouter\+Point@{ajouter\+Point}}
+\index{ajouter\+Point@{ajouter\+Point}!Polygone@{Polygone}}
+\subsubsection[{ajouter\+Point}]{\setlength{\rightskip}{0pt plus 5cm}void Polygone\+::ajouter\+Point (
+\begin{DoxyParamCaption}
+\item[{const {\bf Point} \&}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_polygone_a866ae8e0988baecdd582b22924986c9e}
+
+
+ajouter\+Point 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p} & Ajoute un point à la suite des précédents. Le point est stocké sous forme du pointeur d'une copie du point passé en paramètres. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_polygone_a7a10a1addd6e669b9657f72d6a3ac014}{\index{Polygone@{Polygone}!get@{get}}
+\index{get@{get}!Polygone@{Polygone}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Point} $\ast$ Polygone\+::get (
+\begin{DoxyParamCaption}
+\item[{size\+\_\+t}]{i}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_polygone_a7a10a1addd6e669b9657f72d6a3ac014}
+
+
+get 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em i} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Une copie du point à la position demandée, ou N\+U\+L\+L si i est incorrect. 
+\end{DoxyReturn}
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+polygone.\+h\item 
+polygone.\+cpp\end{DoxyCompactItemize}

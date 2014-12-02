@@ -1,0 +1,64 @@
+\hypertarget{class_connexion}{\section{RÃ©fÃ©rence de la classe Connexion}
+\label{class_connexion}\index{Connexion@{Connexion}}
+}
+
+
+The \hyperlink{class_connexion}{Connexion} class Cette classe est chargï¿½e d'ï¿½tablire une connexion avec un serveur distant Cette classe charge une seule fois les dll Windows pour toutes les instances, cette partie est donc un singleton. De plus elle est compilable et fonctionnelle sous windows et unix(linux / mac compris) car la portabilitï¿½ c'est la vie.  
+
+
+
+
+{\ttfamily \#include $<$connexion.\+h$>$}
+
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_connexion_a7c890dbf77a2b9f49013a7be018d2230}{{\bfseries Connexion} (const std\+::string \&ip, int host)}\label{class_connexion_a7c890dbf77a2b9f49013a7be018d2230}
+
+\item 
+void \hyperlink{class_connexion_aa8fbcb5c7ae95474159841a159075d72}{envoyer} (const char $\ast$) const 
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_connexion_aa8fbcb5c7ae95474159841a159075d72}{Connexion\+::envoyer} envoie le message au serveur. \end{DoxyCompactList}\item 
+int \hyperlink{class_connexion_aff85c238e81fb5e3b7b5e218da2b70ef}{recevoir} () const 
+\begin{DoxyCompactList}\small\item\em Dessin\+Manager\+::recevoir. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description dÃ©taillÃ©e}
+The \hyperlink{class_connexion}{Connexion} class Cette classe est chargï¿½e d'ï¿½tablire une connexion avec un serveur distant Cette classe charge une seule fois les dll Windows pour toutes les instances, cette partie est donc un singleton. De plus elle est compilable et fonctionnelle sous windows et unix(linux / mac compris) car la portabilitï¿½ c'est la vie. 
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{class_connexion_aa8fbcb5c7ae95474159841a159075d72}{\index{Connexion@{Connexion}!envoyer@{envoyer}}
+\index{envoyer@{envoyer}!Connexion@{Connexion}}
+\subsubsection[{envoyer}]{\setlength{\rightskip}{0pt plus 5cm}void Connexion\+::envoyer (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{message}
+\end{DoxyParamCaption}
+) const}}\label{class_connexion_aa8fbcb5c7ae95474159841a159075d72}
+
+
+\hyperlink{class_connexion_aa8fbcb5c7ae95474159841a159075d72}{Connexion\+::envoyer} envoie le message au serveur. 
+
+
+\begin{DoxyParams}{ParamÃ¨tres}
+{\em message} & le message à envoyer Cette méthode permet d'envoyer un message au serveur Il ne faut pas ajouter \char`\"{}\textbackslash{}r\textbackslash{}n\char`\"{} à la fin du message, la fonction s'en charge. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_connexion_aff85c238e81fb5e3b7b5e218da2b70ef}{\index{Connexion@{Connexion}!recevoir@{recevoir}}
+\index{recevoir@{recevoir}!Connexion@{Connexion}}
+\subsubsection[{recevoir}]{\setlength{\rightskip}{0pt plus 5cm}int Connexion\+::recevoir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_connexion_aff85c238e81fb5e3b7b5e218da2b70ef}
+
+
+Dessin\+Manager\+::recevoir. 
+
+\begin{DoxyReturn}{Renvoie}
+la réponse du serveur, 0 (il y a eu une erreur) ou 1 (tout s'est bien passé) Fonction à appeller après chaque envoie de message, elle vérifie que le message a bien été reçu par le serveur 
+\end{DoxyReturn}
+
+
+La documentation de cette classe a Ã©tÃ© gÃ©nÃ©rÃ©e Ã  partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+connexion.\+h\item 
+connexion.\+cpp\end{DoxyCompactItemize}

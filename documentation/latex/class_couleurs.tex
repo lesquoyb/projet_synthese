@@ -1,0 +1,184 @@
+\hypertarget{class_couleurs}{\section{Référence de la classe Couleurs}
+\label{class_couleurs}\index{Couleurs@{Couleurs}}
+}
+
+
+The \hyperlink{class_couleurs}{Couleurs} class Cette classe représente les différentes couleurs disponible dans l'application et contient les différentes méthodes utiles pour les manipuler.  
+
+
+
+
+{\ttfamily \#include $<$Couleur.\+h$>$}
+
+\subsection*{Types publics}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_couleurs_abd168094c41895357f4402e17bcd7379}{enum {\bfseries Couleur} \{ \\*
+{\bfseries black} = 0, 
+{\bfseries white}, 
+{\bfseries yellow}, 
+{\bfseries red}, 
+\\*
+{\bfseries green}, 
+{\bfseries blue}, 
+{\bfseries nb\+Couleurs}
+ \}}\label{class_couleurs_abd168094c41895357f4402e17bcd7379}
+
+\end{DoxyCompactItemize}
+\subsection*{Fonctions membres publiques statiques}
+\begin{DoxyCompactItemize}
+\item 
+static string \hyperlink{class_couleurs_a3a07aadeec400f7ae9aa2f7548732609}{couleur\+To\+String} (const Couleur \&couleur)
+\begin{DoxyCompactList}\small\item\em couleur\+To\+String \end{DoxyCompactList}\item 
+static string \hyperlink{class_couleurs_a180a77b65f68f5bfa07c7bf0755cced8}{couleur\+To\+Hexa} (const Couleur \&couleur)
+\begin{DoxyCompactList}\small\item\em couleur\+To\+Hexa \end{DoxyCompactList}\item 
+static Couleur \hyperlink{class_couleurs_a502cfe3fdf9496d4b2f391d68b3ec00f}{hexa\+To\+Couleur} (const string \&hexa)
+\begin{DoxyCompactList}\small\item\em hexa\+To\+Couleur \end{DoxyCompactList}\item 
+static Couleur \hyperlink{class_couleurs_a4c1d1a7dad74a2337920103313c7ddbc}{string\+To\+Couleur} (const string \&nom)
+\begin{DoxyCompactList}\small\item\em string\+To\+Couleur \end{DoxyCompactList}\item 
+static Couleur \hyperlink{class_couleurs_ade385a32c027d77eef94fff699e23ac4}{int\+To\+Couleur} (int i)
+\begin{DoxyCompactList}\small\item\em int\+To\+Couleur \end{DoxyCompactList}\item 
+static bool \hyperlink{class_couleurs_aa9b1467aaf1b88acbefc3e319a9a32bf}{is\+Couleur} (const string \&coul)
+\begin{DoxyCompactList}\small\item\em is\+Couleur \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Amis}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_couleurs_acad36b0faad1100a0bf903291f8506db}{ostream \& {\bfseries operator$<$$<$} (ostream \&, const Couleur \&c)}\label{class_couleurs_acad36b0faad1100a0bf903291f8506db}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+The \hyperlink{class_couleurs}{Couleurs} class Cette classe représente les différentes couleurs disponible dans l'application et contient les différentes méthodes utiles pour les manipuler. 
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{class_couleurs_a180a77b65f68f5bfa07c7bf0755cced8}{\index{Couleurs@{Couleurs}!couleur\+To\+Hexa@{couleur\+To\+Hexa}}
+\index{couleur\+To\+Hexa@{couleur\+To\+Hexa}!Couleurs@{Couleurs}}
+\subsubsection[{couleur\+To\+Hexa}]{\setlength{\rightskip}{0pt plus 5cm}string Couleurs\+::couleur\+To\+Hexa (
+\begin{DoxyParamCaption}
+\item[{const Couleur \&}]{couleur}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_couleurs_a180a77b65f68f5bfa07c7bf0755cced8}
+
+
+couleur\+To\+Hexa 
+
+couleur\+To\+Hexa Permet d'obtenir le code hexadécimal correspondant à une couleur
+
+
+\begin{DoxyParams}{Paramètres}
+{\em couleur} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+un string représentant la valeur hexadécimale de la couleur passée en paramètre sous la forme\+: \char`\"{}\#\+R\+R\+G\+G\+B\+B\char`\"{}.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Paramètres}
+{\em couleur} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+le code hexadeciale sous la forme \char`\"{}\#\+R\+R\+G\+G\+B\+B\char`\"{} 
+\end{DoxyReturn}
+\hypertarget{class_couleurs_a3a07aadeec400f7ae9aa2f7548732609}{\index{Couleurs@{Couleurs}!couleur\+To\+String@{couleur\+To\+String}}
+\index{couleur\+To\+String@{couleur\+To\+String}!Couleurs@{Couleurs}}
+\subsubsection[{couleur\+To\+String}]{\setlength{\rightskip}{0pt plus 5cm}string Couleurs\+::couleur\+To\+String (
+\begin{DoxyParamCaption}
+\item[{const Couleur \&}]{couleur}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_couleurs_a3a07aadeec400f7ae9aa2f7548732609}
+
+
+couleur\+To\+String 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em couleur} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+un string représentant la couleur passée en paramètre 
+\end{DoxyReturn}
+\hypertarget{class_couleurs_a502cfe3fdf9496d4b2f391d68b3ec00f}{\index{Couleurs@{Couleurs}!hexa\+To\+Couleur@{hexa\+To\+Couleur}}
+\index{hexa\+To\+Couleur@{hexa\+To\+Couleur}!Couleurs@{Couleurs}}
+\subsubsection[{hexa\+To\+Couleur}]{\setlength{\rightskip}{0pt plus 5cm}Couleurs\+::\+Couleur Couleurs\+::hexa\+To\+Couleur (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{hexa}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_couleurs_a502cfe3fdf9496d4b2f391d68b3ec00f}
+
+
+hexa\+To\+Couleur 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em hexa} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+la couleur correspondant à la valeur hexadécimale passée en paramètre. Retourne Couleur\+::nb\+Couleurs si la couleur n'est pas trouvée. 
+\end{DoxyReturn}
+\hypertarget{class_couleurs_ade385a32c027d77eef94fff699e23ac4}{\index{Couleurs@{Couleurs}!int\+To\+Couleur@{int\+To\+Couleur}}
+\index{int\+To\+Couleur@{int\+To\+Couleur}!Couleurs@{Couleurs}}
+\subsubsection[{int\+To\+Couleur}]{\setlength{\rightskip}{0pt plus 5cm}Couleurs\+::\+Couleur Couleurs\+::int\+To\+Couleur (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_couleurs_ade385a32c027d77eef94fff699e23ac4}
+
+
+int\+To\+Couleur 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em i} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+la couleur correspondant à l'indice, si l'indice ne correspond à aucune couleur, on retourne Couleurs\+::nb\+Couleurs . 
+\end{DoxyReturn}
+\hypertarget{class_couleurs_aa9b1467aaf1b88acbefc3e319a9a32bf}{\index{Couleurs@{Couleurs}!is\+Couleur@{is\+Couleur}}
+\index{is\+Couleur@{is\+Couleur}!Couleurs@{Couleurs}}
+\subsubsection[{is\+Couleur}]{\setlength{\rightskip}{0pt plus 5cm}bool Couleurs\+::is\+Couleur (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{coul}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_couleurs_aa9b1467aaf1b88acbefc3e319a9a32bf}
+
+
+is\+Couleur 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em coul} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+true si coul est une couleur correcte, false sinon. 
+\end{DoxyReturn}
+\hypertarget{class_couleurs_a4c1d1a7dad74a2337920103313c7ddbc}{\index{Couleurs@{Couleurs}!string\+To\+Couleur@{string\+To\+Couleur}}
+\index{string\+To\+Couleur@{string\+To\+Couleur}!Couleurs@{Couleurs}}
+\subsubsection[{string\+To\+Couleur}]{\setlength{\rightskip}{0pt plus 5cm}Couleurs\+::\+Couleur Couleurs\+::string\+To\+Couleur (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{nom}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_couleurs_a4c1d1a7dad74a2337920103313c7ddbc}
+
+
+string\+To\+Couleur 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em nom} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+la couleur correspondant au nom de couleur passé en paramètre. Retourne Couleur\+::nb\+Couleurs si la couleur n'est pas trouvée. 
+\end{DoxyReturn}
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+Couleur.\+h\item 
+Couleur.\+cpp\end{DoxyCompactItemize}

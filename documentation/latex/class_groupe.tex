@@ -1,0 +1,118 @@
+\hypertarget{class_groupe}{\section{R√©f√©rence de la classe Groupe}
+\label{class_groupe}\index{Groupe@{Groupe}}
+}
+
+
+The \hyperlink{class_groupe}{Groupe} class Un groupe est un ensemble de formes compos√©es. Chaque forme le constituant est une copie de la forme originale. L'ajout d'une forme dans un groupe change sa couleur pour celle du groupe.  
+
+
+
+
+{\ttfamily \#include $<$groupe.\+h$>$}
+
+Graphe d'h√©ritage de Groupe\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_groupe}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_groupe_aa7f2a1ce7018f40ee6c518f62aa5b8d3}{{\bfseries Groupe} (const \hyperlink{class_forme_composee}{Forme\+Composee}$<$ \hyperlink{class_forme_geom}{Forme\+Geom}, \hyperlink{class_groupe}{Groupe} $>$ \&f)}\label{class_groupe_aa7f2a1ce7018f40ee6c518f62aa5b8d3}
+
+\item 
+\hypertarget{class_groupe_adf726dba5919371e203f34441215ef2d}{{\bfseries Groupe} (const \hyperlink{class_groupe}{Groupe} \&)}\label{class_groupe_adf726dba5919371e203f34441215ef2d}
+
+\item 
+\hypertarget{class_groupe_a659615b48f68f6f0ff8052ae4201ac67}{{\bfseries Groupe} (const Couleurs\+::\+Couleur \&coul)}\label{class_groupe_a659615b48f68f6f0ff8052ae4201ac67}
+
+\item 
+\hypertarget{class_groupe_a923d63c16045730cc5276a5be8e04685}{virtual void {\bfseries ajouter} (const \hyperlink{class_forme_geom}{Forme\+Geom} \&f)}\label{class_groupe_a923d63c16045730cc5276a5be8e04685}
+
+\item 
+void \hyperlink{class_groupe_a8a31cdfca2e4729ecaceebb3038ba931}{supprimer} (const double \&index)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_groupe_a8a31cdfca2e4729ecaceebb3038ba931}{Groupe\+::supprimer} enlËve la forme de la liste et de la mÈmoire. \end{DoxyCompactList}\item 
+void \hyperlink{class_groupe_a0ea16776237c99ea14eb910c5d053e88}{enlever} (const \hyperlink{class_forme_geom}{Forme\+Geom} $\ast$forme)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_groupe_a0ea16776237c99ea14eb910c5d053e88}{Groupe\+::enlever} enlËve forme du groupe, ne le supprime pas de la mÈmoire. \end{DoxyCompactList}\item 
+\hyperlink{class_forme_geom}{Forme\+Geom} $\ast$ \hyperlink{class_groupe_ace75101b0417cead91c911682537c62f}{get} (size\+\_\+t i) const 
+\begin{DoxyCompactList}\small\item\em get \end{DoxyCompactList}\item 
+\hypertarget{class_groupe_ae81ebd4b7292c02e909aec794f676643}{virtual string {\bfseries to\+String} () const }\label{class_groupe_ae81ebd4b7292c02e909aec794f676643}
+
+\item 
+\hypertarget{class_groupe_ab5184897ea2f56b4f280852e4665f824}{virtual void {\bfseries dessin} (const \hyperlink{class_dessinable}{Dessinable} \&d) const }\label{class_groupe_ab5184897ea2f56b4f280852e4665f824}
+
+\item 
+\hypertarget{class_groupe_aa9a817d398da48c63dd8c5435be0edfa}{virtual double {\bfseries aire} () const }\label{class_groupe_aa9a817d398da48c63dd8c5435be0edfa}
+
+\item 
+\hypertarget{class_groupe_a2ee3c8904c199b3bdc777817286f1c44}{virtual \hyperlink{class_groupe}{Groupe} $\ast$ {\bfseries clone} () const }\label{class_groupe_a2ee3c8904c199b3bdc777817286f1c44}
+
+\item 
+\hypertarget{class_groupe_a99dd414922635dcc0585aabb2a330f63}{virtual \hyperlink{class_groupe_a99dd414922635dcc0585aabb2a330f63}{$\sim$\+Groupe} ()}\label{class_groupe_a99dd414922635dcc0585aabb2a330f63}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_groupe_a99dd414922635dcc0585aabb2a330f63}{Groupe\+::$\sim$\+Groupe} Rien ‡ faire car les objets dans le groupe doivent Ítre gÈrÈs en dehors de celui-\/ci. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Membres h√©rit√©s additionnels}
+
+
+\subsection{Description d√©taill√©e}
+The \hyperlink{class_groupe}{Groupe} class Un groupe est un ensemble de formes compos√©es. Chaque forme le constituant est une copie de la forme originale. L'ajout d'une forme dans un groupe change sa couleur pour celle du groupe. 
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{class_groupe_a0ea16776237c99ea14eb910c5d053e88}{\index{Groupe@{Groupe}!enlever@{enlever}}
+\index{enlever@{enlever}!Groupe@{Groupe}}
+\subsubsection[{enlever}]{\setlength{\rightskip}{0pt plus 5cm}void Groupe\+::enlever (
+\begin{DoxyParamCaption}
+\item[{const {\bf Forme\+Geom} $\ast$}]{forme}
+\end{DoxyParamCaption}
+)}}\label{class_groupe_a0ea16776237c99ea14eb910c5d053e88}
+
+
+\hyperlink{class_groupe_a0ea16776237c99ea14eb910c5d053e88}{Groupe\+::enlever} enlËve forme du groupe, ne le supprime pas de la mÈmoire. 
+
+
+\begin{DoxyParams}{Param√®tres}
+{\em forme} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_groupe_ace75101b0417cead91c911682537c62f}{\index{Groupe@{Groupe}!get@{get}}
+\index{get@{get}!Groupe@{Groupe}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Forme\+Geom} $\ast$ Groupe\+::get (
+\begin{DoxyParamCaption}
+\item[{size\+\_\+t}]{i}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_groupe_ace75101b0417cead91c911682537c62f}
+
+
+get 
+
+
+\begin{DoxyParams}{Param√®tres}
+{\em i} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+l'objet √† la position i, N\+U\+L\+L si la position est mauvaise. Attention ne pas d√©truire l'objet avant que le groupe ne soit lui m√™me d√©truit. 
+\end{DoxyReturn}
+\hypertarget{class_groupe_a8a31cdfca2e4729ecaceebb3038ba931}{\index{Groupe@{Groupe}!supprimer@{supprimer}}
+\index{supprimer@{supprimer}!Groupe@{Groupe}}
+\subsubsection[{supprimer}]{\setlength{\rightskip}{0pt plus 5cm}void Groupe\+::supprimer (
+\begin{DoxyParamCaption}
+\item[{const double \&}]{index}
+\end{DoxyParamCaption}
+)}}\label{class_groupe_a8a31cdfca2e4729ecaceebb3038ba931}
+
+
+\hyperlink{class_groupe_a8a31cdfca2e4729ecaceebb3038ba931}{Groupe\+::supprimer} enlËve la forme de la liste et de la mÈmoire. 
+
+
+\begin{DoxyParams}{Param√®tres}
+{\em f} & \\
+\hline
+\end{DoxyParams}
+
+
+La documentation de cette classe a √©t√© g√©n√©r√©e √† partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+groupe.\+h\item 
+groupe.\+cpp\end{DoxyCompactItemize}
