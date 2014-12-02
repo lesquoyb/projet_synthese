@@ -30,8 +30,7 @@ SOURCES += src/formegeom.cpp \
     src/connexion.cpp \
     src/matricecarree2.cpp \
     src/chargementCOR/chargementgroupe.cpp \
-    src/tools.cpp \
-    tests/testtriangle.cpp
+    src/tools.cpp
 
 HEADERS  += src/Couleur.h \
     src/formegeom.h \
@@ -40,7 +39,6 @@ HEADERS  += src/Couleur.h \
     src/angle.h \
     src/point.h \
     src/vecteur.h \
-    exceptions/exceptioncouleurinexistante.h \
     src/groupe.h \
     tests/testgroupe.h \
     src/segment.h \
@@ -72,7 +70,6 @@ HEADERS  += src/Couleur.h \
     src/chargementCOR/expertcor.h \
     src/chargementCOR/expertchargement.h \
     src/chargementCOR/chargementsegment.h \
-    exceptions/exceptiontraitementimpossible.h \
     src/chargementCOR/facade.h \
     src/chargementCOR/chargementtriangle.h \
     src/chargementCOR/chargementcercle.h \

@@ -3,6 +3,11 @@
 #include "cpptest.h"
 #include "../src/angle.h"
 
+
+/**
+  *@brief TestAngle
+  * La classe de tests sur les angles.
+  */
 CPPTEST(TestAngle)
 
     Angle droit(180);

@@ -5,6 +5,12 @@
 #include "../src/polygone.h"
 #include <memory>
 
+
+
+/**
+  *@brief TestForme
+  * La classe de tests sur les FormeGeom.
+  */
 CPPTEST(TestForme)
 
 Point origine(0,0);

@@ -13,7 +13,10 @@
 
 
 
-
+/**
+ * @brief The CppTest class
+ * Classe abstraite représentant un ensemble de tests unitaires.
+ */
 class CppTest{
 
 
@@ -28,6 +31,10 @@ protected:
 
 public:
 
+    /**
+     * @brief run
+     * Lance les tests unitaires de la classe.
+     */
     void run(){
         for(unsigned int i = 0 ; i < _functions.size() ; i++){
             std::string detail;
@@ -36,7 +43,17 @@ public:
             _run.push_back(_names[i] + " " + detail);
         }
     }
+
+    /**
+     * @brief getRunResult
+     * @return le résultat des tests.
+     */
     std::vector<std::string> getRunResult()const{return _run;}
+
+    /**
+      * @brief getName
+      * @return le nom de l'ensemble de tests.
+      */
      std::string getName()const{return _name;}
 
 

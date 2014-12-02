@@ -1,10 +1,14 @@
 #ifndef TESTCOULEURS_H
 #define TESTCOULEURS_H
 
-#include "../exceptions/exceptioncouleurinexistante.h"
 #include "cpptest.h"
 #include "../src/Couleur.h"
 
+
+/**
+  *@brief TestCouleurs
+  * La classe de tests sur les couleurs.
+  */
 CPPTEST(TestCouleurs)
 
         TESTCASE(CouleurToStringTestTrue,{

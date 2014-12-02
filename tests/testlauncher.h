@@ -12,7 +12,10 @@
 #include "testangle.h"
 #include "testforme.h"
 
-
+/**
+  *@brief TestLauncher1
+  * La façade lançant tous les tests unitaires du programme.
+  */
 TESTLAUNCHER(TestLauncher1)
 
     addTest(new TestCouleurs());

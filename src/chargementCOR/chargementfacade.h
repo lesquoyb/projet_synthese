@@ -8,6 +8,10 @@
 #include "facade.h"
 #include "../tools.h"
 
+/**
+ * @brief The ChargementFacade class
+ * Spécialisation de la façade pour s'occuper d'ExpertChargement.
+ */
 class ChargementFacade : public Facade<FormeGeom,string>{
 
 private:

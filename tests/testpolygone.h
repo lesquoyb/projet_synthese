@@ -2,7 +2,15 @@
 #define TESTPOLYGONE_H
 #include "cpptest.h"
 #include "../src/polygone.h"
+#include <memory>
 
+using std::unique_ptr;
+
+
+/**
+  *@brief TestPolygone
+  * La classe de tests sur les polygones.
+  */
 CPPTEST(TestPolygone)
 
     Point origine(0,0);
@@ -32,15 +40,21 @@ CPPTEST(TestPolygone)
 
 
     TESTCASE(rotationSimple,{
-        Equals( Polygone(*p.rotation(origine,Angle(90))).toString() , Polygone(origine,pRot90,*pZeroUn.rotation(origine,Angle(90))).toString());
+        unique_ptr<ObjetGeom> poly(p.rotation(origine,Angle(90)));
+        Point* tmp = pZeroUn.rotation(origine,Angle(90));
+        Point temp = * tmp;
+        delete tmp;
+        Equals( poly->toString() , Polygone(origine,pRot90,temp).toString());
     });
 
     TESTCASE(translationSimple,{
-         Equals(Polygone(*p.translation(Vecteur(origine,pUn))).toString(),Polygone(pUn,Point(2,2),Point(1,2)).toString());
+                 unique_ptr<ObjetGeom> poly(p.translation(Vecteur(origine,pUn)));
+                 Equals(poly->toString(),Polygone(pUn,Point(2,2),Point(1,2)).toString());
      });
 
     TESTCASE(homothetieSimple, {
-         Equals(Polygone(*p.homothetie(origine,1)).toString(), p.toString());
+                 unique_ptr<ObjetGeom> poly(p.homothetie(origine,1));
+                 Equals(poly->toString(), p.toString());
      });
 
     TESTCASE(toString,{

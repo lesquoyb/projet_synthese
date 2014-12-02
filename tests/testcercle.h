@@ -5,6 +5,11 @@
 #include "cpptest.h"
 #include "../src/cercle.h"
 
+
+/**
+  *@brief TestCercle
+  * La classe de tests sur les cercles.
+  */
 CPPTEST(TestCercle)
 
 
@@ -13,10 +18,9 @@ CPPTEST(TestCercle)
     Point pZeroUn(0,1);
     Point pRot90(-1,1);
     Point* temp = origine.rotation(pUn,Angle(90));
-    Cercle* cTemp;
     Point unRot(*temp);
     delete temp;
-
+    Cercle* cTemp;
     Cercle un(origine,5);
 
 
@@ -26,20 +30,23 @@ CPPTEST(TestCercle)
 
     TESTCASE(rotationSimple,{
          cTemp = un.rotation(pUn,Angle(90));
-         string stringUn = temp->toString();
+         string stringUn = cTemp->toString();
          delete cTemp;
          Equals(stringUn , Cercle(unRot,un.getRayon()).toString());
      });
 
     TESTCASE(translationSimple,{
          cTemp = un.translation(Vecteur(origine,pUn));
-         string stringUn = temp->toString();
+         string stringUn = cTemp->toString();
          delete cTemp;
          Equals(stringUn,Cercle(pUn,un.getRayon()).toString());
      });
 
     TESTCASE(homothetieSimple, {
-         Equals(un.homothetie(origine,2)->toString(), Cercle(origine, un.getRayon()*2).toString());
+         cTemp = un.homothetie(origine,2);
+         string stringUn = cTemp->toString();
+         delete cTemp;
+         Equals(stringUn , Cercle(origine, un.getRayon()*2).toString());
      });
 
     TESTCASE(toString,{

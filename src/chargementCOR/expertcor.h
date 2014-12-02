@@ -1,10 +1,15 @@
 #ifndef EXPERTCOR_H
 #define EXPERTCOR_H
 #include "expert.h"
-#include "../../exceptions/exceptiontraitementimpossible.h"
 
 
 template<class retour, class aTraiter>
+/**
+ * @brief The ExpertCOR class
+ * Spécialisation de l'expert, l'expert COR est fait pour être utilisé dans une Chain Of Responsibility
+ * C'est pourquoi il est doté d'un poiteur sur un autre ExpertCOR: le suivant dans la chaine.
+ * De plus il définie sa fonction de traitement de façon à ce qu'elle renvoie le résultat du suivant si jamais l'expert est incapable de traiter les données.
+ */
 class ExpertCOR : public Expert<retour, aTraiter>{
 
 private:
@@ -23,18 +28,11 @@ public:
     }
 
     virtual retour* traitement(aTraiter &objet)const{
-        try{
             retour* ret = traitementSpecialise(objet);
             if( ret == NULL and suivant != NULL){
                 return  suivant->traitement(objet);
             }
             return ret;
-        }
-        catch(ExceptionTraitementImpossible e){
-            std::cout << e.what();
-            return NULL;
-        }
-
     }
 
     /**

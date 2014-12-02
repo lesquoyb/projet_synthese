@@ -9,6 +9,10 @@
 
 using namespace std;
 
+/**
+ * @brief The ChargementCercle class
+ * Expert du cercle
+ */
 class ChargementCercle : public ExpertChargement{
 
 

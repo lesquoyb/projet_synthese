@@ -3,6 +3,11 @@
 #include "cpptest.h"
 #include "../src/vecteur.h"
 
+
+/**
+  *@brief TestVecteur
+  * La classe de tests sur les vecteurs.
+  */
 CPPTEST(TestVecteur)
 
 

@@ -11,7 +11,7 @@ Cercle* Cercle::rotation(const Point &p, const Angle &angle)const{
 
 Cercle* Cercle::homothetie(const Point &p, const double &scale)const{
     Point* c = _centre.homothetie(p,scale);
-    Cercle* ret = new Cercle(_couleur,*c, abs(_rayon * scale));
+    Cercle* ret = new Cercle(_couleur,*c, _rayon * scale);
     delete c;
     return ret;
 }
@@ -28,16 +28,28 @@ void Cercle::dessin(const Dessinable &d) const{
 }
 
 Cercle::Cercle(const Point &centre, double rayon):
-FormeGeom(),
-_centre(centre),
-_rayon(abs(rayon))
-{}
+    FormeGeom(),
+    _centre(centre)
+    {
+        if(rayon < 0 ){
+            _rayon = -rayon;
+        }
+        else{
+            _rayon = (rayon == 0) ? 1 : rayon;
+        }
+    }
 
 Cercle::Cercle(const Couleurs::Couleur &couleur,const Point &centre, double rayon):
-FormeGeom(couleur),
-_centre(centre),
-_rayon(abs(rayon))
-{}
+    FormeGeom(couleur),
+    _centre(centre)
+    {
+        if(rayon < 0 ){
+            _rayon = -rayon;
+        }
+        else{
+            _rayon = (rayon == 0) ? 1 : rayon;
+        }
+    }
 
 double Cercle::aire() const{
     return _rayon*_rayon*(Angle::PI);

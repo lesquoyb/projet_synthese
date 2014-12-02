@@ -14,6 +14,12 @@
 using namespace std;
 using namespace tools;
 
+/**
+ * @brief The ExpertChargement class
+ * Spécialisation d'un ExpertCOR.
+ * Cette classe est chargé de parser une chaine de caractère pour la transformer en FormeGeom.
+ * Il s'agit d'une classe abstraite.
+ */
 class ExpertChargement : public ExpertCOR<FormeGeom,string>{
 
 public:

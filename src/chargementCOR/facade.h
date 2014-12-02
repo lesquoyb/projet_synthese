@@ -4,6 +4,10 @@
 
 
 template<class retour, class aTraiter>
+/**
+ * @brief The Facade class
+ * Une façade faite pour rendre l'utilisation des ExpertCOR plus facile.
+ */
 class Facade {
 
 protected:

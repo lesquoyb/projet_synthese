@@ -5,6 +5,10 @@
 
 using namespace std;
 
+/**
+ * @brief The ChargementSegment class
+ * L'expert en segment.
+ */
 class ChargementSegment : public ExpertChargement{
 
 

@@ -44,7 +44,7 @@ Triangle* Triangle::rotation(const Point &p, const Angle &angle)const{
     Point* p1 = _p1.rotation(p,angle);
     Point* p2 = _p2.rotation(p,angle);
     Point* p3 = _p3.rotation(p,angle);
-    Triangle* t = new Triangle(*p1,*p2,*p3 );
+    Triangle* t = new Triangle(_couleur,*p1,*p2,*p3 );
     delete p1;
     delete p2;
     delete p3;
@@ -55,7 +55,7 @@ Triangle* Triangle::homothetie(const Point &p, const double &scale)const{
     Point* p1 = _p1.homothetie(p,scale);
     Point* p2 = _p2.homothetie(p,scale);
     Point* p3 = _p3.homothetie(p,scale);
-    Triangle* t = new Triangle(*p1,*p2,*p3 );
+    Triangle* t = new Triangle(_couleur,*p1,*p2,*p3 );
     delete p1;
     delete p2;
     delete p3;
@@ -66,7 +66,7 @@ Triangle* Triangle::translation(const Vecteur &v)const{
     Point* p1 = _p1.translation(v);
     Point* p2 = _p2.translation(v);
     Point* p3 = _p3.translation(v);
-    Triangle* t = new Triangle(*p1,*p2,*p3 );
+    Triangle* t = new Triangle(_couleur,*p1,*p2,*p3 );
     delete p1;
     delete p2;
     delete p3;
@@ -80,8 +80,8 @@ void Triangle::dessin(const Dessinable &d) const{
 
 string Triangle::toString()const {
     ostringstream ser;
-    ser << "triangle: " << _couleur << ", " <<  _p1.getX() << ", " << _p1.getY() << ", " << _p2.getX() << ", " << _p2.getY() << ", " << _p3.getX() << ", " << _p3.getY() ;
-    return ser.str(); // on enlève 2 car c'est la taille du dernier ", "
+    ser << "triangle: " << _couleur << ", " <<  _p1.toString() << ", " << _p2.toString() << ", " << _p3.toString() ;
+    return ser.str();
 }
 
 

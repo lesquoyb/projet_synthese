@@ -8,7 +8,10 @@
 #include "../polygone.h"
 
 using namespace std;
-
+/**
+ * @brief The ChargementPolygone class
+ * L'expert en polygones.
+ */
 class ChargementPolygone : public ExpertChargement{
 
 

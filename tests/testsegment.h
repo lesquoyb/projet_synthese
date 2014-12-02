@@ -2,7 +2,14 @@
 #define TESTSEGMENT_H
 #include "../src/segment.h"
 #include "cpptest.h"
+#include <memory>
 
+using std::unique_ptr;
+
+/**
+  *@brief TestSegment
+  * La classe de tests sur les segments.
+  */
 CPPTEST(TestSegment)
 
 
@@ -17,15 +24,18 @@ CPPTEST(TestSegment)
     });
 
     TESTCASE(rotationSimple,{
-         Equals(un.rotation(origine,Angle(90))->toString() , Segment(origine,pRot90).toString());
+        unique_ptr<Segment>s(un.rotation(origine,Angle(90)));
+         Equals(s->toString() , Segment(origine,pRot90).toString());
      });
 
     TESTCASE(translationSimple,{
-         Equals(un.translation(Vecteur(origine,pUn))->toString(),Segment(pUn,Point(2,2)).toString());
+         unique_ptr<Segment>s(un.translation(Vecteur(origine,pUn)));
+         Equals(s->toString(),Segment(pUn,Point(2,2)).toString());
      });
 
     TESTCASE(homothetieSimple, {
-         Equals(un.homothetie(origine,1)->toString(), un.toString());
+         unique_ptr<Segment>s(un.homothetie(origine,1));
+         Equals(s->toString(), un.toString());
      });
 
     TESTCASE(toString,{

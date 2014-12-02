@@ -1,6 +1,5 @@
 #include "formegeom.h"
 #include "Couleur.h"
-#include "../exceptions/exceptioncouleurinexistante.h"
 #include "chargementCOR/chargementfacade.h"
 
 FormeGeom::FormeGeom():

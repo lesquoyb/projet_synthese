@@ -6,6 +6,12 @@
 #define TESTLAUNCHER(name) class name : public CppTestFacade { public: ~name(){for(CppTest* f : _tests){delete f;}} name(){
 #define ENDLAUNCHER }};
 
+
+/**
+ * @brief The CppTestFacade class
+ * Une façade pour les tests unitaires.
+ * C'est une classe abstraite dont il faut hériter.
+ */
 class CppTestFacade{
 
 protected:
@@ -14,6 +20,11 @@ protected:
 
 public:
 
+
+    /**
+     * @brief run
+     * Lance tous les tests de la façade.
+     */
     void run(){
         int i = 0;
         int total = 0;
@@ -37,6 +48,11 @@ public:
         std::cout << " dans l'ensemble des tests" << std::endl;
     }
 
+    /**
+     * @brief addTest
+     * @param t
+     * Ajoute un ensemble de tests.
+     */
     void addTest(CppTest* t){
         _tests.push_back(t);
     }

@@ -5,6 +5,7 @@
 /**
  * @brief The Cercle class
  * Cette classe représente un cercle, c'est à dire un point pour le centre et un double représentant le rayon.
+ * Le rayon ne peut ni être négatif ni égal à zero.
  */
 class Cercle : public FormeGeom{
 

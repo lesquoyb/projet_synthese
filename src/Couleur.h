@@ -15,7 +15,7 @@ class Couleurs {
 
 public:
 
-    enum Couleur {black = 0 ,white,yellow,red,green,blue, nbCouleurs};
+    enum Couleur {black = 0 ,white,yellow,red,green,blue, cyan,nbCouleurs};
 
     /**
      * @brief couleurToString

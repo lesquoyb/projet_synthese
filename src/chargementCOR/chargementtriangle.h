@@ -9,6 +9,10 @@
 
 using namespace std;
 
+/**
+ * @brief The ChargementTriangle class
+ * L'expert en triangle.
+ */
 class ChargementTriangle : public ExpertChargement{
 
 

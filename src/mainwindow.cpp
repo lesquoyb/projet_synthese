@@ -7,27 +7,19 @@
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow),
-    _connexion(NULL)
+    _connexion(NULL),
+    _dessinManager(NULL)
     {
         ui->setupUi(this);
-        QStringList model;
         listeFormes = ui->listeFormes;
     }
 
 MainWindow::~MainWindow(){
     delete ui;
+    //On vide uniquement forme car les autres vector partagent les même pointeurs
     for(FormeGeom* f : _formes){
         delete f;
     }
-
-    /* // pas besoin car valeurs partagées entre les vector
-    for(Polygone* p : _polygones){
-        delete p;
-    }
-    for(Groupe* g : _groupes){
-        delete g;
-    }
-    */
 }
 
 /**
@@ -56,6 +48,7 @@ void MainWindow::on_ajout_cercle_clicked(){
     Couleurs::Couleur couleur = Couleurs::intToCouleur(ui->couleurCercle->currentIndex());
     Cercle c(couleur,centre,ui->rayon->value());
     _formes.push_back(c.clone());
+    _polygones.push_back(NULL);
     rafraichirListe();
 }
 
@@ -70,6 +63,7 @@ void MainWindow::on_ajout_segment_clicked(){
     Couleurs::Couleur couleur = Couleurs::intToCouleur(ui->couleurSegment->currentIndex());
     Segment s(couleur,p1,p2);
     _formes.push_back(s.clone());
+    _polygones.push_back(NULL);
     rafraichirListe();
 }
 
@@ -84,6 +78,7 @@ void MainWindow::on_ajout_triangle_clicked(){
     Couleurs::Couleur couleur = Couleurs::intToCouleur(ui->couleurTriangle->currentIndex());
     Triangle t(couleur,p1,p2,p3);
     _formes.push_back(t.clone());
+    _polygones.push_back(NULL);
     rafraichirListe();
 }
 
@@ -104,7 +99,10 @@ void MainWindow::on_ajouterPoint_clicked(){
     rafraichirListe();
 }
 
-
+/**
+ * @brief MainWindow::on_ajout_polygone_clicked
+ * AJoute un point au polygone sélectionné.
+ */
 void MainWindow::on_ajout_polygone_clicked(){
     Point p1(ui->pP1X->value(),ui->pP1Y->value());
     Point p2(ui->pP2X->value(),ui->pP2Y->value());
@@ -123,6 +121,7 @@ void MainWindow::on_creer_groupe_clicked(){
     Groupe* groupe = p.clone();
     _formes.push_back(groupe);
     _groupes.push_back(groupe);
+    _polygones.push_back(NULL);
     rafraichirListe();
 }
 
@@ -143,15 +142,8 @@ void MainWindow::on_ajout_groupe_clicked(){
             i++;
         }
 
-        i = 0;
-        for(Polygone* p : _polygones){
-            if (p == f){
-                _polygones.erase(_polygones.begin()+i);
-                break;
-            }
-            i++;
-        }
         delete f;
+        _polygones.erase(_polygones.begin()+indexForme);
         _formes.erase( _formes.begin()+indexForme);
 
     }
@@ -189,6 +181,7 @@ void MainWindow::on_connexion_clicked(){
     }
 
     if(_connexion != NULL){
+        delete _dessinManager;
         _dessinManager = new DessinManager(_connexion);
         ui->status_reseau->setPixmap(QPixmap(":images/ressources/images/Green_check.png"));
     }
@@ -209,6 +202,9 @@ void MainWindow::on_chargement_clicked(){
            if(f->toString().find("polygone") == 0 ){
                _polygones.push_back((Polygone*)f);
            }
+           else{
+               _polygones.push_back(NULL);
+           }
            _formes.push_back(f);
            rafraichirListe();
        }
@@ -219,7 +215,7 @@ void MainWindow::on_chargement_clicked(){
 void MainWindow::on_sauver_clicked(){
     int index =  ui->listeFormes->currentRow();
     if( index != -1 ){
-        QString fileName = QFileDialog::getOpenFileName(this, tr("Sauvegarde d'une forme géométrique"), "",tr("Text Files (*.txt);;Dessinator files (*.dess)"));
+        QString fileName = QFileDialog::getSaveFileName(this, tr("Sauvegarde d'une forme géométrique"), "",tr("Text Files (*.txt);;Dessinator files (*.dess)"));
         if (fileName != "") {
            _formes[index]->sauvegarder(fileName.toStdString());
         }
@@ -238,16 +234,9 @@ void MainWindow::on_supprimer_clicked(){
             }
             i++;
         }
-        i = 0;
-        for(Polygone* p : _polygones){
-            if (p == f){
-                _polygones.erase(_polygones.begin()+i);
-                break;
-            }
-            i++;
-        }
         delete f;
         _formes.erase( _formes.begin()+index);
+        _polygones.erase(_polygones.begin()+index);
 
     }
     rafraichirListe();
@@ -274,6 +263,9 @@ void MainWindow::on_translation_clicked(){
                 break;
             }
             i++;
+        }
+        if(i == _polygones.size()){
+            _polygones[index] = NULL;
         }
         _formes[index] = f;
         delete temp;
@@ -304,6 +296,9 @@ void MainWindow::on_rotation_clicked(){
             }
             i++;
         }
+        if(i == _polygones.size()){
+            _polygones[index] = NULL;
+        }
         _formes[index] = f;
         delete temp;
 
@@ -333,9 +328,11 @@ void MainWindow::on_homothetie_clicked(){
             }
             i++;
         }
+        if(i == _polygones.size()){
+            _polygones[index] = NULL;
+        }
         _formes[index] = f;
         delete temp;
-
     }
     rafraichirListe();
 }
