@@ -12,7 +12,10 @@ CPPTEST(TestCercle)
     Point pUn(1,1);
     Point pZeroUn(0,1);
     Point pRot90(-1,1);
-    Point unRot = *origine.rotation(pUn,Angle(90));
+    Point* temp = origine.rotation(pUn,Angle(90));
+    Cercle* cTemp;
+    Point unRot(*temp);
+    delete temp;
 
     Cercle un(origine,5);
 
@@ -22,11 +25,17 @@ CPPTEST(TestCercle)
     });
 
     TESTCASE(rotationSimple,{
-         Equals(un.rotation(pUn,Angle(90))->toString() , Cercle(unRot,un.getRayon()).toString());
+         cTemp = un.rotation(pUn,Angle(90));
+         string stringUn = temp->toString();
+         delete cTemp;
+         Equals(stringUn , Cercle(unRot,un.getRayon()).toString());
      });
 
     TESTCASE(translationSimple,{
-         Equals(un.translation(Vecteur(origine,pUn))->toString(),Cercle(pUn,un.getRayon()).toString());
+         cTemp = un.translation(Vecteur(origine,pUn));
+         string stringUn = temp->toString();
+         delete cTemp;
+         Equals(stringUn,Cercle(pUn,un.getRayon()).toString());
      });
 
     TESTCASE(homothetieSimple, {
@@ -36,6 +45,7 @@ CPPTEST(TestCercle)
     TESTCASE(toString,{
          Equals(un.toString(),"cercle: #000000, 0, 0, 5");
      });
+
 
 ENDTEST
 

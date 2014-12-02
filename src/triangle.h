@@ -11,6 +11,7 @@ private:
 
 public:
 
+    Triangle(const Triangle &t);
     Triangle(const Point &p1,const Point &p2,const Point &p3);
     Triangle(const Couleurs::Couleur & couleur,const Point &p1,const Point &p2,const Point &p3);
 

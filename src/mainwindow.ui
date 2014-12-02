@@ -1779,12 +1779,24 @@
      <height>27</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuOutils">
+    <property name="title">
+     <string>outils</string>
+    </property>
+    <addaction name="actionAire"/>
+   </widget>
+   <addaction name="menuOutils"/>
   </widget>
   <widget class="QStatusBar" name="statusBar">
    <property name="sizeGripEnabled">
     <bool>false</bool>
    </property>
   </widget>
+  <action name="actionAire">
+   <property name="text">
+    <string>Aire</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>

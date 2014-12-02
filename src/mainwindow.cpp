@@ -2,10 +2,12 @@
 #include "ui_mainwindow.h"
 #include "erreur.h"
 #include <qfiledialog.h>
+#include <qmessagebox.h>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::MainWindow)
+    ui(new Ui::MainWindow),
+    _connexion(NULL)
     {
         ui->setupUi(this);
         QStringList model;
@@ -165,7 +167,7 @@ void MainWindow::on_dessiner_tout_clicked(){
 }
 
 void MainWindow::on_dessiner_forme_clicked(){
-    if(_dessinManager != NULL){
+    if(_connexion != NULL){
         int index =  ui->listeFormes->currentRow();
         if( index != -1 ){
             _formes[index]->dessin(*_dessinManager);
@@ -336,4 +338,15 @@ void MainWindow::on_homothetie_clicked(){
 
     }
     rafraichirListe();
+}
+
+void MainWindow::on_actionAire_triggered(){
+    double somme = 0;
+    for(FormeGeom* f : _formes){
+        somme += f->aire();
+    }
+    QMessageBox box;
+    QString mess = QString("L'aire totale cumlée des formes est de: ")+ QString::number(somme);//TODO
+    box.critical(NULL,"Aire totale cumulée",mess);
+
 }

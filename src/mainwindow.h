@@ -63,6 +63,8 @@ private slots:
 
     void on_homothetie_clicked();
 
+    void on_actionAire_triggered();
+
 private:
 
     void rafraichirListe();

@@ -1,6 +1,13 @@
 #include "triangle.h"
 
 
+Triangle::Triangle(const Triangle &t):
+    FormeGeom(t._couleur),
+    _p1(t._p1),
+    _p2(t._p2),
+    _p3(t._p3)
+    {}
+
 Triangle::Triangle(const Point &p1, const Point &p2, const Point &p3):
     FormeGeom(),
     _p1(p1),
